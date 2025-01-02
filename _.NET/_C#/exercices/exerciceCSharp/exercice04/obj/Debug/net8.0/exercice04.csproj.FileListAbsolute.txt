@@ -1,0 +1,15 @@
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice04\bin\Debug\net8.0\exercice04.exe
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice04\bin\Debug\net8.0\exercice04.deps.json
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice04\bin\Debug\net8.0\exercice04.runtimeconfig.json
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice04\bin\Debug\net8.0\exercice04.dll
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice04\bin\Debug\net8.0\exercice04.pdb
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice04\obj\Debug\net8.0\exercice04.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice04\obj\Debug\net8.0\exercice04.AssemblyInfoInputs.cache
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice04\obj\Debug\net8.0\exercice04.AssemblyInfo.cs
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice04\obj\Debug\net8.0\exercice04.csproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice04\obj\Debug\net8.0\exercice04.sourcelink.json
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice04\obj\Debug\net8.0\exercice04.dll
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice04\obj\Debug\net8.0\refint\exercice04.dll
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice04\obj\Debug\net8.0\exercice04.pdb
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice04\obj\Debug\net8.0\exercice04.genruntimeconfig.cache
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice04\obj\Debug\net8.0\ref\exercice04.dll

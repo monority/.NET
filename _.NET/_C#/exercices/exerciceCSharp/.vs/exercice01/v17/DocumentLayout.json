@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Administrateur\\Desktop\\Formation .NET\\_.NET\\_C#\\exercices\\exerciceCSharp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{31163CAB-7F63-42B6-9FF1-4340A6A51C27}|exercice02\\exercice02.csproj|c:\\users\\administrateur\\desktop\\formation .net\\_.net\\_c#\\exercices\\exercicecsharp\\exercice02\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31163CAB-7F63-42B6-9FF1-4340A6A51C27}|exercice02\\exercice02.csproj|solutionrelative:exercice02\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26CF754B-5955-4859-B1EC-58D996DD57C8}|exercice01\\exercice01.csproj|c:\\users\\administrateur\\desktop\\formation .net\\_.net\\_c#\\exercices\\exercicecsharp\\exercice01\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26CF754B-5955-4859-B1EC-58D996DD57C8}|exercice01\\exercice01.csproj|solutionrelative:exercice01\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\Formation .NET\\_.NET\\_C#\\exercices\\exerciceCSharp\\exercice02\\Program.cs",
+              "RelativeDocumentMoniker": "exercice02\\Program.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\Formation .NET\\_.NET\\_C#\\exercices\\exerciceCSharp\\exercice02\\Program.cs",
+              "RelativeToolTip": "exercice02\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-02T13:44:08.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\Formation .NET\\_.NET\\_C#\\exercices\\exerciceCSharp\\exercice01\\Program.cs",
+              "RelativeDocumentMoniker": "exercice01\\Program.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\Formation .NET\\_.NET\\_C#\\exercices\\exerciceCSharp\\exercice01\\Program.cs",
+              "RelativeToolTip": "exercice01\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-02T10:34:57.403Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
