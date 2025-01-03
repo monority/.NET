@@ -1,0 +1,10 @@
+﻿Console.WriteLine("Enter your capital value : ");
+double capital = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Rate value (%) : ");
+double rate = Convert.ToDouble(Console.ReadLine()) / 100;
+Console.WriteLine("Enter the years of save (in years) : ");
+double years=  Convert.ToDouble(Console.ReadLine());
+double new_capital = capital * Math.Pow(rate + 1 , years);
+double total_capital = new_capital + capital;
+Console.WriteLine($"Value of gain will be : {new_capital} after {years} years ");
+Console.WriteLine($"Capital final : {total_capital}");

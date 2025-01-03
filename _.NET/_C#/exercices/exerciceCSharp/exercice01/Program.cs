@@ -24,5 +24,19 @@ Console.WriteLine("Entier : " + integer);
 Console.WriteLine($"Entier {integer}");
 Console.Write("Please write your name : ");
 string name = Console.ReadLine();
-
 Console.WriteLine($"Your name is {name}");
+
+int c = 0;
+Console.WriteLine(++c);
+
+c = c + 1;
+c += 10;
+
+Console.WriteLine(Math.Round(Pi));
+
+int compte = 300;
+
+if (compte >= 0)
+    Console.WriteLine("Votre compte est créditeur");
+else
+    Console.WriteLine("Votre compte est débiteur");
