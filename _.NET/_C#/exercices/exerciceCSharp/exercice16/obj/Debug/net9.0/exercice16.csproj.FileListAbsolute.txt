@@ -1,0 +1,15 @@
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice16\bin\Debug\net9.0\exercice16.exe
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice16\bin\Debug\net9.0\exercice16.deps.json
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice16\bin\Debug\net9.0\exercice16.runtimeconfig.json
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice16\bin\Debug\net9.0\exercice16.dll
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice16\bin\Debug\net9.0\exercice16.pdb
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice16\obj\Debug\net9.0\exercice16.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice16\obj\Debug\net9.0\exercice16.AssemblyInfoInputs.cache
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice16\obj\Debug\net9.0\exercice16.AssemblyInfo.cs
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice16\obj\Debug\net9.0\exercice16.csproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice16\obj\Debug\net9.0\exercice16.sourcelink.json
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice16\obj\Debug\net9.0\exercice16.dll
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice16\obj\Debug\net9.0\refint\exercice16.dll
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice16\obj\Debug\net9.0\exercice16.pdb
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice16\obj\Debug\net9.0\exercice16.genruntimeconfig.cache
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice16\obj\Debug\net9.0\ref\exercice16.dll
