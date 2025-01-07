@@ -1,0 +1,15 @@
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice19\obj\Debug\net9.0\exercice19.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice19\obj\Debug\net9.0\exercice19.AssemblyInfoInputs.cache
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice19\obj\Debug\net9.0\exercice19.AssemblyInfo.cs
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice19\obj\Debug\net9.0\exercice19.csproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice19\obj\Debug\net9.0\exercice19.sourcelink.json
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice19\bin\Debug\net9.0\exercice19.exe
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice19\bin\Debug\net9.0\exercice19.deps.json
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice19\bin\Debug\net9.0\exercice19.runtimeconfig.json
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice19\bin\Debug\net9.0\exercice19.dll
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice19\bin\Debug\net9.0\exercice19.pdb
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice19\obj\Debug\net9.0\exercice19.dll
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice19\obj\Debug\net9.0\refint\exercice19.dll
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice19\obj\Debug\net9.0\exercice19.pdb
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice19\obj\Debug\net9.0\exercice19.genruntimeconfig.cache
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice19\obj\Debug\net9.0\ref\exercice19.dll

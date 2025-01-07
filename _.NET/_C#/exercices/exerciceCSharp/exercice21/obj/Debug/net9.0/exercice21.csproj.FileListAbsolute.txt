@@ -1,0 +1,15 @@
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice21\bin\Debug\net9.0\exercice21.exe
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice21\bin\Debug\net9.0\exercice21.deps.json
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice21\bin\Debug\net9.0\exercice21.runtimeconfig.json
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice21\bin\Debug\net9.0\exercice21.dll
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice21\bin\Debug\net9.0\exercice21.pdb
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice21\obj\Debug\net9.0\exercice21.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice21\obj\Debug\net9.0\exercice21.AssemblyInfoInputs.cache
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice21\obj\Debug\net9.0\exercice21.AssemblyInfo.cs
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice21\obj\Debug\net9.0\exercice21.csproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice21\obj\Debug\net9.0\exercice21.sourcelink.json
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice21\obj\Debug\net9.0\exercice21.dll
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice21\obj\Debug\net9.0\refint\exercice21.dll
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice21\obj\Debug\net9.0\exercice21.pdb
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice21\obj\Debug\net9.0\exercice21.genruntimeconfig.cache
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice21\obj\Debug\net9.0\ref\exercice21.dll

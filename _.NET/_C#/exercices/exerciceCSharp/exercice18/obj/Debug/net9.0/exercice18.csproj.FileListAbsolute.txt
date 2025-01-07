@@ -1,0 +1,15 @@
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice18\obj\Debug\net9.0\exercice18.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice18\obj\Debug\net9.0\exercice18.AssemblyInfoInputs.cache
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice18\obj\Debug\net9.0\exercice18.AssemblyInfo.cs
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice18\obj\Debug\net9.0\exercice18.csproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice18\obj\Debug\net9.0\exercice18.sourcelink.json
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice18\bin\Debug\net9.0\exercice18.exe
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice18\bin\Debug\net9.0\exercice18.deps.json
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice18\bin\Debug\net9.0\exercice18.runtimeconfig.json
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice18\bin\Debug\net9.0\exercice18.dll
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice18\bin\Debug\net9.0\exercice18.pdb
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice18\obj\Debug\net9.0\exercice18.dll
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice18\obj\Debug\net9.0\refint\exercice18.dll
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice18\obj\Debug\net9.0\exercice18.pdb
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice18\obj\Debug\net9.0\exercice18.genruntimeconfig.cache
+C:\Users\Administrateur\Desktop\Formation .NET\_.NET\_C#\exercices\exerciceCSharp\exercice18\obj\Debug\net9.0\ref\exercice18.dll
