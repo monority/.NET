@@ -1,5 +1,79 @@
+https://chatgpt.com/g/g-Rc3iZmqCN-cv-resume-evaluator-ats
 Oceane leveque 
 Glorai vanderberghe
 Charles Prudhomme
 m2i villeneuve d'asq
 Anais cocquet
+//TAG
+
+Post to Chargé recrutement
+DSI
+Tech Lead
+DEV
+RA
+
+
+Stage -> post 
+Emploi -> Cadre emploi
+Postuler en précisément qu'on cherche un stage.
+-> Lettre de recommandé a la fin du stage.
+
+reporting -> calendrier des candidatures 
+date -> relance tout les 15 jours
+poste -> info lors du contact
+boite -> personnaliser la candidature
+canal utilisé -> 
+personne ressource
+lien vers l'offre
+
+quantité = 5 - 10 / jours en candidature spontanée
++ offres d'emplois
+
+## Sourcing
+La bonne boîte -> référencement France travail
+Adopte1dev
+meteojob
+hellowork // best
+ESN
+Indeed
+APEC
+LesJeudis // best
+Welcome to the jungle
+Free-work
+Mobiskill
+Kompass
+Great place to work
+
+## Stage 
+Full remote ?
+
+## Freelance
+
+## Mail
+Bonjour [interlocuteur]
+
+- Donner les raisons de la cand
+- pitch court
+- personnalise le message
+- arguments douze lignes (pourquoi nous et pas un 
+- être vendeur 
+CCI
+
+
+Pitch
+Bonjour [Nom de l’interlocuteur],
+
+Je m’appelle Ronan Chenu, et je suis actuellement en formation Développeur .NET Fullstack avec M2i. Je me permets de vous contacter pour vous proposer ma candidature pour un stage d’une durée d’un mois.
+
+Votre entreprise a retenu mon attention en raison de {project_or_whytheyknow}. En particulier, les projets tels que {call_projects} et les atouts comme {atout_entreprise} me confortent dans l’idée que je pourrais m’intégrer rapidement et efficacement à vos équipes.
+
+Doté d’une grande détermination, d’une polyvalence éprouvée et d’un sens aigu du travail en équipe, je suis prêt à m’investir pleinement dans vos projets en cours et à apporter une réelle valeur ajoutée.
+
+Je serais ravi de pouvoir échanger davantage sur ma candidature et de discuter de la manière dont je pourrais contribuer à vos objectifs.
+
+Dans l’attente de votre retour, je reste à votre disposition pour toute information complémentaire.
+
+Cordialement,
+Ronan Chenu
+
+
