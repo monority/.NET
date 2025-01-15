@@ -1,0 +1,15 @@
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exercice\bin\Debug\net9.0\_exercice.exe
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exercice\bin\Debug\net9.0\_exercice.deps.json
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exercice\bin\Debug\net9.0\_exercice.runtimeconfig.json
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exercice\bin\Debug\net9.0\_exercice.dll
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exercice\bin\Debug\net9.0\_exercice.pdb
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exercice\obj\Debug\net9.0\_exercice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exercice\obj\Debug\net9.0\_exercice.AssemblyInfoInputs.cache
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exercice\obj\Debug\net9.0\_exercice.AssemblyInfo.cs
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exercice\obj\Debug\net9.0\_exercice.csproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exercice\obj\Debug\net9.0\_exercice.sourcelink.json
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exercice\obj\Debug\net9.0\_exercice.dll
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exercice\obj\Debug\net9.0\refint\_exercice.dll
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exercice\obj\Debug\net9.0\_exercice.pdb
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exercice\obj\Debug\net9.0\_exercice.genruntimeconfig.cache
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exercice\obj\Debug\net9.0\ref\_exercice.dll
