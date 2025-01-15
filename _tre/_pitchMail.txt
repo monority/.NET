@@ -1,0 +1,14 @@
+Bonjour Madame, Monsieur,
+
+Je m’appelle Ronan Chenu, et je suis actuellement en formation de Développeur .NET Fullstack avec M2i. Je me permets de vous adresser ma candidature pour un stage d’une durée d’un mois.
+
+Votre entreprise a particulièrement retenu mon attention en raison de vos projets, {project}. De plus, les frameworks et technologies que vous utilisez correspondent à mes compétences actuelles et représentent une opportunité idéale pour continuer à progresser.
+
+Doté d’une grande détermination, de polyvalence et d’un sens aigu du travail en équipe, je suis prêt à m’investir pleinement dans vos projets en cours et à apporter une réelle valeur ajoutée.
+
+Je serais ravi de pouvoir échanger davantage sur ma candidature et de discuter de la manière dont je pourrais contribuer à vos objectifs.
+
+Dans l’attente de votre retour, je reste à votre disposition pour toute information complémentaire.
+
+Cordialement,
+Ronan Chenu
