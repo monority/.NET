@@ -24,7 +24,7 @@ internal class Tank
     {
         TotalWeight = weight;
         TotalCapacity = totalCapacity;
-        _citern = citern;
+        Citern = citern;
         FillLevel = fillLevel;
         TotalWater += FillLevel;
     }
@@ -48,16 +48,48 @@ internal class Tank
 
     public string AddingWater(int water)
     {
-        if (FillLevel + water > TotalCapacity)
+        if (FillLevel == TotalCapacity)
         {
-            var value = TotalCapacity + (water - FillLevel);
-            Console.WriteLine($"You've got back {value}");
+            Console.WriteLine("Water tank is full");
+        }
+        else if (FillLevel + water > TotalCapacity)
+        {
+            var value = FillLevel + water;
+            value -= TotalCapacity;
+            FillLevel = TotalCapacity;
+            Console.WriteLine($"You've got back {value} in Citern {Citern}.");
+            TotalWater += FillLevel;
         }
         else
         {
+            FillLevel += water;
             TotalWater += water;
         }
-        return $"Water quantity in Citern {Citern} after adding {water} liter {TotalCapacity} / {TotalCapacity}";
+        return $"Water quantity in Citern {Citern} after adding {water} liter {FillLevel} / {TotalCapacity}";
+    }
+
+    public string RemovingWater(int water)
+    {
+        int BackWater = 0;
+        if (FillLevel == 0)
+        {
+            Console.WriteLine("Water tank is empty");
+        }
+       else if (FillLevel - water < 0)
+        {
+            BackWater = water - FillLevel;
+            var value = water - BackWater;
+            TotalWater -= value;
+            FillLevel = 0;
+            Console.WriteLine($"You've got back {BackWater}");
+        }
+        else
+        {
+            FillLevel -= water;
+            TotalWater -= water;
+        }
+        return $"Water quantity in Citern {Citern} after removing {water} liter {FillLevel} / {TotalCapacity}";
+
     }
 
 
