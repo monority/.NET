@@ -7,7 +7,7 @@ internal class Tank
     public static int TotalWater { get; private set; }
     public static int TotalTank { get; private set; }
     public int FillLevel { get; set; }
-    public int _citern { get; private set; }
+    private int _citern { get;  set; }
 
     public int Citern
     {
@@ -43,7 +43,7 @@ internal class Tank
 
     public static string GetTotalWater()
     {
-        return $"Total Water is {TotalWater}";
+        return $"Total Water is {TotalWater} in all Citerns";
     }
 
     public string AddingWater(int water)
@@ -58,7 +58,7 @@ internal class Tank
             value -= TotalCapacity;
             FillLevel = TotalCapacity;
             Console.WriteLine($"You've got back {value} in Citern {Citern}.");
-            TotalWater += FillLevel;
+            
         }
         else
         {
@@ -76,10 +76,8 @@ internal class Tank
             Console.WriteLine("Water tank is empty");
         }
        else if (FillLevel - water < 0)
-        {
-            BackWater = water - FillLevel;
-            var value = water - BackWater;
-            TotalWater -= value;
+       {
+           water = FillLevel;
             FillLevel = 0;
             Console.WriteLine($"You've got back {BackWater}");
         }
