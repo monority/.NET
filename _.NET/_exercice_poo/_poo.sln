@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_ExerciceAccount", "_Exerci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_exerciceFigure", "_exerciceFigure\_exerciceFigure.csproj", "{44C4FB2C-CE2E-4D23-ADD0-7E275688D6A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_exerciceFigCorrect", "_exerciceFigCorrect\_exerciceFigCorrect.csproj", "{C154FE55-5C66-45E5-A4B6-1C1F0A189CD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{44C4FB2C-CE2E-4D23-ADD0-7E275688D6A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44C4FB2C-CE2E-4D23-ADD0-7E275688D6A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44C4FB2C-CE2E-4D23-ADD0-7E275688D6A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C154FE55-5C66-45E5-A4B6-1C1F0A189CD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C154FE55-5C66-45E5-A4B6-1C1F0A189CD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C154FE55-5C66-45E5-A4B6-1C1F0A189CD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C154FE55-5C66-45E5-A4B6-1C1F0A189CD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
