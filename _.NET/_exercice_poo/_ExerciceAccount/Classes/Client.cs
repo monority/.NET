@@ -7,6 +7,14 @@ public class Client
     private int _phoneNumber;
     private string _username { get; }
     private int _accountList { get; }
-    
+
+    public Client(string firstName, string lastName, int phoneNumber, string username, int accountList)
+    {
+        _firstName = firstName;
+        _lastName = lastName;
+        _phoneNumber = phoneNumber;
+        _username = username;
+        _accountList = accountList;
+    }
     
 }

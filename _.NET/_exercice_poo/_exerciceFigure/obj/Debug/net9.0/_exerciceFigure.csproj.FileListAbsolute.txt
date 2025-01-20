@@ -1,0 +1,15 @@
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exerciceFigure\bin\Debug\net9.0\_exerciceFigure.exe
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exerciceFigure\bin\Debug\net9.0\_exerciceFigure.deps.json
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exerciceFigure\bin\Debug\net9.0\_exerciceFigure.runtimeconfig.json
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exerciceFigure\bin\Debug\net9.0\_exerciceFigure.dll
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exerciceFigure\bin\Debug\net9.0\_exerciceFigure.pdb
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exerciceFigure\obj\Debug\net9.0\_exerciceFigure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exerciceFigure\obj\Debug\net9.0\_exerciceFigure.AssemblyInfoInputs.cache
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exerciceFigure\obj\Debug\net9.0\_exerciceFigure.AssemblyInfo.cs
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exerciceFigure\obj\Debug\net9.0\_exerciceFigure.csproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exerciceFigure\obj\Debug\net9.0\_exerciceFigure.sourcelink.json
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exerciceFigure\obj\Debug\net9.0\_exerciceFigure.dll
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exerciceFigure\obj\Debug\net9.0\refint\_exerciceFigure.dll
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exerciceFigure\obj\Debug\net9.0\_exerciceFigure.pdb
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exerciceFigure\obj\Debug\net9.0\_exerciceFigure.genruntimeconfig.cache
+C:\Users\Administrateur\Desktop\.NET\_.NET\_exercice_poo\_exerciceFigure\obj\Debug\net9.0\ref\_exerciceFigure.dll
