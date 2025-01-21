@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrateur\\Desktop\\.NET\\_.NET\\_exercice_poo\\_WaterTank\\_WaterTank.csproj",
+      "projectUniqueName": "C:\\Users\\Administrateur\\Desktop\\.NET\\_C#\\_exercice_poo\\_WaterTank\\_WaterTank.csproj",
       "projectName": "_WaterTank",
-      "projectPath": "C:\\Users\\Administrateur\\Desktop\\.NET\\_.NET\\_exercice_poo\\_WaterTank\\_WaterTank.csproj",
+      "projectPath": "C:\\Users\\Administrateur\\Desktop\\.NET\\_C#\\_exercice_poo\\_WaterTank\\_WaterTank.csproj",
       "packagesPath": "C:\\Users\\Administrateur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrateur\\Desktop\\.NET\\_.NET\\_exercice_poo\\_WaterTank\\obj\\",
+      "outputPath": "C:\\Users\\Administrateur\\Desktop\\.NET\\_C#\\_exercice_poo\\_WaterTank\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
