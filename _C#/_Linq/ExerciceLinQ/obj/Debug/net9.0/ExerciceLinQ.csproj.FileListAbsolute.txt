@@ -1,0 +1,14 @@
+C:\Users\Administrateur\Desktop\_tryVsCode\ExerciceLinQ\bin\Debug\net9.0\ExerciceLinQ.exe
+C:\Users\Administrateur\Desktop\_tryVsCode\ExerciceLinQ\bin\Debug\net9.0\ExerciceLinQ.deps.json
+C:\Users\Administrateur\Desktop\_tryVsCode\ExerciceLinQ\bin\Debug\net9.0\ExerciceLinQ.runtimeconfig.json
+C:\Users\Administrateur\Desktop\_tryVsCode\ExerciceLinQ\bin\Debug\net9.0\ExerciceLinQ.dll
+C:\Users\Administrateur\Desktop\_tryVsCode\ExerciceLinQ\bin\Debug\net9.0\ExerciceLinQ.pdb
+C:\Users\Administrateur\Desktop\_tryVsCode\ExerciceLinQ\obj\Debug\net9.0\ExerciceLinQ.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrateur\Desktop\_tryVsCode\ExerciceLinQ\obj\Debug\net9.0\ExerciceLinQ.AssemblyInfoInputs.cache
+C:\Users\Administrateur\Desktop\_tryVsCode\ExerciceLinQ\obj\Debug\net9.0\ExerciceLinQ.AssemblyInfo.cs
+C:\Users\Administrateur\Desktop\_tryVsCode\ExerciceLinQ\obj\Debug\net9.0\ExerciceLinQ.csproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Desktop\_tryVsCode\ExerciceLinQ\obj\Debug\net9.0\ExerciceLinQ.dll
+C:\Users\Administrateur\Desktop\_tryVsCode\ExerciceLinQ\obj\Debug\net9.0\refint\ExerciceLinQ.dll
+C:\Users\Administrateur\Desktop\_tryVsCode\ExerciceLinQ\obj\Debug\net9.0\ExerciceLinQ.pdb
+C:\Users\Administrateur\Desktop\_tryVsCode\ExerciceLinQ\obj\Debug\net9.0\ExerciceLinQ.genruntimeconfig.cache
+C:\Users\Administrateur\Desktop\_tryVsCode\ExerciceLinQ\obj\Debug\net9.0\ref\ExerciceLinQ.dll
