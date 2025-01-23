@@ -113,3 +113,6 @@ SELECT SUM(salary) as total_salary
 FROM Users;
 
 
+SELECT birth_location, SUM(salary) as salary_bytown
+FROM USERS 
+GROUP BY birth_location
