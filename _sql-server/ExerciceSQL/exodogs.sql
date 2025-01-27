@@ -67,6 +67,8 @@ INSERT INTO Personne (first_name, last_name, age, phone_number, address)
 VALUES     ('Frodo', 'Baggins', 33, '1237894560', 'Bag End'),
     ('Waldo', 'Rosenbaum', 50, '7778889999', 'Nowhere Street');
 
+    DROP TABLE Chien;
+    DROP TABLE Personne;
     SELECT Chien.name, Chien.weight, Chien.breed
     FROM Chien;
 
@@ -132,8 +134,77 @@ GROUP BY breed
 ORDER BY breed_count DESC;
 
     
-SELECT TOP 3 breed, COUNT(*) AS breed_count
-FROM Chien
-INNER JOIN Personne ON Personne.id = Chien.id_maitre
-GROUP BY breed
-ORDER BY breed_count DESC; 
+SELECT p.first_name, p.last_name, COUNT(c.breed) AS dog_count
+FROM Chien c
+INNER JOIN Personne p ON p.id = c.id_maitre
+GROUP BY p.first_name, p.last_name
+HAVING COUNT(c.breed) >= 2
+ORDER BY dog_count DESC;
+
+SELECT p.first_name, p.last_name, c.name
+FROM Chien c
+FULL OUTER JOIN Personne p ON p.id = c.id_maitre
+WHERE c.id_maitre IS NULL 
+
+SELECT p.first_name, p.last_name, SUM(c.size) AS sum_size
+FROM Personne p 
+INNER JOIN Chien c ON p.id = c.id_maitre
+GROUP BY p.first_name, p.last_name
+
+INSERT INTO Personne (first_name, last_name, age, phone_number, address)
+VALUES     ('Arya', 'Stark', 18, '1231231234', 'Winterfell')
+
+INSERT INTO Chien (name, breed, age, size, weight, id_maitre)
+VALUES 
+    ('Nymeria', 'Loup géant', 3, 120, 60, 13);
+
+UPDATE Chien
+SET weight = 9
+WHERE name = 'Milou';
+
+UPDATE Personne
+SET address = 'Dragonstone'
+WHERE Personne.first_name = 'Daenerys';
+
+UPDATE Chien
+SET Chien.id_maitre = 3
+WHERE  id_maitre IS NULL;
+
+DELETE FROM Chien
+WHERE Chien.weight < 5;
+
+DELETE FROM Personne
+INNER JOIN Chien ON Chien.id_maitre = Personne.id
+WHERE Personne.first_name = 'Waldo'
+
+TRUNCATE TABLE Chien;
+
+-- Correction
+
+-- 1.
+SELECT [name], [breed], [weight]
+FROM [Dogs];
+
+-- 2.
+
+-- 3.
+
+-- 4.
+
+-- 5.
+
+-- 6.
+
+-- 7.
+
+-- 8.
+
+-- 9.
+
+-- 10.
+
+-- 11.
+
+-- 12.
+
+

@@ -1,0 +1,116 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_sql-server\\ExerciceSQL\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__tpdc/master/True/SqlTable/dbo.People.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_sql-server\\ExerciceSQL\\TPDogsAndCats.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TPDogsAndCats.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__tpdc/master/True/SqlTable/dbo.RelationDogsAndCats.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__tpdc/master/True/SqlTable/dbo.Cat.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__tpdc/master/True/SqlTable/dbo.Dogs.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_sql-server\\ExerciceSQL\\TPDogsAndCats.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TPDogsAndCats.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_sql-server\\ExerciceSQL\\TPDogsAndCats.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TPDogsAndCats.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "dbo.Dogs [Donn\u00E9es]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__tpdc/master/True/SqlTable/dbo.Dogs.sql",
+              "ToolTip": "dbo.Dogs [Donn\u00E9es]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-01-27T15:40:03.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "dbo.RelationDogsAndCats [Donn\u00E9es]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__tpdc/master/True/SqlTable/dbo.RelationDogsAndCats.sql",
+              "ToolTip": "dbo.RelationDogsAndCats [Donn\u00E9es]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-01-27T15:39:57.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dbo.Cat [Donn\u00E9es]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__tpdc/master/True/SqlTable/dbo.Cat.sql",
+              "ToolTip": "dbo.Cat [Donn\u00E9es]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-01-27T15:36:54.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "dbo.People [Donn\u00E9es]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__tpdc/master/True/SqlTable/dbo.People.sql",
+              "ToolTip": "dbo.People [Donn\u00E9es]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-01-27T15:36:51.917Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 100,
+      "FloatingWindowState": {
+        "Id": "c0765853-357f-4982-95fc-d7b348e67e8c",
+        "Display": 0,
+        "X": 189,
+        "Y": 170,
+        "Width": 973,
+        "Height": 758,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TPDogsAndCats.sql ",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_sql-server\\ExerciceSQL\\TPDogsAndCats.sql",
+              "RelativeDocumentMoniker": "TPDogsAndCats.sql",
+              "ToolTip": "TPDogsAndCats.sql ",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-01-27T15:27:28.899Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
