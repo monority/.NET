@@ -98,7 +98,7 @@ ADD
         CONSTRAINT CHK_Gender CHECK (gender IN ('Male', 'Female', 'Other'));
 
 
-ALTER TABLE Dogs 
-MODIFY 
+ALTER TABLE Dogs
+ALTER COLUMN size DECIMAL(6,2);
 
 DROP TABLE RelationDogsAndCats

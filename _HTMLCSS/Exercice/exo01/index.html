@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="icon" type="image/x-icon" href=".\img\favicon.ico">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name='keywords' content='coffee, fun, friends'>
+	<meta name='description' content='A website to have a coffee with your friends (or alone)'>
+	<title>Coffee for friends</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+	<header>
+		<div class="container" style="display: flex; align-items: center; justify-content: center;">
+			<figure style="padding: 0;">
+				<img src="./img/logo.png" alt="" width="100px" height="100px">
+			</figure>
+			<h1>Coffee for friends</h1>
+		</div>
+		<div class="container">
+			<nav>
+				<ul style="display: flex; gap: 2rem">
+					<li style="list-style-type: none;"><a href="#home">Home</a></li>
+					<li style="list-style-type: none;"><a href="#menu">Menu</a></li>
+					<li style="list-style-type: none;"><a href="#gallery">Gallery</a></li>
+					<li style="list-style-type: none;"><a href="#contact">Contact</a></li>
+					<li style="list-style-type: none;"><a href="#schedule">Schedule</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<main>
+		<div class="app_container" style="margin-top: 100px;">
+			<section id="home">
+				<div class="container">
+
+					<div class="element">
+						<figure>
+							<img src="./img/coffee_hero.jpg" class="img_hero" alt="">
+						</figure>
+					</div>
+					<div class="element">
+						<h1>Welcome</h1>
+						<h2>On our website to share a coffee !</h2>
+					</div>
+
+				</div>
+
+			</section>
+			<section id="menu">
+				<div class="container">
+
+
+					<ul>
+						<h1>Our coffees</h1>
+						<li>Expresso</li>
+						<li>Moka</li>
+						<li>Yozi</li>
+
+					</ul>
+					<ul>
+						<h1>Our Meals</h1>
+						<li>Kebabos</li>
+						<li>Tacoso</li>
+						<li>Indianajones</li>
+
+					</ul>
+				</div>
+			</section>
+			<section id="gallery">
+				<div class="container_column">
+					<div class="element">
+						<h1>Gallery</h1>
+						<h2>Our best moments</h2>
+					</div>
+					<div class="wrapper_row">
+						<div class="element">
+							<figure>
+								<img src="./img/section/01.jpg" class="img_section" alt="">
+								<figcaption>
+									Une légende
+								</figcaption>
+							</figure>
+						</div>
+						<div class="element">
+							<figure>
+								<img src="./img/section/02.jpg" class="img_section" alt="">
+								<figcaption>
+									Une légende
+								</figcaption>
+							</figure>
+						</div>
+						<div class="element">
+							<figure>
+								<img src="./img/section/03.jpg" class="img_section" alt="">
+								<figcaption>
+									Une légende
+								</figcaption>
+							</figure>
+						</div>
+						<div class="element">
+							<figure>
+								<img src="./img/section/04.jpg" class="img_section" alt="">
+								<figcaption>
+									Une légende
+								</figcaption>
+							</figure>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="contact">
+				<div class="element">
+					<h1>Reservation</h1>
+				</div>
+				<form action="get">
+					<div class="form_group">
+						<div class="form_element">
+							<label for="firstname">First name</label>
+							<input type="text" name="firstname" id="firstname" placeholder="firstname">
+						</div>
+						<div class="form_element">
+							<label for="lastname">Last name</label>
+							<input type="text" name="lastname" id="lastname" placeholder="lastname">
+						</div>
+						<div class="form_element">
+							<label for="number">Phone number</label>
+							<input type="tel" name="number" id="number" placeholder="number">
+						</div>
+						<div class="form_element">
+							<label for="email">Email</label>
+							<input type="email" name="email" id="email" placeholder="email">
+						</div>
+					</div>
+				</form>
+
+			</section>
+			<section id="schedule">
+				<div class="container">
+					<table>
+						<caption>
+							Our schedule
+						</caption>
+						<thead>
+							<tr>
+								<th scope="col">Day</th>
+								<th scope="col">Schedule</th>
+					
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td scope="row">Tuesday</td>
+								<td>11 am - 9 pm</td>
+							</tr>
+							
+							<tr>
+								<td scope="row">Wednesday</td>
+								<td>11 am - 9 pm</td>
+							</tr>
+							
+							<tr>
+								<td scope="row">Thursday</td>
+								<td>11 am - 9 pm</td>
+							</tr>
+							
+							<tr>
+								<td scope="row">Friday</td>
+								<td>11 am - 9 pm</td>
+							</tr>
+							
+							<tr>
+								<td scope="row">Saturday</td>
+								<td>Close</td>
+							</tr>
+							<tr>
+								<td scope="row">Sunday</td>
+								<td>Close</td>
+							</tr>
+							
+						</tbody>
+						<tfoot>
+							<tr>
+								<th scope="row" colspan="2">Open occasionnaly on sunday</th>
+							
+							</tr>
+						</tfoot>
+					</table>
+
+				</div>
+
+			</section>
+		</div>
+	</main>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+a{
+	text-decoration: none;
+	color: rgb(48, 48, 48);
+}
+
+* {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	scrollbar-color: var(--scrollbar_color);
+	scrollbar-width: thin;
+
+}
+
+html {
+	font-size: 62.5%;
+}
+
+
+body{
+	margin: 0;
+	padding: 0;
+	font-size: 1.6rem;
+
+	font-family: "Poppins", serif;
+	font-weight: 400;
+	font-style: normal;
+	background-color: rgb(240, 239, 237);
+}
+nav{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+section{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 30vh;
+	margin-top: 10rem;
+	margin-bottom: 10rem;
+}
+.app_container{
+	width: 50vw;
+	margin: 0 auto;
+
+}
+.img_hero{
+	border-radius: 20px;
+}
+.container{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.img_section{
+	width: max(20rem, 20vw);
+	height: 30rem;
+	object-fit: cover;
+}
+.container_column{
+	display: flex;
+	flex-direction: column;
+}
+.wrapper_row{
+	display: flex;
+	flex-wrap: wrap;
+}
+.element{
+	flex-basis: 25%;
+}
+
+form{
+	display: flex;
+}
+.form_element{
+	display: flex;
+	justify-content: space-between;
+	gap: 4rem;
+}
