@@ -19,10 +19,9 @@ body {
 	height: 100vh;
 	width: 100%;
 }
-.img_illustration {
-	border-top-left-radius: 1rem;
-	border-top-right-radius: 1rem;
-	width: 100%;
+
+figure {
+	overflow: hidden;
 }
 .wrapper_content {
 	padding: 2rem;
@@ -48,6 +47,7 @@ body {
 	border-radius: 1rem;
 	max-width: 28rem;
 	background-color: white;
+	overflow: hidden;
 }
 .element {
 	display: flex;
