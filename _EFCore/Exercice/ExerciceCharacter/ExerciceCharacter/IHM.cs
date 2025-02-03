@@ -402,14 +402,12 @@ namespace ExerciceCharacter
 				switch (input)
 				{
 					case "1": CreateCharacter();
-
 						break;
 					case "2": DeleteCharacter();
 						break;
 					case "3":UpdateCharacter();
 						break;
-					case "4":
-						ShowAllCharacters();
+					case "4":ShowAllCharacters();
 						break;
 					case "5": HitCharacterYourSelf();
 						break;
