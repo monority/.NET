@@ -24,17 +24,17 @@ namespace ExerciceCharacter
 			Console.WriteLine("3 -- Update a Charater");
 			Console.WriteLine("4 -- Show all Characters");
 			Console.WriteLine("5 -- Hit a Character YourSelf");
-			Console.WriteLine("6 -- Combat a Character with a Character of your choice");
-			Console.WriteLine("7 -- Show Characters that have superior average hp and armor");
-			Console.WriteLine("8 -- Generate Random Characters");
-			Console.WriteLine("9 -- Tournament");
-			Console.WriteLine("10 -- Delete All Characters");
+			Console.WriteLine("6 -- Show Characters that have superior average hp and armor");
+			Console.WriteLine("7 -- Generate Random Characters");
+			Console.WriteLine("8 -- Tournament");
+			Console.WriteLine("9 -- Delete All Characters");
 			Console.WriteLine("# -- Any to leave");
 			Console.WriteLine("---------------------------------------------");
 
 		}
 		public static void CreateCharacter()
 		{
+			Console.Clear();
 			using var context = new ApplicationDbContext();
 
 			var character = new Character();
@@ -70,6 +70,8 @@ namespace ExerciceCharacter
 		}
 		public static void GenerateCharacters()
 		{
+			Console.Clear();
+
 			using var context = new ApplicationDbContext();
 
 			Console.WriteLine("Automatic generation of characters");
@@ -115,6 +117,8 @@ namespace ExerciceCharacter
 		}
 		public static void DeleteCharacter()
 		{
+			Console.Clear();
+
 			using var context = new ApplicationDbContext();
 			ShowAllCharacters();
 			Console.WriteLine("Enter Character name you want to delete");
@@ -149,6 +153,8 @@ namespace ExerciceCharacter
 
 		public static void ShowAllCharacters()
 		{
+			Console.Clear();
+
 			using var context = new ApplicationDbContext();
 
 			var characters = context.Characters.ToList();
@@ -160,6 +166,8 @@ namespace ExerciceCharacter
 		}
 		public static void UpdateCharacter()
 		{
+			Console.Clear();
+
 			using var context = new ApplicationDbContext();
 			Console.WriteLine("Which character you want to modify #name");
 
@@ -198,6 +206,8 @@ namespace ExerciceCharacter
 		}
 		public static void HitCharacterYourSelf()
 		{
+			Console.Clear();
+
 			using var context = new ApplicationDbContext();
 
 			Console.WriteLine("Which character do you want to hit?");
@@ -265,6 +275,8 @@ namespace ExerciceCharacter
 	
 		public static void DeleteAllCharacters()
 		{
+			Console.Clear();
+
 			using var context = new ApplicationDbContext();
 			Console.WriteLine("Are you sure you want to delete all characters except the one with ID 0? (y/n)");
 			string choice = Console.ReadLine();
@@ -280,26 +292,27 @@ namespace ExerciceCharacter
 				Console.WriteLine("Operation cancelled.");
 			}
 	} 
-		public static void CombatACharacter()
+ static void Tournament()
 		{
+			Console.Clear();
+
 			using var context = new ApplicationDbContext();
 			ShowAllCharacters();
 			Console.WriteLine("Which character do you want to chose?");
 			string nickname = Console.ReadLine();
 			var character = context.Characters.FirstOrDefault(c => c.Nickname == nickname);
-			Random rnd =	new Random();
-			int rndCharacter = rnd.Next(1, context.Characters.Count());
-			Console.WriteLine(rndCharacter);
-	
-			var combat_character = context.Characters.FirstOrDefault(c => c.Id == rndCharacter);
-			Console.WriteLine($"{combat_character.Nickname} was chosen");
-			if (character == null || combat_character == null)
+			Random rnd = new Random();
+			int rndCharacter = context.Characters.OrderBy(c => Guid.NewGuid()).FirstOrDefault()?.Id ?? 0;
+
+			var combatCharacter = context.Characters.FirstOrDefault(c => c.Id == rndCharacter);
+			Console.WriteLine($"{combatCharacter.Nickname} was chosen");
+			if (character == null || combatCharacter == null)
 			{
 				Console.WriteLine("Character was not found.");
 				return;
 			}
 
-			if (character.Nickname == "God"  || combat_character.Nickname == "God")
+			if (character.Nickname == "God" || combatCharacter.Nickname == "God")
 			{
 				Console.WriteLine("You can't chose an admin!");
 				return;
@@ -307,39 +320,54 @@ namespace ExerciceCharacter
 
 			try
 			{
-
-				if (combat_character.Armor > 0)
+				while (character.HealthPoints > 0 && combatCharacter.HealthPoints > 0)
 				{
-					int? remainingDamage = character.Damage - combat_character.Armor;
-					combat_character.Armor = Math.Max(0, (int)(combat_character.Armor - character.Damage));
-
-					if (remainingDamage > 0)
+					if (combatCharacter.Armor > 0 || character.Armor > 0)
 					{
-						combat_character.HealthPoints = Math.Max(0, (int)(combat_character.HealthPoints - remainingDamage));
-						Console.WriteLine($"Character lost {remainingDamage} health after armor was destroyed.");
+						int? remainingDamage = character.Damage - combatCharacter.Armor;
+						int? remainingDamageCharacter = combatCharacter.Damage - character.Armor;
+						combatCharacter.Armor = Math.Max(0, (int)(combatCharacter.Armor - character.Damage));
+						character.Armor = Math.Max(0, (int)(character.Armor - combatCharacter.Damage));
+						if (remainingDamage > 0 || remainingDamageCharacter > 0)
+						{
+							combatCharacter.HealthPoints = Math.Max(0, (int)(combatCharacter.HealthPoints - remainingDamage));
+							character.HealthPoints = Math.Max(0, (int)(character.HealthPoints - remainingDamageCharacter));
+							Console.WriteLine($"Character lost {remainingDamage} health after armor was destroyed.");
+							Console.WriteLine($"Character lost {remainingDamageCharacter} health after armor was destroyed.");
+						}
+						else
+						{
+							Console.WriteLine($"Character lost {character.Damage} armor.");
+							Console.WriteLine($"Opponent lost {combatCharacter.Damage} armor");
+						}
 					}
 					else
 					{
-						Console.WriteLine($"Character lost {character.Damage} armor.");
+						combatCharacter.HealthPoints = Math.Max(0, (int)(combatCharacter.HealthPoints - character.Damage));
+						character.HealthPoints = Math.Max(0, (int)(character.HealthPoints - combatCharacter.Damage));
+
+						Console.WriteLine($"{combatCharacter.Nickname} lost {character.Damage} health.");
+						Console.WriteLine($"{character.Nickname} lost {combatCharacter.Damage} health.");
 					}
 				}
-				else
+
+				if (combatCharacter.HealthPoints <= 0)
 				{
-
-					combat_character.HealthPoints = Math.Max(0, (int)(combat_character.HealthPoints - character.Damage));
-
-					Console.WriteLine($"{combat_character.Nickname} lost {character.Damage} health.");
+					Console.WriteLine("No more life. Opponent deleted.");
+					character.KillCounts++;
+					context.Characters.Remove(combatCharacter);
 				}
-
-				if (combat_character.HealthPoints <= 0)
+				if (character.HealthPoints <= 0)
 				{
 					Console.WriteLine("No more life. Character deleted.");
-					character.KillCounts++;
-					context.Characters.Remove(combat_character);
+					combatCharacter.KillCounts++;
+					context.Characters.Remove(character);
 				}
 				context.SaveChanges();
-				Console.WriteLine($"Remaining Armor: {combat_character.Armor}");
-				Console.WriteLine($"Remaining Health: {combat_character.HealthPoints}");
+				Console.WriteLine($"Opponent Remaining Armor: {combatCharacter.Armor}");
+				Console.WriteLine($"Opponent Remaining Health: {combatCharacter.HealthPoints}");
+				Console.WriteLine($"Character Remaining Armor: {character.Armor}");
+				Console.WriteLine($"Character Remaining Health: {character.HealthPoints}");
 			}
 			catch (FormatException)
 			{
@@ -352,6 +380,8 @@ namespace ExerciceCharacter
 		}
 		public static void AverageLife()
 		{
+			Console.Clear();
+
 			using var context = new ApplicationDbContext();
 
 			var characters = context.Characters.ToList();
@@ -386,11 +416,7 @@ namespace ExerciceCharacter
 			}
 		}
 
-		public static void Tournament()
-		{
-			using var context = new ApplicationDbContext();
-			var characters = context.Characters.ToList();
-		}
+		
 		public static void Start()
 		{
 			while (true)
@@ -411,19 +437,16 @@ namespace ExerciceCharacter
 						break;
 					case "5": HitCharacterYourSelf();
 						break;
-					case "6": CombatACharacter();
+					case "6": AverageLife();
 						break;
-					case "7": AverageLife();
+					case "7": GenerateCharacters();
 						break;
-					case "8": GenerateCharacters();
+					case "8":  Tournament();
 						break;
-					case "9":  Tournament();
-						break;
-					case "10": DeleteAllCharacters();
+					case "9": DeleteAllCharacters();
 						break;
 					default: Environment.Exit(0);
 						break;
-
 				}
 			}
 		}
