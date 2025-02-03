@@ -25,7 +25,7 @@ namespace Demo01.Data
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-			modelBuilder.Entity<Character>().HasData(new Character() { Id = 1, Nickname = "God", Armor = 100, HealthPoints = 100, Damage = 1000, DateCreation = DateTime.Now, KillCounts = 0 , CanGetKill = false});
+			modelBuilder.Entity<Character>().HasData(new Character() { Id = 1, Nickname = "God", Armor = 100, HealthPoints = 100, Damage = 1000, DateCreation = DateTime.Now, KillCounts = 0});
 
 		}
 

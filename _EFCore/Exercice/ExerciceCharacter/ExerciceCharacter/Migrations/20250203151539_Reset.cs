@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ExerciceCharacter.Migrations
 {
     /// <inheritdoc />
-    public partial class INIT : Migration
+    public partial class Reset : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,13 +17,12 @@ namespace ExerciceCharacter.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nickname = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
-                    HealthPoints = table.Column<int>(type: "int", maxLength: 100, nullable: true),
-                    Armor = table.Column<int>(type: "int", maxLength: 100, nullable: true),
-                    Damage = table.Column<int>(type: "int", maxLength: 100, nullable: true),
+                    Nickname = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HealthPoints = table.Column<int>(type: "int", maxLength: 50, nullable: true),
+                    Armor = table.Column<int>(type: "int", nullable: true),
+                    Damage = table.Column<int>(type: "int", nullable: true),
                     DateCreation = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    KillCounts = table.Column<int>(type: "int", nullable: true),
-                    CanGetKill = table.Column<bool>(type: "bit", nullable: false)
+                    KillCounts = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -32,8 +31,8 @@ namespace ExerciceCharacter.Migrations
 
             migrationBuilder.InsertData(
                 table: "Characters",
-                columns: new[] { "Id", "Armor", "CanGetKill", "Damage", "DateCreation", "HealthPoints", "KillCounts", "Nickname" },
-                values: new object[] { 1, 100, false, 1000, new DateTime(2025, 2, 3, 12, 33, 47, 614, DateTimeKind.Local).AddTicks(7513), 100, 0, "God" });
+                columns: new[] { "Id", "Armor", "Damage", "DateCreation", "HealthPoints", "KillCounts", "Nickname" },
+                values: new object[] { 1, 100, 1000, new DateTime(2025, 2, 3, 16, 15, 39, 483, DateTimeKind.Local).AddTicks(3121), 100, 0, "God" });
         }
 
         /// <inheritdoc />

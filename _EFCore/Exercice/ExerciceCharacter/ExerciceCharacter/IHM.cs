@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Demo01.Data;
 using ExerciceCharacter.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 
 namespace ExerciceCharacter
@@ -25,6 +26,10 @@ namespace ExerciceCharacter
 			Console.WriteLine("5 -- Hit a Character YourSelf");
 			Console.WriteLine("6 -- Combat a Character with a Character of your choice");
 			Console.WriteLine("7 -- Show Characters that have superior average hp and armor");
+			Console.WriteLine("8 -- Generate Random Characters");
+			Console.WriteLine("9 -- Tournament");
+			Console.WriteLine("10 -- Delete All Characters");
+			Console.WriteLine("# -- Any to leave");
 			Console.WriteLine("---------------------------------------------");
 
 		}
@@ -33,30 +38,85 @@ namespace ExerciceCharacter
 			using var context = new ApplicationDbContext();
 
 			var character = new Character();
+			var characters = context.Characters.ToList();
 			try
 			{
 				Console.WriteLine("Username : ");
 				character.Nickname = Console.ReadLine();
-				Console.WriteLine("Health Points");
-				character.HealthPoints = Convert.ToInt32(Console.ReadLine());
-				Console.WriteLine("Armor : ");
-				character.Armor = Convert.ToInt32(Console.ReadLine());
-				Console.WriteLine("Default Damage : ");
-				character.Damage = Convert.ToInt32(Console.ReadLine());
-				character.DateCreation = DateTime.Now;
-				character.CanGetKill = true;
-				context.Characters.Add(character);
-				context.SaveChanges();
-				Console.WriteLine("Character Created");
+				var find_character = characters.Find(c => c.Nickname == character.Nickname);
+				if (find_character != null)
+				{
+					Console.WriteLine("Character already exist");
+					return;
+				}
+				else
+				{
+					Console.WriteLine("Health Points");
+					character.HealthPoints = Convert.ToInt32(Console.ReadLine());
+					Console.WriteLine("Armor : ");
+					character.Armor = Convert.ToInt32(Console.ReadLine());
+					Console.WriteLine("Default Damage : ");
+					character.Damage = Convert.ToInt32(Console.ReadLine());
+					character.DateCreation = DateTime.Now;
+					context.Characters.Add(character);
+					context.SaveChanges();
+					Console.WriteLine("Character Created");
+				}
 			}
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex.Message);
 			}
 		}
+		public static void GenerateCharacters()
+		{
+			using var context = new ApplicationDbContext();
+
+			Console.WriteLine("Automatic generation of characters");
+			Console.WriteLine("How many characters you want to create ?");
+			int nbrCharacters = Convert.ToInt32(Console.ReadLine());
+			for (int i = 0; i < nbrCharacters; i++)
+			{
+				Random rdn = new Random();
+				int max = rdn.Next(3, 12);
+				int max_armor = rdn.Next(20, 150);
+				int max_hp = rdn.Next(50, 150);
+				int max_damage = rdn.Next(10, 25);
+				var character = new Character();
+				character.Nickname = GenerateName(max);
+				character.Armor = max_armor;
+				character.HealthPoints = max_hp;
+				character.Damage = max_damage;
+				character.DateCreation = DateTime.Now;
+				context.Characters.Add(character);
+			}
+			context.SaveChanges();
+		}
+		public static string GenerateName(int len)
+		{
+			Random r = new Random();
+			string[] consonants = { "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "l", "n", "p", "q", "r", "s", "sh", "zh", "t", "v", "w", "x" };
+			string[] vowels = { "a", "e", "i", "o", "u", "ae", "y" };
+			string Name = "";
+			Name += consonants[r.Next(consonants.Length)].ToUpper();
+			Name += vowels[r.Next(vowels.Length)];
+			int b = 2;
+			while (b < len)
+			{
+				Name += consonants[r.Next(consonants.Length)];
+				b++;
+				Name += vowels[r.Next(vowels.Length)];
+				b++;
+			}
+
+			return Name;
+
+
+		}
 		public static void DeleteCharacter()
 		{
 			using var context = new ApplicationDbContext();
+			ShowAllCharacters();
 			Console.WriteLine("Enter Character name you want to delete");
 			var character = context.Characters.FirstOrDefault(c => c.Nickname == Console.ReadLine());
 
@@ -70,10 +130,9 @@ namespace ExerciceCharacter
 				{
 					try
 					{
-						Console.WriteLine("Character was found");
 						context.Characters.Remove(character);
+						Console.WriteLine("Character was found and deleted");
 						context.SaveChanges();
-						Console.WriteLine("Character was deleted");
 					}
 					catch (Exception ex)
 					{
@@ -92,22 +151,25 @@ namespace ExerciceCharacter
 		{
 			using var context = new ApplicationDbContext();
 
-			var result = context.Characters.Select(c => c.Nickname).Distinct().ToList();
-			result.ForEach(Console.WriteLine);
+			var characters = context.Characters.ToList();
 
+			foreach (var character in characters)
+			{
+				Console.WriteLine($"ID: {character.Id}, Nickname: {character.Nickname}, Hp: {character.HealthPoints}, Armor : {character.Armor}, Damage : {character.Damage}, kill : {character.KillCounts}");
+			}
 		}
 		public static void UpdateCharacter()
 		{
 			using var context = new ApplicationDbContext();
 			Console.WriteLine("Which character you want to modify #name");
-			
+
 			var character = context.Characters.FirstOrDefault(c => c.Nickname == Console.ReadLine());
 			if (character != null)
 				if (character.Nickname == "God")
 				{
 					Console.WriteLine("You can't modify an admin !");
 				}
-			else {
+				else {
 					{
 						try
 						{
@@ -127,7 +189,7 @@ namespace ExerciceCharacter
 							Console.WriteLine(ex.Message);
 						}
 					}
-			}
+				}
 			else
 			{
 				Console.WriteLine("Character was not found");
@@ -142,7 +204,6 @@ namespace ExerciceCharacter
 			string nickname = Console.ReadLine();
 
 			var character = context.Characters.FirstOrDefault(c => c.Nickname == nickname);
-
 			if (character == null)
 			{
 				Console.WriteLine("Character was not found.");
@@ -151,7 +212,7 @@ namespace ExerciceCharacter
 
 			if (character.Nickname == "God")
 			{
-				Console.WriteLine("You can't modify an admin!");
+				Console.WriteLine("You can't hit an admin!");
 				return;
 			}
 
@@ -159,89 +220,176 @@ namespace ExerciceCharacter
 			{
 				Console.WriteLine("Hit for how much?");
 				int damage = Convert.ToInt32(Console.ReadLine());
-				int rest = 0;
 				if (character.Armor > 0)
 				{
-					character.Armor -= damage;
-					
-					if (character.Armor < 0)
+					int? remainingDamage = damage - character.Armor;
+					character.Armor = Math.Max(0, (int)(character.Armor - damage));
+
+					if (remainingDamage > 0)
 					{
-						character.Armor = 0;
-						Console.WriteLine("No more armor.");
+						character.HealthPoints = Math.Max(0, (int)(character.HealthPoints - remainingDamage));
+						Console.WriteLine($"Character lost {remainingDamage} health after armor was destroyed.");
+					}
+					else
+					{
+						Console.WriteLine($"Character lost {damage} armor.");
 					}
 				}
 				else
 				{
-					if (character.HealthPoints > 0)
-					{
-						character.HealthPoints -= damage;
 
-						if (character.HealthPoints <= 0)
-						{
-							character.HealthPoints = 0;
-							Console.WriteLine("No more life, the character is dead.");
-							context.Characters.Remove(character);
-						}
-					}
+					character.HealthPoints = Math.Max(0, (int)(character.HealthPoints - damage));
+
+					Console.WriteLine($"Character lost {damage} health.");
 				}
 
-	
+				if (character.HealthPoints <= 0)
+				{
+					Console.WriteLine("No more life. Character deleted.");
+					context.Characters.Remove(character);
+				}
 				context.SaveChanges();
+				Console.WriteLine($"Remaining Armor: {character.Armor}");
+				Console.WriteLine($"Remaining Health: {character.HealthPoints}");
+			}
+			catch (FormatException)
+			{
+				Console.WriteLine("Invalid input. Please enter a valid number for damage.");
 			}
 			catch (Exception ex)
 			{
 				Console.WriteLine($"An error occurred: {ex.Message}");
 			}
 		}
-		public static void CombatCharacter()
+
+	
+		public static void DeleteAllCharacters()
 		{
 			using var context = new ApplicationDbContext();
-
+			Console.WriteLine("Are you sure you want to delete all characters except the one with ID 0? (y/n)");
+			string choice = Console.ReadLine();
+			if (choice != null && choice.ToLower() == "y")
+			{
+				var charactersToDelete = context.Characters.Where(c => c.Id != 1).ToList();
+				context.Characters.RemoveRange(charactersToDelete);
+				context.SaveChanges();
+				Console.WriteLine("All characters except God have been deleted.");
+			}
+			else
+			{
+				Console.WriteLine("Operation cancelled.");
+			}
+	} 
+		public static void CombatACharacter()
+		{
+			using var context = new ApplicationDbContext();
+			ShowAllCharacters();
 			Console.WriteLine("Which character do you want to chose?");
 			string nickname = Console.ReadLine();
 			var character = context.Characters.FirstOrDefault(c => c.Nickname == nickname);
-			Console.WriteLine("Which Character you want to combat ?");
-			string combat_nick = Console.ReadLine();
-			var combat_character = context.Characters.FirstOrDefault(character => character.Nickname == combat_nick);
-			if (character == null)
+			Random rnd =	new Random();
+			int rndCharacter = rnd.Next(1, context.Characters.Count());
+			Console.WriteLine(rndCharacter);
+	
+			var combat_character = context.Characters.FirstOrDefault(c => c.Id == rndCharacter);
+			Console.WriteLine($"{combat_character.Nickname} was chosen");
+			if (character == null || combat_character == null)
 			{
 				Console.WriteLine("Character was not found.");
 				return;
 			}
-			if (combat_character == null)
+
+			if (character.Nickname == "God"  || combat_character.Nickname == "God")
 			{
-				Console.WriteLine("Can't find the opponent");
+				Console.WriteLine("You can't chose an admin!");
 				return;
 			}
 
-			if (character.Nickname == "God" || combat_character.Nickname == "God")
-			{
-				Console.WriteLine("You can't modify an admin!");
-				return;
-			}
 			try
 			{
+
 				if (combat_character.Armor > 0)
 				{
-					combat_character.Armor -= character.Damage;
-					Console.WriteLine($"{combat_character.Nickname} lost {character.Damage}");
-					if (combat_character.Armor < 0)
-					{
+					int? remainingDamage = character.Damage - combat_character.Armor;
+					combat_character.Armor = Math.Max(0, (int)(combat_character.Armor - character.Damage));
 
+					if (remainingDamage > 0)
+					{
+						combat_character.HealthPoints = Math.Max(0, (int)(combat_character.HealthPoints - remainingDamage));
+						Console.WriteLine($"Character lost {remainingDamage} health after armor was destroyed.");
 					}
-					Console.WriteLine($"{combat_character.Armor} left");
+					else
+					{
+						Console.WriteLine($"Character lost {character.Damage} armor.");
+					}
 				}
+				else
+				{
+
+					combat_character.HealthPoints = Math.Max(0, (int)(combat_character.HealthPoints - character.Damage));
+
+					Console.WriteLine($"{combat_character.Nickname} lost {character.Damage} health.");
+				}
+
+				if (combat_character.HealthPoints <= 0)
+				{
+					Console.WriteLine("No more life. Character deleted.");
+					character.KillCounts++;
+					context.Characters.Remove(combat_character);
+				}
+				context.SaveChanges();
+				Console.WriteLine($"Remaining Armor: {combat_character.Armor}");
+				Console.WriteLine($"Remaining Health: {combat_character.HealthPoints}");
+			}
+			catch (FormatException)
+			{
+				Console.WriteLine("Invalid input. Please enter a valid number for damage.");
 			}
 			catch (Exception ex)
 			{
-
-				Console.WriteLine(ex.Message);
+				Console.WriteLine($"An error occurred: {ex.Message}");
 			}
-			finally
+		}
+		public static void AverageLife()
+		{
+			using var context = new ApplicationDbContext();
+
+			var characters = context.Characters.ToList();
+			if (characters.Count == 0)
 			{
-				context.SaveChanges();
+				Console.WriteLine("No characters found.");
+				return;
 			}
 
+			float totalArmor = 0;
+			float totalHealthPoints = 0;
+			float? result;
+			foreach (var character in characters)
+			{
+				totalArmor += (float)character.Armor;
+				totalHealthPoints += (float)character.HealthPoints;
+			}
+
+			float averageArmor = totalArmor / characters.Count;
+			float averageHealthPoints = totalHealthPoints / characters.Count;
+			result = averageArmor + averageHealthPoints;
+			Console.WriteLine($"Average Armor: {averageArmor}");
+			Console.WriteLine($"Average Health Points: {averageHealthPoints}");
+
+					Console.WriteLine($"Character that has higher than average armor and hp : ");
+			foreach (var character in characters)
+			{
+				if (character.Armor  + character.HealthPoints > result)
+				{
+					Console.WriteLine(character.Nickname);
+				}
+			}
+		}
+
+		public static void Tournament()
+		{
+			using var context = new ApplicationDbContext();
+			var characters = context.Characters.ToList();
 		}
 		public static void Start()
 		{
@@ -262,6 +410,18 @@ namespace ExerciceCharacter
 						break;
 					case "4":
 						ShowAllCharacters();
+						break;
+					case "5": HitCharacterYourSelf();
+						break;
+					case "6": CombatACharacter();
+						break;
+					case "7": AverageLife();
+						break;
+					case "8": GenerateCharacters();
+						break;
+					case "9":  Tournament();
+						break;
+					case "10": DeleteAllCharacters();
 						break;
 					default: Environment.Exit(0);
 						break;

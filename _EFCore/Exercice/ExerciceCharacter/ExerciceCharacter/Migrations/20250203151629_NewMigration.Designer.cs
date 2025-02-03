@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExerciceCharacter.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250203113347_INIT")]
-    partial class INIT
+    [Migration("20250203151629_NewMigration")]
+    partial class NewMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,29 +34,23 @@ namespace ExerciceCharacter.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("Armor")
-                        .HasMaxLength(100)
                         .HasColumnType("int");
 
-                    b.Property<bool>("CanGetKill")
-                        .HasColumnType("bit");
-
                     b.Property<int?>("Damage")
-                        .HasMaxLength(100)
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateCreation")
                         .HasColumnType("datetime2");
 
                     b.Property<int?>("HealthPoints")
-                        .HasMaxLength(100)
+                        .HasMaxLength(50)
                         .HasColumnType("int");
 
                     b.Property<int?>("KillCounts")
                         .HasColumnType("int");
 
                     b.Property<string>("Nickname")
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -67,9 +61,8 @@ namespace ExerciceCharacter.Migrations
                         {
                             Id = 1,
                             Armor = 100,
-                            CanGetKill = false,
                             Damage = 1000,
-                            DateCreation = new DateTime(2025, 2, 3, 12, 33, 47, 614, DateTimeKind.Local).AddTicks(7513),
+                            DateCreation = new DateTime(2025, 2, 3, 16, 16, 28, 892, DateTimeKind.Local).AddTicks(2615),
                             HealthPoints = 100,
                             KillCounts = 0,
                             Nickname = "God"
