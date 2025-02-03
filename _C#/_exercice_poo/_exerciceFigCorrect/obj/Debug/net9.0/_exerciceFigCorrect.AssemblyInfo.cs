@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("_exerciceFigCorrect")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+077fc9b3977cfca87503b5dd7b5c13d751b7422a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bddffe253ac9eec33c292bc6e925c3f2e1592d74")]
 [assembly: System.Reflection.AssemblyProductAttribute("_exerciceFigCorrect")]
 [assembly: System.Reflection.AssemblyTitleAttribute("_exerciceFigCorrect")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

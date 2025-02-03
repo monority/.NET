@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrateur\\Desktop\\.NET\\_C#\\_exercice_poo\\_exerciceFigCorrect\\_exerciceFigCorrect.csproj",
+      "projectUniqueName": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_C#\\_exercice_poo\\_exerciceFigCorrect\\_exerciceFigCorrect.csproj",
       "projectName": "_exerciceFigCorrect",
-      "projectPath": "C:\\Users\\Administrateur\\Desktop\\.NET\\_C#\\_exercice_poo\\_exerciceFigCorrect\\_exerciceFigCorrect.csproj",
+      "projectPath": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_C#\\_exercice_poo\\_exerciceFigCorrect\\_exerciceFigCorrect.csproj",
       "packagesPath": "C:\\Users\\Administrateur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrateur\\Desktop\\.NET\\_C#\\_exercice_poo\\_exerciceFigCorrect\\obj\\",
+      "outputPath": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_C#\\_exercice_poo\\_exerciceFigCorrect\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrateur\\Desktop\\.NET\\_C#\\_exercice_poo\\_ExerciceAccount\\_ExerciceAccount.csproj": {}
+    "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_C#\\_exercice_poo\\_ExerciceAccount\\_ExerciceAccount.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrateur\\Desktop\\.NET\\_C#\\_exercice_poo\\_ExerciceAccount\\_ExerciceAccount.csproj": {
+    "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_C#\\_exercice_poo\\_ExerciceAccount\\_ExerciceAccount.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrateur\\Desktop\\.NET\\_C#\\_exercice_poo\\_ExerciceAccount\\_ExerciceAccount.csproj",
+        "projectUniqueName": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_C#\\_exercice_poo\\_ExerciceAccount\\_ExerciceAccount.csproj",
         "projectName": "_ExerciceAccount",
-        "projectPath": "C:\\Users\\Administrateur\\Desktop\\.NET\\_C#\\_exercice_poo\\_ExerciceAccount\\_ExerciceAccount.csproj",
+        "projectPath": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_C#\\_exercice_poo\\_ExerciceAccount\\_ExerciceAccount.csproj",
         "packagesPath": "C:\\Users\\Administrateur\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrateur\\Desktop\\.NET\\_C#\\_exercice_poo\\_ExerciceAccount\\obj\\",
+        "outputPath": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_C#\\_exercice_poo\\_ExerciceAccount\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
