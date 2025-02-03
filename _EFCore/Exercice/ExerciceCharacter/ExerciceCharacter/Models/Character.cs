@@ -20,10 +20,10 @@ namespace ExerciceCharacter.Models
 		public int? Armor { get ; set; }
 		[MinLength(1), MaxLength(100)]
 
-		public int? Damage { get; set; }
+		public int? Damage { get; set ; }
 		public DateTime DateCreation { get; set; }
 
-		public int? KillCounts {  get; set; }
+		public int? KillCounts { get; set; } = 0;
 		public bool CanGetKill { get ;  set; }
 	}
 	}
