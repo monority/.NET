@@ -9,7 +9,9 @@ namespace BlogApp.Models
 	internal class Blog
 	{
 		public int Id { get; set; }
-		public string Name { get; set; }
-		public string Url { get; set; }
+		public string Name { get; set; } = null;
+		public string Url { get; set; } = null;
+
+		public List<Post> Posts { get; set; } = new List<Post>();
 	}
 }
