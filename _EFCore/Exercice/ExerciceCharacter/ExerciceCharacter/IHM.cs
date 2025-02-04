@@ -201,8 +201,18 @@ namespace ExerciceCharacter
 			Console.WriteLine("Which character do you want to choose?");
 			string? nickname = Console.ReadLine();
 			var character = context.Characters.FirstOrDefault(c => c.Nickname == nickname);
-			int rndCharacter = context.Characters.OrderBy(c => Guid.NewGuid()).FirstOrDefault()?.Id ?? 0;
-			var combatCharacter = context.Characters.FirstOrDefault(c => c.Id == rndCharacter);
+			var combatCharacter = context.Characters
+				.Where(c => c.Id != character.Id || c.Id != 1)
+				.OrderBy(c => Guid.NewGuid())
+				.FirstOrDefault();
+
+			if (character == null || combatCharacter == null)
+			{
+				Console.ForegroundColor = ConsoleColor.Red;
+				Console.WriteLine("Character was not found.");
+				Console.ResetColor();
+				return;
+			}
 
 			if (character == null || combatCharacter == null)
 			{
@@ -226,11 +236,6 @@ namespace ExerciceCharacter
 
 			try
 			{
-				int? stockHPCombat = combatCharacter.HealthPoints;
-				int? stockAMRCombat = combatCharacter.Armor;
-				int? stockHPCharacter = character.HealthPoints;
-				int? stockAMRCharacter = character.Armor;
-
 				while (character.HealthPoints > 0 && combatCharacter.HealthPoints > 0)
 				{
 					Console.Clear();
@@ -246,6 +251,7 @@ namespace ExerciceCharacter
 						if (remainingDamage > 0)
 						{
 							combatCharacter.HealthPoints = Math.Max(0, (combatCharacter.HealthPoints ?? 0) - remainingDamage.Value);
+
 						}
 						if (remainingDamageCharacter > 0)
 						{
@@ -279,8 +285,9 @@ namespace ExerciceCharacter
 					Console.ResetColor();
 					Thread.Sleep(500);
 					character.KillCounts++;
-					character.HealthPoints = stockHPCharacter;
-					combatCharacter.HealthPoints = stockHPCombat;
+					character.HealthPoints = character.MaxHP;
+					character.Armor = character.MaxArmor;
+					AddXp(character);
 					Console.ForegroundColor = ConsoleColor.Cyan;
 					Console.WriteLine("Your character got healed.");
 					Console.ResetColor();
@@ -295,9 +302,10 @@ namespace ExerciceCharacter
 					Console.ForegroundColor = ConsoleColor.Cyan;
 					Console.WriteLine("Opponent got healed.");
 					Console.ResetColor();
-					combatCharacter.HealthPoints = stockHPCombat;
-					combatCharacter.Armor = stockAMRCombat;
 					combatCharacter.KillCounts++;
+					combatCharacter.HealthPoints = combatCharacter.MaxHP;
+					combatCharacter.Armor = combatCharacter.MaxArmor;
+					AddXp(combatCharacter);
 					context.Characters.Remove(character);
 				}
 
@@ -370,7 +378,17 @@ namespace ExerciceCharacter
 				}
 			}
 		}
-
+		public static void AddXp(Character character)
+		{
+			Console.WriteLine("Adding XP");
+			Thread.Sleep(500);
+			character.HealthPoints = (int?)(character.HealthPoints * 1.25);
+			character.Armor = (int?)(character.Armor * 1.15);
+			character.MaxHP = character.HealthPoints;
+			character.MaxArmor = character.Armor;
+			Console.WriteLine($"New Value -- Hp : {character.MaxHP}, Armor : {character.MaxArmor} ");
+			Thread.Sleep(500);
+		}
 		
 		public static void Start()
 		{
