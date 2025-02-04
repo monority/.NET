@@ -19,80 +19,54 @@ namespace ExerciceCharacter
 			Console.ForegroundColor = ConsoleColor.Green;
 			Console.WriteLine("---------- Character Combat -------------\n");
 			Console.ResetColor();
-			Console.WriteLine("1 -- Create a Character");
+			Console.WriteLine("1 -- Generate Characters");
 			Console.WriteLine("2 -- Delete a Character");
 			Console.WriteLine("3 -- Update a Charater");
 			Console.WriteLine("4 -- Show all Characters");
-			Console.WriteLine("5 -- Hit a Character YourSelf");
-			Console.WriteLine("6 -- Show Characters that have superior average hp and armor");
-			Console.WriteLine("7 -- Generate Random Characters");
-			Console.WriteLine("8 -- Tournament");
-			Console.WriteLine("9 -- Delete All Characters");
+			Console.WriteLine("5 -- Delete All Characters");
+			Console.WriteLine("6 -- Best Characters");
+			Console.WriteLine("7 -- Tournament");
 			Console.WriteLine("# -- Any to leave");
+			Console.ForegroundColor = ConsoleColor.Green;
 			Console.WriteLine("---------------------------------------------");
+			Console.ResetColor();
 
 		}
-		public static void CreateCharacter()
-		{
-			Console.Clear();
-			using var context = new ApplicationDbContext();
 
-			var character = new Character();
-			var characters = context.Characters.ToList();
-			try
-			{
-				Console.WriteLine("Username : ");
-				character.Nickname = Console.ReadLine();
-				var find_character = characters.Find(c => c.Nickname == character.Nickname);
-				if (find_character != null)
-				{
-					Console.WriteLine("Character already exist");
-					return;
-				}
-				else
-				{
-					Console.WriteLine("Health Points");
-					character.HealthPoints = Convert.ToInt32(Console.ReadLine());
-					Console.WriteLine("Armor : ");
-					character.Armor = Convert.ToInt32(Console.ReadLine());
-					Console.WriteLine("Default Damage : ");
-					character.Damage = Convert.ToInt32(Console.ReadLine());
-					character.DateCreation = DateTime.Now;
-					context.Characters.Add(character);
-					context.SaveChanges();
-					Console.WriteLine("Character Created");
-				}
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine(ex.Message);
-			}
-		}
 		public static void GenerateCharacters()
 		{
 			Console.Clear();
-
 			using var context = new ApplicationDbContext();
-
 			Console.WriteLine("Automatic generation of characters");
 			Console.WriteLine("How many characters you want to create ?");
-			int nbrCharacters = Convert.ToInt32(Console.ReadLine());
-			for (int i = 0; i < nbrCharacters; i++)
+			if (int.TryParse(Console.ReadLine(), out int nbrCharacters))
 			{
-				Random rdn = new Random();
-				int max = rdn.Next(3, 12);
-				int max_armor = rdn.Next(20, 150);
-				int max_hp = rdn.Next(50, 150);
-				int max_damage = rdn.Next(10, 25);
-				var character = new Character();
-				character.Nickname = GenerateName(max);
-				character.Armor = max_armor;
-				character.HealthPoints = max_hp;
-				character.Damage = max_damage;
-				character.DateCreation = DateTime.Now;
-				context.Characters.Add(character);
+				for (int i = 0; i < nbrCharacters; i++)
+				{
+					Random rdn = new Random();
+					int max = rdn.Next(3, 12);
+					int maxArmor = rdn.Next(20, 150);
+					int maxHP = rdn.Next(50, 150);
+					int maxDMG = rdn.Next(10, 25);
+					var character = new Character
+					{
+						Nickname = GenerateName(max),
+						Armor = maxArmor,
+						HealthPoints = maxHP,
+						Damage = maxDMG,
+						DateCreation = DateTime.Now,
+						MaxHP = maxHP,
+						MaxArmor = maxArmor,
+					};
+					context.Characters.Add(character);
+					Console.WriteLine(character.ToString());
+				}
+				context.SaveChanges();
 			}
-			context.SaveChanges();
+			else
+			{
+				Console.WriteLine("Invalid input. Please enter a valid number.");
+			}
 		}
 		public static string GenerateName(int len)
 		{
@@ -129,21 +103,18 @@ namespace ExerciceCharacter
 				if (character.Nickname == "God")
 				{
 					Console.WriteLine("You can't delete an admin");
+					return;
 				}
-				else
+				try
 				{
-					try
-					{
-						context.Characters.Remove(character);
-						Console.WriteLine("Character was found and deleted");
-						context.SaveChanges();
-					}
-					catch (Exception ex)
-					{
-						Console.WriteLine(ex.Message);
-					}
+					context.Characters.Remove(character);
+					Console.WriteLine("Character was found and deleted");
+					context.SaveChanges();
 				}
-
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);
+				}
 			}
 			else
 			{
@@ -154,14 +125,12 @@ namespace ExerciceCharacter
 		public static void ShowAllCharacters()
 		{
 			Console.Clear();
-
 			using var context = new ApplicationDbContext();
-
 			var characters = context.Characters.ToList();
 
 			foreach (var character in characters)
 			{
-				Console.WriteLine($"ID: {character.Id}, Nickname: {character.Nickname}, Hp: {character.HealthPoints}, Armor : {character.Armor}, Damage : {character.Damage}, kill : {character.KillCounts}");
+				Console.WriteLine(character.ToString());
 			}
 		}
 		public static void UpdateCharacter()
@@ -204,81 +173,12 @@ namespace ExerciceCharacter
 				return;
 			}
 		}
-		public static void HitCharacterYourSelf()
-		{
-			Console.Clear();
-
-			using var context = new ApplicationDbContext();
-
-			Console.WriteLine("Which character do you want to hit?");
-			string nickname = Console.ReadLine();
-
-			var character = context.Characters.FirstOrDefault(c => c.Nickname == nickname);
-			if (character == null)
-			{
-				Console.WriteLine("Character was not found.");
-				return;
-			}
-
-			if (character.Nickname == "God")
-			{
-				Console.WriteLine("You can't hit an admin!");
-				return;
-			}
-
-			try
-			{
-				Console.WriteLine("Hit for how much?");
-				int damage = Convert.ToInt32(Console.ReadLine());
-				if (character.Armor > 0)
-				{
-					int? remainingDamage = damage - character.Armor;
-					character.Armor = Math.Max(0, (int)(character.Armor - damage));
-
-					if (remainingDamage > 0)
-					{
-						character.HealthPoints = Math.Max(0, (int)(character.HealthPoints - remainingDamage));
-						Console.WriteLine($"Character lost {remainingDamage} health after armor was destroyed.");
-					}
-					else
-					{
-						Console.WriteLine($"Character lost {damage} armor.");
-					}
-				}
-				else
-				{
-
-					character.HealthPoints = Math.Max(0, (int)(character.HealthPoints - damage));
-
-					Console.WriteLine($"Character lost {damage} health.");
-				}
-
-				if (character.HealthPoints <= 0)
-				{
-					Console.WriteLine("No more life. Character deleted.");
-					context.Characters.Remove(character);
-				}
-				context.SaveChanges();
-				Console.WriteLine($"Remaining Armor: {character.Armor}");
-				Console.WriteLine($"Remaining Health: {character.HealthPoints}");
-			}
-			catch (FormatException)
-			{
-				Console.WriteLine("Invalid input. Please enter a valid number for damage.");
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine($"An error occurred: {ex.Message}");
-			}
-		}
-
-	
 		public static void DeleteAllCharacters()
 		{
 			Console.Clear();
 
 			using var context = new ApplicationDbContext();
-			Console.WriteLine("Are you sure you want to delete all characters except the one with ID 0? (y/n)");
+			Console.WriteLine("Are you sure you want to delete all characters ? (y/n)");
 			string choice = Console.ReadLine();
 			if (choice != null && choice.ToLower() == "y")
 			{
@@ -291,94 +191,149 @@ namespace ExerciceCharacter
 			{
 				Console.WriteLine("Operation cancelled.");
 			}
-	} 
- static void Tournament()
+	}
+		public static void Tournament()
 		{
 			Console.Clear();
-
+			Random rnd = new Random();
 			using var context = new ApplicationDbContext();
 			ShowAllCharacters();
-			Console.WriteLine("Which character do you want to chose?");
-			string nickname = Console.ReadLine();
+			Console.WriteLine("Which character do you want to choose?");
+			string? nickname = Console.ReadLine();
 			var character = context.Characters.FirstOrDefault(c => c.Nickname == nickname);
-			Random rnd = new Random();
 			int rndCharacter = context.Characters.OrderBy(c => Guid.NewGuid()).FirstOrDefault()?.Id ?? 0;
-
 			var combatCharacter = context.Characters.FirstOrDefault(c => c.Id == rndCharacter);
-			Console.WriteLine($"{combatCharacter.Nickname} was chosen");
+
 			if (character == null || combatCharacter == null)
 			{
+				Console.ForegroundColor = ConsoleColor.Red;
 				Console.WriteLine("Character was not found.");
+				Console.ResetColor();
 				return;
 			}
 
 			if (character.Nickname == "God" || combatCharacter.Nickname == "God")
 			{
-				Console.WriteLine("You can't chose an admin!");
+				Console.ForegroundColor = ConsoleColor.Red;
+				Console.WriteLine("You can't choose an admin!");
+				Console.ResetColor();
 				return;
 			}
 
+			Console.ForegroundColor = ConsoleColor.Yellow;
+			Console.WriteLine($"\n{combatCharacter.Nickname} was chosen as your opponent!");
+			Console.ResetColor();
+
 			try
 			{
+				int? stockHPCombat = combatCharacter.HealthPoints;
+				int? stockAMRCombat = combatCharacter.Armor;
+				int? stockHPCharacter = character.HealthPoints;
+				int? stockAMRCharacter = character.Armor;
+
 				while (character.HealthPoints > 0 && combatCharacter.HealthPoints > 0)
 				{
+					Console.Clear();
+					DrawCombatInterface(character, combatCharacter);
+
 					if (combatCharacter.Armor > 0 || character.Armor > 0)
 					{
 						int? remainingDamage = character.Damage - combatCharacter.Armor;
 						int? remainingDamageCharacter = combatCharacter.Damage - character.Armor;
-						combatCharacter.Armor = Math.Max(0, (int)(combatCharacter.Armor - character.Damage));
-						character.Armor = Math.Max(0, (int)(character.Armor - combatCharacter.Damage));
-						if (remainingDamage > 0 || remainingDamageCharacter > 0)
+						combatCharacter.Armor = Math.Max(0, (combatCharacter.Armor ?? 0) - (character.Damage ?? 0));
+						character.Armor = Math.Max(0, (character.Armor ?? 0) - (combatCharacter.Damage ?? 0));
+
+						if (remainingDamage > 0)
 						{
-							combatCharacter.HealthPoints = Math.Max(0, (int)(combatCharacter.HealthPoints - remainingDamage));
-							character.HealthPoints = Math.Max(0, (int)(character.HealthPoints - remainingDamageCharacter));
-							Console.WriteLine($"Character lost {remainingDamage} health after armor was destroyed.");
-							Console.WriteLine($"Character lost {remainingDamageCharacter} health after armor was destroyed.");
+							combatCharacter.HealthPoints = Math.Max(0, (combatCharacter.HealthPoints ?? 0) - remainingDamage.Value);
 						}
-						else
+						if (remainingDamageCharacter > 0)
 						{
-							Console.WriteLine($"Character lost {character.Damage} armor.");
-							Console.WriteLine($"Opponent lost {combatCharacter.Damage} armor");
+							character.HealthPoints = Math.Max(0, (character.HealthPoints ?? 0) - remainingDamageCharacter.Value);
 						}
+
+						Thread.Sleep(500);
+						Console.ForegroundColor = ConsoleColor.Red;
+						Console.WriteLine($"\nOpponent lost {remainingDamage} health after armor was destroyed.");
+						Console.WriteLine($"Character lost {remainingDamageCharacter} health after armor was destroyed.");
+						Console.ResetColor();
 					}
 					else
 					{
-						combatCharacter.HealthPoints = Math.Max(0, (int)(combatCharacter.HealthPoints - character.Damage));
-						character.HealthPoints = Math.Max(0, (int)(character.HealthPoints - combatCharacter.Damage));
+						combatCharacter.HealthPoints = Math.Max(0, (combatCharacter.HealthPoints ?? 0) - (character.Damage ?? 0));
+						character.HealthPoints = Math.Max(0, (character.HealthPoints ?? 0) - (combatCharacter.Damage ?? 0));
 
-						Console.WriteLine($"{combatCharacter.Nickname} lost {character.Damage} health.");
+						Console.ForegroundColor = ConsoleColor.Red;
+						Console.WriteLine($"\n{combatCharacter.Nickname} lost {character.Damage} health.");
 						Console.WriteLine($"{character.Nickname} lost {combatCharacter.Damage} health.");
+						Console.ResetColor();
 					}
+
+					Thread.Sleep(1000);
 				}
 
 				if (combatCharacter.HealthPoints <= 0)
 				{
-					Console.WriteLine("No more life. Opponent deleted.");
+					Console.ForegroundColor = ConsoleColor.Green;
+					Console.WriteLine("\nYou won, your opponent is dead.");
+					Console.ResetColor();
+					Thread.Sleep(500);
 					character.KillCounts++;
+					character.HealthPoints = stockHPCharacter;
+					combatCharacter.HealthPoints = stockHPCombat;
+					Console.ForegroundColor = ConsoleColor.Cyan;
+					Console.WriteLine("Your character got healed.");
+					Console.ResetColor();
 					context.Characters.Remove(combatCharacter);
 				}
 				if (character.HealthPoints <= 0)
 				{
-					Console.WriteLine("No more life. Character deleted.");
+					Console.ForegroundColor = ConsoleColor.Red;
+					Console.WriteLine("\nYou lose, your character died.");
+					Console.ResetColor();
+					Thread.Sleep(500);
+					Console.ForegroundColor = ConsoleColor.Cyan;
+					Console.WriteLine("Opponent got healed.");
+					Console.ResetColor();
+					combatCharacter.HealthPoints = stockHPCombat;
+					combatCharacter.Armor = stockAMRCombat;
 					combatCharacter.KillCounts++;
 					context.Characters.Remove(character);
 				}
+
 				context.SaveChanges();
-				Console.WriteLine($"Opponent Remaining Armor: {combatCharacter.Armor}");
-				Console.WriteLine($"Opponent Remaining Health: {combatCharacter.HealthPoints}");
-				Console.WriteLine($"Character Remaining Armor: {character.Armor}");
-				Console.WriteLine($"Character Remaining Health: {character.HealthPoints}");
 			}
 			catch (FormatException)
 			{
+				Console.ForegroundColor = ConsoleColor.Red;
 				Console.WriteLine("Invalid input. Please enter a valid number for damage.");
+				Console.ResetColor();
 			}
 			catch (Exception ex)
 			{
+				Console.ForegroundColor = ConsoleColor.Red;
 				Console.WriteLine($"An error occurred: {ex.Message}");
+				Console.ResetColor();
 			}
 		}
-		public static void AverageLife()
+
+		private static void DrawCombatInterface(Character character, Character combatCharacter)
+		{
+			Console.WriteLine("=============================================");
+			Console.WriteLine("                  COMBAT                     ");
+			Console.WriteLine("=============================================");
+			Console.ForegroundColor = ConsoleColor.Cyan;
+			Console.WriteLine($" {character.Nickname} (You)");
+			Console.WriteLine($" HP: {character.HealthPoints} | Armor: {character.Armor}");
+			Console.ResetColor();
+			Console.WriteLine("---------------------------------------------");
+			Console.ForegroundColor = ConsoleColor.Magenta;
+			Console.WriteLine($" {combatCharacter.Nickname} (Opponent)");
+			Console.WriteLine($" HP: {combatCharacter.HealthPoints} | Armor: {combatCharacter.Armor}");
+			Console.ResetColor();
+			Console.WriteLine("=============================================");
+		}
+		public static void BestCharacters()
 		{
 			Console.Clear();
 
@@ -406,7 +361,7 @@ namespace ExerciceCharacter
 			Console.WriteLine($"Average Armor: {averageArmor}");
 			Console.WriteLine($"Average Health Points: {averageHealthPoints}");
 
-					Console.WriteLine($"Character that has higher than average armor and hp : ");
+					Console.WriteLine($"Character that have higher than average armor and hp : ");
 			foreach (var character in characters)
 			{
 				if (character.Armor  + character.HealthPoints > result)
@@ -427,7 +382,7 @@ namespace ExerciceCharacter
 
 				switch (input)
 				{
-					case "1": CreateCharacter();
+					case "1": GenerateCharacters();
 						break;
 					case "2": DeleteCharacter();
 						break;
@@ -435,15 +390,11 @@ namespace ExerciceCharacter
 						break;
 					case "4":ShowAllCharacters();
 						break;
-					case "5": HitCharacterYourSelf();
+					case "5":DeleteAllCharacters();
 						break;
-					case "6": AverageLife();
+					case "6": BestCharacters();
 						break;
-					case "7": GenerateCharacters();
-						break;
-					case "8":  Tournament();
-						break;
-					case "9": DeleteAllCharacters();
+					case "7": Tournament();
 						break;
 					default: Environment.Exit(0);
 						break;

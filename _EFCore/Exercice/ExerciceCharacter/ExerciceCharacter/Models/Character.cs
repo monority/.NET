@@ -16,14 +16,26 @@ namespace ExerciceCharacter.Models
 		public int? HealthPoints { get; set; }
 
 		public int? Armor { get; set; }
-
+		public int? MaxHP { get; set; }
+		public int? MaxArmor {  get; set; }
 		public int? Damage { get; set; }
 		public DateTime DateCreation { get; set; }
 		public int? KillCounts { get; set; } = 0;
 
+
 		public override string ToString()
 		{
-			return $"{Id}, {Nickname}, {HealthPoints}, {Armor}, {Damage}, {DateCreation}, {KillCounts}";
+			return $@"
+┌──────────────────────────────┐
+│ {Nickname,-20}       │
+├──────────────────────────────┤
+│ HP     : {HealthPoints,5}    │
+│ Armor  : {Armor,5}    │
+│ DMG    : {Damage,5}    │
+│ Kills  : {KillCounts,5}    │
+├──────────────────────────────┤
+│ Created: {DateCreation} │
+└──────────────────────────────┘";
 		}
 	}
 
