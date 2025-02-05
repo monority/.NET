@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExerciceHotel.Models
+namespace ExerciceHotel.Models;
+using ExerciceHotel.Models.Enums;
+
+internal class Reservation
 {
-	internal class Reservation
-	{
-		public int Id { get; set; }
-		public string Status { get; set; }
-		public List<Room> Rooms { get; set; } = new List<Room>();
-		public Client Client { get; set; }
-	}
+	public int Id { get; set; }
+	public ReservationStatus Status { get; set; }
+
+	public Room? Room { get; set; } 
+	public Client? Client { get; set; }
+
 }

@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ExerciceHotel.Models;
+using ExerciceHotel.Models.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Demo01.Data
 {
 
-    internal class ApplicationDbContext : DbContext
-    {
+	internal class ApplicationDbContext : DbContext
+	{
 
 		public ApplicationDbContext() : base()
 		{
@@ -25,10 +26,23 @@ namespace Demo01.Data
 			optionsBuilder.UseSqlServer(@"Data Source=(localdb)\EFCore;Integrated Security=True");
 		}
 
-		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		protected override void OnModelCreating(ModelBuilder builder)
 		{
-			modelBuilder.Entity<Hotel>().HasData(new Hotel() { Id = 1, Nickname = "God", Armor = 100, HealthPoints = 100, Damage = 1000, DateCreation = DateTime.Now, KillCounts = 0});
+			base.OnModelCreating(builder);
 
+			builder
+				.Entity<Room>()
+				.Property(r => r.Status)
+				.HasConversion(
+					v => v.ToString(),
+					v => (RoomStatus)Enum.Parse(typeof(RoomStatus), v));
+
+			builder.Entity<Reservation>()
+				.Property(r => r.Status)
+				.HasConversion(
+				v => v.ToString(),
+				v => (ReservationStatus)Enum.Parse(typeof(ReservationStatus), v));
+			builder.Entity<Hotel>().HasData(new Hotel() { Id = 1, Name = "Deluxe", Rooms = { } });
 		}
 
 
