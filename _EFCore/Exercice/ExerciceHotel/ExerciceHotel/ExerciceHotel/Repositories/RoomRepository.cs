@@ -67,6 +67,11 @@ namespace ExerciceHotel.Repositories
 			return _db.Rooms
 			.FirstOrDefault(predicate);
 		}
+		public void DeleteAllEntries()
+		{
+			_db.Rooms.RemoveRange(_db.Rooms);
+			_db.SaveChanges();
+		}
 
 
 	}

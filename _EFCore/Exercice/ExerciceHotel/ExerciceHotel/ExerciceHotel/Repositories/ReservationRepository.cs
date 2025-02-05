@@ -70,5 +70,10 @@ namespace ExerciceHotel.Repositories
 				   .Include(r => r.Room)
 				   .FirstOrDefault(predicate);
 		}
+		public void DeleteAllEntries()
+		{
+			_db.Reservations.RemoveRange(_db.Reservations);
+			_db.SaveChanges();
+		}
 	}
 }

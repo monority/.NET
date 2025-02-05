@@ -52,6 +52,7 @@ namespace ExerciceHotel.UI
 			Console.WriteLine("5. Show reservation list");
 			Console.WriteLine("6. Generate rooms");
 			Console.WriteLine("7. List all the rooms");
+			Console.WriteLine("8. Generate Clients");
 			Console.ForegroundColor = ConsoleColor.Red;
 			Console.WriteLine("");
 			Console.WriteLine("#. Any other key to leave");
@@ -81,7 +82,7 @@ namespace ExerciceHotel.UI
 			clientRepository.Add(client);
 			Console.WriteLine("Client added successfully!");
 		}
-		
+
 		public void AddReservation()
 		{
 			Console.WriteLine("Which client want to book ?(id)");
@@ -98,7 +99,7 @@ namespace ExerciceHotel.UI
 				Status = ReservationStatus.InProgress,
 			};
 			var reservation = reservationRepository.Add(reserv);
-			
+
 		}
 		public void ShowClientList()
 		{
@@ -164,6 +165,47 @@ namespace ExerciceHotel.UI
 				roomRepository.Add(room);
 			}
 		}
+		public static string GenerateName(int len)
+		{
+			Random r = new Random();
+			string[] consonants = { "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "l", "n", "p", "q", "r", "s", "sh", "zh", "t", "v", "w", "x" };
+			string[] vowels = { "a", "e", "i", "o", "u", "ae", "y" };
+			string Name = "";
+			Name += consonants[r.Next(consonants.Length)].ToUpper();
+			Name += vowels[r.Next(vowels.Length)];
+			int b = 2;
+			while (b < len)
+			{
+				Name += consonants[r.Next(consonants.Length)];
+				b++;
+				Name += vowels[r.Next(vowels.Length)];
+				b++;
+			}
+
+			return Name;
+
+
+		}
+		public void GenerateClients()
+		{
+
+			Console.WriteLine("How many clients you want to generate ?");
+			int input = Convert.ToInt32(Console.ReadLine());
+
+			Random rdn = new Random();
+			for (int i = 0; i < input; i++)
+			{
+				string phoneNumber = rdn.Next(1, 20000).ToString();
+				int max = rdn.Next(3, 8);
+				Client client = new Client()
+				{
+					FirstName = GenerateName(max),
+					LastName = GenerateName(max),
+					PhoneNumber = phoneNumber,
+				};
+				clientRepository.Add(client);
+			}
+		}
 
 		public void ShowAllRooms()
 		{
@@ -172,6 +214,11 @@ namespace ExerciceHotel.UI
 			{
 				Console.WriteLine($"Room Number: {room.RoomNumber}, Bed Numbers: {room.BedNumber}, Price : {room.Price}, Status : {room.Status}");
 			}
+		}
+
+		public void DeleteAll()
+		{
+			clientRepository.DeleteAllEntry();
 		}
 		public void Start()
 		{
@@ -193,13 +240,16 @@ namespace ExerciceHotel.UI
 					case "3":
 						ShowReservation();
 						break;
-					case "4": AddReservation();
-							break;
+					case "4":
+						AddReservation();
+						break;
 					case "6":
 						GenerateRooms();
 						break;
 					case "7":
 						ShowAllRooms();
+						break;
+					case "8": GenerateClients();
 						break;
 					default:
 						Environment.Exit(0);

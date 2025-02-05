@@ -15,5 +15,6 @@ namespace ExerciceHotel.Repositories
 		IEnumerable<T> GetAll();
 		IEnumerable<T> GetAll(Func<T, bool> predicate);
 		bool Delete(Tid id);
+		bool DeleteAllEntry(T entity);
 	}
 }
