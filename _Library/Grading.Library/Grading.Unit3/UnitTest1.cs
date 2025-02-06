@@ -19,7 +19,7 @@ public sealed class GradingTest
 	{
 		_gCalculator = null;
 	}
-
+		
 	[Theory]
 	[TestCase(95, 90, 'A')]
 	[TestCase(85, 90, 'B')]
