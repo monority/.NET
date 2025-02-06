@@ -64,11 +64,7 @@ namespace ExerciceHotel.Repositories
 		{
 			return _db.Clients.Where(predicate);
 		}
-		public void DeleteAllEntries()
-		{
-			_db.Clients.RemoveRange(_db.Clients);
-			_db.SaveChanges();
-		}
+
 
 	}
 }

@@ -22,4 +22,5 @@ internal class Room
 	public sbyte BedNumber { get; set; }
 	[Precision(10, 5)]
 	public decimal Price { get; set; }
+	public List<Reservation> Reservations { get; set; }
 }

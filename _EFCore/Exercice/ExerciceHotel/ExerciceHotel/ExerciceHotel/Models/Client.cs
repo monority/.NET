@@ -10,7 +10,7 @@ namespace ExerciceHotel.Models
 {
 	internal class Client
 	{
-
+		[Key]
 		public int Id { get; set; }
 		[MaxLength(15)]
 		public string? FirstName { get; set; }
@@ -19,6 +19,7 @@ namespace ExerciceHotel.Models
 		[MaxLength(15)]
 
 		public string? PhoneNumber { get; set; }
+		public List<Reservation> Reservations { get; set; } = []; // new()
 
 	}
 }

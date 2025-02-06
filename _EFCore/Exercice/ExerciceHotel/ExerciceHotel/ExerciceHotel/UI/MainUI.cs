@@ -216,10 +216,8 @@ namespace ExerciceHotel.UI
 			}
 		}
 
-		public void DeleteAll()
-		{
-			clientRepository.DeleteAllEntry();
-		}
+
+		
 		public void Start()
 		{
 			SelectHotel("Deluxe");

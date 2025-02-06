@@ -1,0 +1,12 @@
+C:\Users\Administrateur\Desktop\_dev\.NET\_Library\Grading.Library\Grading.Library\bin\Debug\net8.0\Grading.Library.deps.json
+C:\Users\Administrateur\Desktop\_dev\.NET\_Library\Grading.Library\Grading.Library\bin\Debug\net8.0\Grading.Library.dll
+C:\Users\Administrateur\Desktop\_dev\.NET\_Library\Grading.Library\Grading.Library\bin\Debug\net8.0\Grading.Library.pdb
+C:\Users\Administrateur\Desktop\_dev\.NET\_Library\Grading.Library\Grading.Library\obj\Debug\net8.0\Grading.Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrateur\Desktop\_dev\.NET\_Library\Grading.Library\Grading.Library\obj\Debug\net8.0\Grading.Library.AssemblyInfoInputs.cache
+C:\Users\Administrateur\Desktop\_dev\.NET\_Library\Grading.Library\Grading.Library\obj\Debug\net8.0\Grading.Library.AssemblyInfo.cs
+C:\Users\Administrateur\Desktop\_dev\.NET\_Library\Grading.Library\Grading.Library\obj\Debug\net8.0\Grading.Library.csproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Desktop\_dev\.NET\_Library\Grading.Library\Grading.Library\obj\Debug\net8.0\Grading.Library.sourcelink.json
+C:\Users\Administrateur\Desktop\_dev\.NET\_Library\Grading.Library\Grading.Library\obj\Debug\net8.0\Grading.Library.dll
+C:\Users\Administrateur\Desktop\_dev\.NET\_Library\Grading.Library\Grading.Library\obj\Debug\net8.0\refint\Grading.Library.dll
+C:\Users\Administrateur\Desktop\_dev\.NET\_Library\Grading.Library\Grading.Library\obj\Debug\net8.0\Grading.Library.pdb
+C:\Users\Administrateur\Desktop\_dev\.NET\_Library\Grading.Library\Grading.Library\obj\Debug\net8.0\ref\Grading.Library.dll

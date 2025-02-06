@@ -1,0 +1,12 @@
+C:\Users\Administrateur\Desktop\_dev\.NET\_test\Demo01.Bibliotheque\Demo01.Bibliotheque\bin\Debug\net8.0\Demo01.Bibliotheque.deps.json
+C:\Users\Administrateur\Desktop\_dev\.NET\_test\Demo01.Bibliotheque\Demo01.Bibliotheque\bin\Debug\net8.0\Demo01.Bibliotheque.dll
+C:\Users\Administrateur\Desktop\_dev\.NET\_test\Demo01.Bibliotheque\Demo01.Bibliotheque\bin\Debug\net8.0\Demo01.Bibliotheque.pdb
+C:\Users\Administrateur\Desktop\_dev\.NET\_test\Demo01.Bibliotheque\Demo01.Bibliotheque\obj\Debug\net8.0\Demo01.Bibliotheque.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrateur\Desktop\_dev\.NET\_test\Demo01.Bibliotheque\Demo01.Bibliotheque\obj\Debug\net8.0\Demo01.Bibliotheque.AssemblyInfoInputs.cache
+C:\Users\Administrateur\Desktop\_dev\.NET\_test\Demo01.Bibliotheque\Demo01.Bibliotheque\obj\Debug\net8.0\Demo01.Bibliotheque.AssemblyInfo.cs
+C:\Users\Administrateur\Desktop\_dev\.NET\_test\Demo01.Bibliotheque\Demo01.Bibliotheque\obj\Debug\net8.0\Demo01.Bibliotheque.csproj.CoreCompileInputs.cache
+C:\Users\Administrateur\Desktop\_dev\.NET\_test\Demo01.Bibliotheque\Demo01.Bibliotheque\obj\Debug\net8.0\Demo01.Bibliotheque.sourcelink.json
+C:\Users\Administrateur\Desktop\_dev\.NET\_test\Demo01.Bibliotheque\Demo01.Bibliotheque\obj\Debug\net8.0\Demo01.Bibliotheque.dll
+C:\Users\Administrateur\Desktop\_dev\.NET\_test\Demo01.Bibliotheque\Demo01.Bibliotheque\obj\Debug\net8.0\refint\Demo01.Bibliotheque.dll
+C:\Users\Administrateur\Desktop\_dev\.NET\_test\Demo01.Bibliotheque\Demo01.Bibliotheque\obj\Debug\net8.0\Demo01.Bibliotheque.pdb
+C:\Users\Administrateur\Desktop\_dev\.NET\_test\Demo01.Bibliotheque\Demo01.Bibliotheque\obj\Debug\net8.0\ref\Demo01.Bibliotheque.dll
