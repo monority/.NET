@@ -14,10 +14,9 @@ namespace Towns.Library
 
 		public List<string> Search(string word)
 		{
-	
 			if (word == "*")
 			{
-				return _towns;
+				return _towns.ToList();
 			}
 			else if (word.Length < 2)
 			{
