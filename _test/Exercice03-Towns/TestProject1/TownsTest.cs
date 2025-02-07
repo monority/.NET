@@ -22,7 +22,7 @@ public class TownsTest
 		Assert.Equal(expected, result);
 	}
 	[Fact]
-	public void Search_Not_CaseSensitive()
+		public void Search_Not_CaseSensitive()
 	{
 		var ts = new SearchTown(towns);
 		var result = ts.Search("va");

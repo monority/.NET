@@ -13,12 +13,12 @@ namespace Towns.Library
 
 		public List<string> Search(string word)
 		{
-			
+
 			if (word.Length < 2)
 			{
 				throw new NotFoundException("Word need to have more than 2 characters");
 			}
-			else { return _towns.FindAll(x => x.StartsWith(word)).ToList(); }
+			else { return _towns.FindAll(x => x.StartsWith(word, StringComparison.OrdinalIgnoreCase)).ToList(); }
 
 		}
 	}
