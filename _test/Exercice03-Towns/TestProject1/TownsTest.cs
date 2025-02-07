@@ -21,4 +21,12 @@ public class TownsTest
 		var expected = new List<string> { "Valence", "Vancouver" };
 		Assert.Equal(expected, result);
 	}
+	[Fact]
+	public void Search_Not_CaseSensitive()
+	{
+		var ts = new SearchTown(towns);
+		var result = ts.Search("va");
+		var expected = new List<string> { "Valence", "Vancouver" };
+		Assert.Equal(expected, result);
+	}
 }
