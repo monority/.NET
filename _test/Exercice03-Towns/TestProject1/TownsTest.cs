@@ -17,8 +17,8 @@ public class TownsTest
 	public void Word_EqualOrSuperior_2_Return_AllTowns_StartingWithWord()
 	{
 		var ts = new SearchTown(towns);
-		var result = ts.Search("Par");
-		var expected = new List<string> { "Paris" };
+		var result = ts.Search("Va");
+		var expected = new List<string> { "Valence", "Vancouver" };
 		Assert.Equal(expected, result);
 	}
 }
