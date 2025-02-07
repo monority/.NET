@@ -5,13 +5,15 @@ namespace Towns.Library
 {
 	public class SearchTown
 	{
-		private List<String> _towns;
-
-		public List<String> Search(String word)
+		private List<string> _towns;
+		public SearchTown(List<string> towns)
 		{
+			_towns = towns;
+		}
 
+		public List<string> Search(string word)
+		{
 			throw new NotImplementedException();
-
 		}
 	}
 }
