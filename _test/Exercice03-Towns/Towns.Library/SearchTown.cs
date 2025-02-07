@@ -18,7 +18,7 @@ namespace Towns.Library
 			{
 				throw new NotFoundException("Word need to have more than 2 characters");
 			}
-			else { return _towns.FindAll(x => x.StartsWith(word, StringComparison.OrdinalIgnoreCase)).ToList(); }
+			else { return _towns.FindAll(x => x.StartsWith(word, StringComparison.OrdinalIgnoreCase) || x.Contains(word)).ToList(); }
 
 		}
 	}
