@@ -1,4 +1,5 @@
 ﻿
+using System.Security.Cryptography.X509Certificates;
 using Towns.Library;
 
 namespace Towns.Library
@@ -13,8 +14,12 @@ namespace Towns.Library
 
 		public List<string> Search(string word)
 		{
-
-			if (word.Length < 2)
+	
+			if (word == "*")
+			{
+				return _towns;
+			}
+			else if (word.Length < 2)
 			{
 				throw new NotFoundException("Word need to have more than 2 characters");
 			}

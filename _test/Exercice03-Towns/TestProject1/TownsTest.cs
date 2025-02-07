@@ -3,9 +3,9 @@ using Towns.Library;
 public class TownsTest
 {
 	List<string> towns = new List<string>()
-		{
-			"Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul"
-		};
+						{
+							"Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul"
+						};
 	[Fact]
 	public void CountChar_LessThan2()
 	{
@@ -22,7 +22,7 @@ public class TownsTest
 		Assert.Equal(expected, result);
 	}
 	[Fact]
-		public void Search_Not_CaseSensitive()
+	public void Search_Not_CaseSensitive()
 	{
 		var ts = new SearchTown(towns);
 		var result = ts.Search("va");
@@ -36,5 +36,12 @@ public class TownsTest
 		var result = ts.Search("ape");
 		var expected = new List<string> { "Budapest" };
 		Assert.Equal(expected, result);
+	}
+	[Fact]
+	public void ifStart_Returnall()
+	{
+		var ts = new SearchTown(towns);
+		var result = ts.Search("*");
+		Assert.All(result, town => Assert.Contains(town, towns));
 	}
 }
