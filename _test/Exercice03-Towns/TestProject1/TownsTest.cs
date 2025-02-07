@@ -29,4 +29,12 @@ public class TownsTest
 		var expected = new List<string> { "Valence", "Vancouver" };
 		Assert.Equal(expected, result);
 	}
+	[Fact]
+	public void Search_IncludeTowns_Word()
+	{
+		var ts = new SearchTown(towns);
+		var result = ts.Search("ape");
+		var expected = new List<string> { "Budapest" };
+		Assert.Equal(expected, result);
+	}
 }

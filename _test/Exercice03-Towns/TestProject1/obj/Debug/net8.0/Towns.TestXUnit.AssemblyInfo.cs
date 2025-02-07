@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Towns.TestXUnit")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09e5b7966e4eff34a4a0c515c459ab63af04d17f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9debad3f091890589020caaf91e5255c41bca79d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Towns.TestXUnit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Towns.TestXUnit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
