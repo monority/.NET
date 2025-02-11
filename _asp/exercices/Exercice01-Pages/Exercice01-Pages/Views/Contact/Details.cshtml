@@ -1,0 +1,37 @@
+﻿@model List<Contact>
+
+	@{
+	ViewData["Title"] = "Details";
+	}
+
+	<div class="text-center">
+		<h1>Details of all contacts</h1>
+	</div>
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th scope="col">Id</th>
+				<th scope="col">Firstname</th>
+				<th scope="col">Lastname</th>
+				<th scope="col">Email</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var contact in Model)
+			{
+			<tr>
+				<td asp-for="c_Id">@contact.Id</td>
+				<td asp-for="c_Firstname">@contact.Firstname</td>
+				<td asp-for="c_Lastname">@contact.Lastname</td>
+				<td asp-for="c_Email">@contact.Email</td>
+			</tr>
+			}
+		</tbody>
+	</table>
+
+	<div class="text-center"></div>
+	<p>Show Details of all contact</p>
+	<a asp-controller="Contact" asp-action="Add" class="btn btn-primary">Add a Contact</a>
+	<a asp-controller="Contact" asp-action="Index" class="btn btn-primary">Index</a>
+	</div>	
