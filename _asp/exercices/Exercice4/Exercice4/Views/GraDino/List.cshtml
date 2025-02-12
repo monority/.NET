@@ -1,0 +1,45 @@
+﻿@{
+ViewData["Title"] = "GraDino List";
+
+@model HashSet<GraDino>
+
+	}
+
+	<div id="list">
+		<div class="container">
+			<div class="wrapper">
+				<div class="element">
+
+
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>@Html.DisplayNameForInnerType((GraDino c) => c.NickName)</th>
+								<th>@Html.DisplayNameForInnerType((GraDino c) => c.weight)</th>
+								<th>@Html.DisplayNameForInnerType((GraDino c) => c.height)</th>
+								<th>@Html.DisplayNameForInnerType((GraDino c) => c.specy)</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+		
+							@foreach (var gradino in Model)
+							{
+							<tr>
+									<td>@gradino.Id</td>
+										<td>@gradino.NickName</td>
+										<td>@gradino.weight</td>
+										<td>@gradino.height</td>
+										<td>@gradino.specy</td>
+									<td><a asp-action="Details" asp-route-id="@gradino.Id" class="btn btn-secondary"><span
+											class="bi bi-pencil-square"></span> Details</a></td>
+							</tr>
+							}
+						</tbody>
+
+						<table />
+				</div>
+			</div>
+		</div>
+	</div>
