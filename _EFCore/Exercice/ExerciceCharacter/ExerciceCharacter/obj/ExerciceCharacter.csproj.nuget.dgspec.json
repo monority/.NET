@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_EFCore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\ExerciceCharacter.csproj": {}
+    "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_efcore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\ExerciceCharacter.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_EFCore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\ExerciceCharacter.csproj": {
+    "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_efcore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\ExerciceCharacter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_EFCore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\ExerciceCharacter.csproj",
+        "projectUniqueName": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_efcore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\ExerciceCharacter.csproj",
         "projectName": "ExerciceCharacter",
-        "projectPath": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_EFCore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\ExerciceCharacter.csproj",
+        "projectPath": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_efcore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\ExerciceCharacter.csproj",
         "packagesPath": "C:\\Users\\Administrateur\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_EFCore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\obj\\",
+        "outputPath": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_efcore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

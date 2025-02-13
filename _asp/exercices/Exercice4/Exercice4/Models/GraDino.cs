@@ -5,7 +5,7 @@ namespace Exercice4.Models
     public class GraDino
     {
         [Key]
-        public long Id { get; set; } = 1L;
+        public long Id { get; set; }
        
         [Required]
         [Display(Name = "Nickname")]

@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_EFCore\\Exercice\\ExerciceCharacter\\",
+  "WorkspaceRootPath": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_efcore\\Exercice\\ExerciceCharacter\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{96B87963-FEF7-49CB-B263-2471C2D66324}|ExerciceCharacter\\ExerciceCharacter.csproj|c:\\users\\administrateur\\desktop\\_dev\\.net\\_efcore\\exercice\\exercicecharacter\\exercicecharacter\\ihm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96B87963-FEF7-49CB-B263-2471C2D66324}|ExerciceCharacter\\ExerciceCharacter.csproj|solutionrelative:exercicecharacter\\ihm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{96B87963-FEF7-49CB-B263-2471C2D66324}|ExerciceCharacter\\ExerciceCharacter.csproj|c:\\users\\administrateur\\desktop\\_dev\\.net\\_efcore\\exercice\\exercicecharacter\\exercicecharacter\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96B87963-FEF7-49CB-B263-2471C2D66324}|ExerciceCharacter\\ExerciceCharacter.csproj|solutionrelative:exercicecharacter\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{96B87963-FEF7-49CB-B263-2471C2D66324}|ExerciceCharacter\\ExerciceCharacter.csproj|c:\\users\\administrateur\\desktop\\_dev\\.net\\_efcore\\exercice\\exercicecharacter\\exercicecharacter\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{96B87963-FEF7-49CB-B263-2471C2D66324}|ExerciceCharacter\\ExerciceCharacter.csproj|solutionrelative:exercicecharacter\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96B87963-FEF7-49CB-B263-2471C2D66324}|ExerciceCharacter\\ExerciceCharacter.csproj|c:\\users\\administrateur\\desktop\\_dev\\.net\\_efcore\\exercice\\exercicecharacter\\exercicecharacter\\ihm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96B87963-FEF7-49CB-B263-2471C2D66324}|ExerciceCharacter\\ExerciceCharacter.csproj|solutionrelative:exercicecharacter\\ihm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{96B87963-FEF7-49CB-B263-2471C2D66324}|ExerciceCharacter\\ExerciceCharacter.csproj|c:\\users\\administrateur\\desktop\\_dev\\.net\\_efcore\\exercice\\exercicecharacter\\exercicecharacter\\models\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,15 +29,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "IHM.cs",
-              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_EFCore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\IHM.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_efcore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\IHM.cs",
               "RelativeDocumentMoniker": "ExerciceCharacter\\IHM.cs",
-              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_EFCore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\IHM.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_efcore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\IHM.cs",
               "RelativeToolTip": "ExerciceCharacter\\IHM.cs",
               "ViewState": "AgIAAFYBAAAAAAAAAADwv6gAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -43,15 +47,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_EFCore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\Program.cs",
-              "RelativeDocumentMoniker": "ExerciceCharacter\\Program.cs",
-              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_EFCore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\Program.cs",
-              "RelativeToolTip": "ExerciceCharacter\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_efcore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "ExerciceCharacter\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_efcore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "ExerciceCharacter\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAwwBgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T11:01:24.743Z",
+              "WhenOpened": "2025-02-13T08:27:26.384Z",
               "EditorCaption": ""
             },
             {
@@ -67,24 +71,40 @@
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "dbo.Characters [Donn\u00E9es]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__EFCore/master/True/SqlTable/dbo.Characters.sql",
-              "ToolTip": "dbo.Characters [Donn\u00E9es]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-02-04T10:20:33.472Z",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_efcore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\Program.cs",
+              "RelativeDocumentMoniker": "ExerciceCharacter\\Program.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_efcore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\Program.cs",
+              "RelativeToolTip": "ExerciceCharacter\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T11:01:24.743Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
+              "Title": "dbo.Characters.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__EFCore/master/True/SqlTable/dbo.Characters.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__EFCore/master/True/SqlTable/dbo.Characters.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-02-04T10:20:33.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Character.cs",
-              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_EFCore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\Models\\Character.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_efcore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\Models\\Character.cs",
               "RelativeDocumentMoniker": "ExerciceCharacter\\Models\\Character.cs",
-              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_EFCore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\Models\\Character.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_efcore\\Exercice\\ExerciceCharacter\\ExerciceCharacter\\Models\\Character.cs",
               "RelativeToolTip": "ExerciceCharacter\\Models\\Character.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAuwBQAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA8wBQAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-04T08:39:47.788Z",
               "EditorCaption": ""
