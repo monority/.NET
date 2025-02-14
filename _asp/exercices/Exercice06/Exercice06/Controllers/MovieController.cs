@@ -1,34 +1,31 @@
-﻿using Exercice06.Models;
+﻿using Exercice06.Entities;
+using Exercice06.Models;
+using Exercice06.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Demo01.Controllers
+namespace Exercice06.Controllers
 {
     public class MovieController : Controller
     {
-        private readonly IRepository<Movie> _repo;
-        public MovieController(IRepository<Movie> repo)
+        private readonly IMovieService _movieService;
+
+        public MovieController(IMovieService movieService)
         {
-            _repo = repo;
+            _movieService = movieService;
         }
+
 
         public IActionResult Index()
         {
-            var movies = _repo.GetAll();
+            var movies = _movieService.GetAll();
             return View("List", movies);
         }
 
-        public IActionResult Create()
-        {
-            ViewBag.FormMode = "Create";
-            return View("Form");
-        }
-
-        [HttpPost]
-        public IActionResult Create([Bind("Title", "Duration", "Director", "Status")] Movie movie)
+        public IActionResult Create(MovieCreateViewModel movieViewModel)
         {
             if (ModelState.IsValid)
             {
-                if (_repo.Create(movie) != null)
+                if (_movieService.Create(movieViewModel) != null)
                 {
                     return RedirectToAction(nameof(Index));
                 }
@@ -36,19 +33,41 @@ namespace Demo01.Controllers
                 {
                     ModelState.AddModelError("db-status", "Cannot save in the database!");
                     ViewBag.FormMode = "Create";
-                    return View("Form", movie);
+                    return View("Form", movieViewModel);
                 }
             }
             else
             {
                 ViewBag.FormMode = "Create";
-                return View("Form", movie);
+                return View("Form", movieViewModel);
             }
         }
+        [HttpPost]
+        //public IActionResult Create(MovieCreateViewModel movieViewModel)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        if (_movieService.Create(movieViewModel) != null)
+        //        {
+        //            return RedirectToAction(nameof(Index));
+        //        }
+        //        else
+        //        {
+        //            ModelState.AddModelError("db-status", "Cannot save in the database!");
+        //            ViewBag.FormMode = "Create";
+        //            return View("Form", movieViewModel);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        ViewBag.FormMode = "Create";
+        //        return View("Form", movieViewModel);
+        //    }
+        //}
 
         public IActionResult Edit(int id)
         {
-            var movieFound = _repo.GetById(id);
+            var movieFound = _movieService.GetById(id);
             if (movieFound == null) return View("Error", new ErrorViewModel() { RequestId = "404" });
             ViewBag.FormMode = "Edit";
             return View("Form", movieFound);
@@ -57,33 +76,33 @@ namespace Demo01.Controllers
         [HttpPost]
         public IActionResult ChangeStatus(int id)
         {
-            var movieFound = _repo.GetById(id);
+            var movieFound = _movieService.GetById(id);
             if (movieFound == null) return View("Error", new ErrorViewModel() { RequestId = "404" });
             movieFound.Status = (Status)(((int)movieFound.Status + 1) % Enum.GetValues(typeof(Status)).Length);
-            _repo.Update(movieFound);
-            var movies = _repo.GetAll();
+            _movieService.Update(movieFound);
+            var movies = _movieService.GetAll();
             ViewBag.FormMode = "List";
             return View("List", movies);
         }
 
         public IActionResult Details(int id)
         {
-            var movieFound = _repo.GetById(id);
+            var movieFound = _movieService.GetById(id);
             if (movieFound == null) return View("Error", new ErrorViewModel() { RequestId = "404" });
             ViewBag.FormMode = "Details";
 
-            var movies = new HashSet<Movie> { movieFound };
+            var movies = new HashSet<MovieViewModel> { movieFound };
             return View("List", movies);
         }
 
- 
-        public IActionResult Delete(int id)
+
+        public IActionResult Delete(long id)
         {
-            var movieFound = _repo.GetById(id);
+            var movieFound = _movieService.GetById(id);
             if (movieFound == null) return View("Error", new ErrorViewModel() { RequestId = "404" });
             ViewBag.FormMode = "Delete";
 
-            if (_repo.Delete(movieFound))
+            if (_movieService.Delete(movieFound) == null)
             {
                 return RedirectToAction(nameof(Index));
             }
@@ -94,13 +113,12 @@ namespace Demo01.Controllers
             }
         }
 
-
         [HttpPost]
-        public IActionResult Edit(Movie movie)
+        public IActionResult Edit(MovieViewModel movie)
         {
             if (ModelState.IsValid)
             {
-                if (_repo.Update(movie) != null)
+                if (_movieService.Update(movie) != null)
                 {
                     return RedirectToAction(nameof(Index));
                 }
@@ -117,5 +135,7 @@ namespace Demo01.Controllers
                 return View("Form", movie);
             }
         }
+
     }
+
 }

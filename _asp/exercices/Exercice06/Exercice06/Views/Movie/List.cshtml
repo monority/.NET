@@ -1,97 +1,77 @@
-﻿@model HashSet<Movie>
+﻿@model HashSet<MovieViewModel>
 
-@{
-    string viewMode = ViewBag.FormMode;
+	@{
+	string viewMode = ViewBag.FormMode;
 
-    ViewData["Title"] = viewMode switch
-    {
-        "Edit" => "Edit a movie",
-        "Delete" => "Delete a movie",
-        "Details" => "Movie Details",
-        _ => "List"
-    };
+	ViewData["Title"] = viewMode switch
+	{
+	"Edit" => "Edit a movie",
+	"Delete" => "Delete a movie",
+	"Details" => "Movie Details",
+	_ => "List"
+	};
 
-    var btnColorClass = viewMode switch
-    {
-        "Edit" => "btn-warning",
-        "Delete" => "btn-danger",
-        "Details" => "btn-primary",
-        _ => "btn-secondary"
-    };
+	var btnColorClass = viewMode switch
+	{
+	"Edit" => "btn-warning",
+	"Delete" => "btn-danger",
+	"Details" => "btn-primary",
+	_ => "btn-secondary"
+	};
 
-    var btnText = viewMode switch
-    {
-        "Edit" => "Editer",
-        "Delete" => "Confirmer",
-        "Details" => "Details",
-        _ => "Details"
-    };
-}
+	var btnText = viewMode switch
+	{
+	"Edit" => "Editer",
+	"Delete" => "Confirmer",
+	"Details" => "Details",
+	_ => "Details"
+	};
+	}
 
-<div class="d-flex">
-    <h1>@ViewData["Title"]</h1>
-    <a asp-action="Create" class="btn btn-success ms-auto">Ajouter</a>
-</div>
-<hr />
-<div class="container" asp-action="@viewMode">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameForInnerType((Movie m) => m.Id)
-                </th>
-                <th>
-                    @Html.DisplayNameForInnerType((Movie m) => m.Title)
-                </th>
-                <th>
-                    @Html.DisplayNameForInnerType((Movie m) => m.Director)
-                </th>
-                <th>
-                    @Html.DisplayNameForInnerType((Movie m) => m.Duration)
-                </th>
-                <th>
-                    @Html.DisplayNameForInnerType((Movie m) => m.Status)
-                </th>
-                <th>
-                    Actions
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var m in Model)
-            {
-                    <tr>
-                        <td>
-                        @m.Id
-                        </td>
-                        <td>
-                        @m.Title
-                        </td>
-                        <td>
-                        @m.Director
-                        </td>
-                        <td>
-                        @m.Duration
-                        </td>
-                        <td>
-                            <form asp-action="ChangeStatus" method="post">
-                                <input type="hidden" name="id" value="@m.Id" />
-                                <button type="submit" class="btn btn-link">@m.Status</button>
-                            </form>
-                        </td>
-                    @if (viewMode != "Details")
-                    {
-                                <td>
-                                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@m.Id">Details</a>
-                                </td>
-                    }
-                    @if (viewMode == "Details")
-                    {
-                                <td><a class="btn btn-danger" asp-action="Delete" asp-route-id="@m.Id">Delete</a></td>
-                                <td><a class="btn btn-warning" asp-action="Edit" asp-route-id="@m.Id">Edit</a></td>
-                    }
-                    </tr>
-            }
-        </tbody>
-    </table>
-</div>
+	<div class="d-flex">
+		<h1>@ViewData["Title"]</h1>
+
+	</div>
+	<hr />
+	<div class="container_def" asp-action="@viewMode">
+
+		@foreach (var m in Model)
+		{
+		<div class="movie_card">
+			<div class="container_content">
+				<div class="wrapper">
+					<div class="element">
+						<h4>Title : @m.Title</h4>
+					</div>
+					<div class="element">
+						<p>Director : @m.Director</p>
+					</div>
+				</div>
+				<div class="element">
+					<p>Duration : @m.Duration mins</p>
+				</div>
+				<div class="wrapper">
+					<div class="element">
+						<form asp-action="ChangeStatus" method="post">
+							<input type="hidden" name="id" value="@m.Id" />
+							<button type="submit" class="button_def">@m.Status</button>
+						</form>
+					</div>
+					<div class="element">
+						@if (viewMode != "Details")
+						{
+						<a class="btn btn-primary" asp-action="Details" asp-route-id="@m.Id">Details</a>
+						}
+						@if (viewMode == "Details")
+						{
+						<a class="btn btn-danger" asp-action="Delete" asp-route-id="@m.Id">Delete</a>
+						<a class="btn btn-warning" asp-action="Edit" asp-route-id="@m.Id">Edit</a>
+						}
+					</div>
+				</div>
+
+			</div>
+		</div>
+		}
+		<div class="element"><a asp-action="Create" class="btn btn-success ms-auto">Ajouter</a></div>
+	</div>

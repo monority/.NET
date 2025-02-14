@@ -1,20 +1,21 @@
 ﻿using Exercice06.Models;
-namespace Demo01.Data;
+using Microsoft.EntityFrameworkCore;
+namespace Exercice06.Data;
 
-public class MovieRepository : BaseRepository, IRepository<Movie>
+public class MovieRepository : BaseRepository, IRepository<MovieViewModel>
 {
     public MovieRepository(ApplicationDbContext context) : base(context)
     {
     }
 
-    public Movie Create(Movie entity)
+    public MovieViewModel Create(MovieViewModel entity)
     {
         _context.Movies.Add(entity);
         _context.SaveChanges();
         return entity;
     }
 
-    public bool Delete(Movie entity)
+    public bool Delete(MovieViewModel entity)
     {
         var movieFound = _context.Movies.FirstOrDefault(c => c.Id == entity.Id);
         if (movieFound == null) return false;
@@ -22,21 +23,25 @@ public class MovieRepository : BaseRepository, IRepository<Movie>
         _context.SaveChanges();
         return true;
     }
+    public IEnumerable<MovieViewModel> GetAll(Func<MovieViewModel, bool> predicate)
+    {
+        return _context.Movies.Where(predicate);
+    }
 
-    public IEnumerable<Movie> GetAll()
+    public IEnumerable<MovieViewModel> GetAll()
     {
         var movies = _context.Movies.ToHashSet();
         return movies;
     }
 
-    public Movie? GetById(int id)
+    public MovieViewModel? GetById(int id)
     {
         var movieFound = _context.Movies.FirstOrDefault(c => c.Id == id);
         var movieFoundSingle = _context.Movies.SingleOrDefault(c => c.Id == id);
         return movieFound;
     }
 
-    public Movie? Update(Movie entity)
+    public MovieViewModel? Update(MovieViewModel entity)
     {
         var movieFound = _context.Movies.FirstOrDefault(c => c.Id == entity.Id);
         if (movieFound == null) return null;
@@ -45,6 +50,7 @@ public class MovieRepository : BaseRepository, IRepository<Movie>
         movieFound.Status = entity.Status;
         movieFound.Director = entity.Director;
         movieFound.Duration = entity.Duration;
+        movieFound.PictureUrl = entity.PictureUrl;
 
         _context.SaveChanges();
         return movieFound;

@@ -1,22 +1,93 @@
+:root {
+	--bg_color01: oklch(14.54% 0.0074 0);
+	--bg_color02: oklch(18.99% 0.0074 0);
+	--border_color01: solid 0.01rem oklch(30.56% 0 22.43);
+	--box_shadow01: 0 10px 15px -3px oklch(0.74 0 0), 0 4px 6px -4px oklch(0.91 0 0);
+	--bg_color02: oklch(18.99% 0.0074 0);
+	--fade_color01 : oklch(38.72% 0 356 / 49.71%);
+	--text_color01: oklch(98.52% 0.0074 0);
+	--text_color02: oklch(87.09% 0 22.43);
+	--text_color03: oklch(49.7% 0 156);
+	--text_success: oklch(71.22% 0.1614 136.74);
+	--text_error: oklch(62.91% 0.2273 22.43);
+}
+
+
 html {
-  font-size: 14px;
+	font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+	html {
+		font-size: 16px;
+	}
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+	box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+	position: relative;
+	min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+	margin-bottom: 60px;
+	font-family: "Poppins", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.movie_card {
+	display: flex;
+	border: 0.1px solid rgba(165, 165, 165, 0.274);
+	border-radius: 0.5rem;
+	padding: 1rem;
+	.wrapper {
+		width: 100%;
+		display: flex;
+		gap: 2rem;
+		justify-content: space-between;
+	}
+	.container_content {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		justify-content: space-between;
+	}
+}
+.container_def {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+a{
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	border: 0.1px solid rgba(165, 165, 165, 0.274);
+	background-color: #1bdd9c;
+	text-decoration: none;
+	height: auto;
+}
+nav{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.input_default {
+	border: var(--border_color01);
+	border-radius: 0.5rem;
+	font-size: var(--text_size01);
+	width: 20%;
+	outline: none;
+	padding: 1rem;
+
+}
+
+.label_default {
+
+	font-size: var(--text_size01);
+	color: var(--text_color03);
 }

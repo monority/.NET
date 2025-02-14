@@ -1,77 +1,82 @@
-﻿@model Movie
-@*
-For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model MovieCreateViewModel
 @{
-string formMode = ViewBag.FormMode;
+    string formMode = ViewBag.FormMode;
 
+    ViewData["Title"] = formMode switch
+    {
+        "Edit" => "Edit a movie",
+        "Delete" => "Delete a movie",
+        "Details" => "See details",
+        _ => "Add a movie"
+    };
 
+    var btnColorClass = formMode switch
+    {
+        "Edit" => "btn-warning",
+        "Delete" => "btn-danger",
+        "Details" => "btn-secondary",
+        _ => "btn-success"
+    };
 
-ViewData["Title"] = formMode switch
-{
-"Edit" => "Edit a movie",
-"Delete" => "Delete a movie",
-"Details" => "See details",
-_ => "Add a movie"
-};
-
-var btnColorClass = formMode switch
-{
-"Edit" => "btn-warning",
-"Delete" => "btn-danger",
-"Details" => "btn-secondary",
-_ => "btn-success"
-};
-
-var btnText = formMode switch
-{
-"Edit" => "Editer",
-"Delete" => "Confirmer",
-"Details" => "Retour",
-_ => "Ajouter"
-};
-
+    var btnText = formMode switch
+    {
+        "Edit" => "Editer",
+        "Delete" => "Confirmer",
+        "Details" => "Retour",
+        _ => "Ajouter"
+    };
 }
 
-<form asp-action="@formMode">
-	<input type="hidden" asp-for="Id" />
-	<div class="row mb-3">
-		<div class="col-4">
-			<label asp-for="Title" class="form-label"></label>
-		</div>
-		<div class="col-8">
-			<input asp-for="Title" class="form-control" />
-		</div>
-		<div class="col-12">
-			<span class="text-danger" asp-validation-for="Title"></span>
-		</div>
-	</div>
-	<div class="row mb-3">
-		<div class="col-4">
-			<label asp-for="Director" class="form-label"></label>
-		</div>
-		<div class="col-8">
-			<input asp-for="Director" class="form-control" />
-		</div>
-		<div class="col-12">
-			<span class="text-danger" asp-validation-for="Director"></span>
-		</div>
-	</div>
-	<div class="row mb-3">
-		<div class="col-4">
-			<label asp-for="Duration" class="form-label"></label>
-		</div>
-		<div class="col-8">
-			<input asp-for="Duration" class="form-control" />
-		</div>
-		<div class="col-12">
-			<span class="text-danger" asp-validation-for="Duration"></span>
-		</div>
-	</div>
+<h1>@ViewData["Title"]</h1>
 
-	<div class="d-flex">
-		<button class="ms-auto btn @btnColorClass">
-			@btnText
-		</button>
-	</div>
+<form asp-action="Create" enctype="multipart/form-data">
+    <div class="form_group">
+        <div class="form_element">
+            <label class="label_default" asp-for="Title"></label>
+        </div>
+        <div class="form_element">
+            <input class="input_default" asp-for="Title" />
+        </div>
+        <div class="form_element">
+            <span asp-validation-for="Title"></span>
+        </div>
+    </div>
+    <div class="form_group">
+        <div class="form_element">
+            <label class="label_default" asp-for="Director"></label>
+        </div>
+        <div class="form_element">
+            <input class="input_default" asp-for="Director" />
+        </div>
+        <div class="form_element">
+            <span asp-validation-for="Director"></span>
+        </div>
+    </div>
+    <div class="form_group">
+        <div class="form_element">
+            <label class="label_default" asp-for="Duration"></label>
+        </div>
+        <div class="form_element">
+            <input class="input_default" asp-for="Duration" />
+        </div>
+        <div class="form_element">
+            <span asp-validation-for="Duration"></span>
+        </div>
+    </div>
+    <div class="form_group">
+        <div class="form_element">
+            <label class="label_default" asp-for="Picture"></label>
+        </div>
+        <div class="form_element">
+            <input class="input_default" asp-for="Picture" type="file" />
+        </div>
+        <div class="form_element">
+            <span asp-validation-for="Picture"></span>
+        </div>
+    </div>
+    <div class="d-flex">
+        <button class="ms-auto btn @btnColorClass">
+            <span class="bi bi-save"></span> @btnText
+        </button>
+    </div>
 </form>
