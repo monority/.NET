@@ -1,0 +1,6 @@
+@Exercice_Api_HostAddress = http://localhost:5275
+
+GET {{Exercice_Api_HostAddress}}/contact/
+Accept: application/json
+
+###
