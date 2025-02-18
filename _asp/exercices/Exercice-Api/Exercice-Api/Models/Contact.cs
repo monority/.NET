@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Exercice_Api.Models
 {
@@ -8,13 +10,25 @@ namespace Exercice_Api.Models
         public int Id { get; set; }
         [Required]
         [StringLength(50)]
-        public string Firstname { get; set; }
+        [CapitalizeFirstLetter]
+        public required string FirstName { get; set; }
         [Required]
         [StringLength(50)]
-        public string Lastname { get; set; }
-        [MaxLength(3)]
+        [UpperCase]
+        public required string LastName { get; set; }
         public int Age { get; set; }
-        public string Gender { get; set; }
-        public DateTime BirthDate { get; set; }
+        public string? FullName { get; set; }
+        [Required]
+        [StringLength(1)]
+        [LimitToCharacters]
+        public required string Gender { get; set; }
+        [ValidateEmail]
+        public string? Email { get; set; }
+        [ValidatePhone]
+        public string? PhoneNumber { get; set; }
+        [Required]
+        [BirthDateLimit]
+        public DateOnly BirthDate { get; set; }
+
     }
 }

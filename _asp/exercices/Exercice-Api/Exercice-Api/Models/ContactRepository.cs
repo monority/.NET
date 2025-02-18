@@ -15,6 +15,12 @@ public class ContactRepository : BaseRepository, IRepository<Contact>
         return entity;
     }
 
+    public Contact Add(Contact entity)
+    {
+        _context.Contacts.Add(entity);
+        _context.SaveChanges();
+        return entity;
+    }
 
     public bool Delete(int id)
     {
@@ -42,13 +48,16 @@ public class ContactRepository : BaseRepository, IRepository<Contact>
         return contactFound;
     }
 
+    public Contact? GetByName(string lastName)
+    {
+        var contactFound = _context.Contacts.FirstOrDefault(c => c.LastName == lastName);
+        var contactFoundSingle = _context.Contacts.SingleOrDefault(c => c.LastName == lastName);
+        return contactFound;
+    }
+
     public Contact? Update(Contact entity)
     {
         var contactFound = _context.Contacts.FirstOrDefault(c => c.Id == entity.Id);
-        if (contactFound == null) return null;
-
-
-
         _context.SaveChanges();
         return contactFound;
     }

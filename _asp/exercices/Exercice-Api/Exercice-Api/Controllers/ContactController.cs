@@ -1,5 +1,6 @@
 ﻿using Exercice_Api.Data;
 using Exercice_Api.Models;
+using Exercice_Api.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Exercice_Api.Controllers;
@@ -8,22 +9,25 @@ namespace Exercice_Api.Controllers;
 [ApiController]
 public class ContactController : Controller
 {
-private readonly ApplicationDbContext _context;
-    public ContactController(ApplicationDbContext ContactDb)
+    private readonly IContactService _service;
+    private readonly ApplicationDbContext _context;
+    public ContactController(IContactService service)
     {
-        _context = ContactDb;
+        _service = service;
     }
+
     [HttpGet]
     public IActionResult Get()
     {
-        var contacts = _context.Contacts;
+        var contacts = _service.GetAll();
         return Ok(contacts);
     }
+
 
     [HttpGet("{id}")]
     public IActionResult GetById(int id)
     {
-        var contact = _context.Contacts.FirstOrDefault(c => c.Id == id);
+        var contact = _service.GetById(id);
 
         if (contact == null)
             return NotFound(new
@@ -37,10 +41,87 @@ private readonly ApplicationDbContext _context;
         });
     }
     [HttpPost]
-    public IActionResult Create(Contact contact){
+    [ProducesResponseType(typeof(Contact), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(void), StatusCodes.Status500InternalServerError)]
+    [ProducesResponseType(typeof(void), StatusCodes.Status429TooManyRequests)]
+    [ProducesResponseType(typeof(void), StatusCodes.Status400BadRequest)]
 
-    var contacts = _context.Contacts.Add(contact);
-        return CreatedAtAction(nameof(GetById), new { id = contact.Id }, "Contact Added");
-
+    public IActionResult Create(Contact contact)
+    {
+        if (ModelState.IsValid)
+        {
+            _service.Add(contact);
+            return Ok(new
+            {
+                Message = "Contact created successfully!",
+                Contact = contact
+            });
+        }
+        return BadRequest(ModelState);
     }
+
+    [HttpGet("name/{LastName}")]
+    [ProducesResponseType(typeof (Contact), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
+    public IActionResult GetByName(string lastName)
+    {
+        var contact = _service.GetByName(lastName);
+
+        if (contact == null)
+            return NotFound(new
+            {
+                Message = "Contact not found!"
+            });
+        return Ok(new
+        {
+            Message = "Contact found !",
+            Contact = contact
+        });
+    }
+
+    //[HttpGet]
+
+    //public IActionResult FilterContacts(string paremeter)
+    //{
+
+    //}
+
+
+    [HttpPut("{id}")]
+    [ProducesResponseType(typeof(Contact), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
+    public IActionResult Update(Contact contact)
+    {
+        if (ModelState.IsValid)
+        {
+            _service.Update(contact);
+            return Ok("Contact Updated");
+        }
+        else{
+        return BadRequest(ModelState);
+        }
+    }
+
+    [HttpDelete("{id}")]
+    [ProducesResponseType(typeof(Contact), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
+    public IActionResult Delete(int id)
+    {
+        var findContact = _service.GetById(id);
+        if (findContact == null)
+        {
+            return NotFound(new
+            {
+                Message = "Contact not found!"
+            });
+        }
+        _service.Delete(findContact);
+        return Ok(new
+        {
+            Message = "Contact deleted successfully!"
+        });
+    }
+
+
 }
+
