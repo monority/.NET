@@ -7,23 +7,25 @@ namespace Exercice_Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class ContactController : Controller
+public class ContactController : ControllerBase
 {
     private readonly IContactService _service;
-    private readonly ApplicationDbContext _context;
     public ContactController(IContactService service)
     {
         _service = service;
     }
 
     [HttpGet]
-    public IActionResult Get()
+    [ProducesResponseType(typeof(Contact), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
+    public IActionResult GetAll()
     {
         var contacts = _service.GetAll();
         return Ok(contacts);
     }
 
-
+    [ProducesResponseType(typeof(Contact), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
     [HttpGet("{id}")]
     public IActionResult GetById(int id)
     {
@@ -40,12 +42,12 @@ public class ContactController : Controller
             Contact = contact
         });
     }
+
     [HttpPost]
     [ProducesResponseType(typeof(Contact), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(void), StatusCodes.Status500InternalServerError)]
     [ProducesResponseType(typeof(void), StatusCodes.Status429TooManyRequests)]
     [ProducesResponseType(typeof(void), StatusCodes.Status400BadRequest)]
-
     public IActionResult Create(Contact contact)
     {
         if (ModelState.IsValid)
@@ -61,7 +63,7 @@ public class ContactController : Controller
     }
 
     [HttpGet("name/{LastName}")]
-    [ProducesResponseType(typeof (Contact), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(Contact), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
     public IActionResult GetByName(string lastName)
     {
@@ -79,15 +81,6 @@ public class ContactController : Controller
         });
     }
 
-    //[HttpGet("{parameter}")]
-
-    //public IActionResult FilterContacts(string parameter)
-    //{
-
-
-    //}
-
-
     [HttpPut("{id}")]
     [ProducesResponseType(typeof(Contact), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
@@ -98,8 +91,9 @@ public class ContactController : Controller
             _service.Update(contact);
             return Ok("Contact Updated");
         }
-        else{
-        return BadRequest(ModelState);
+        else
+        {
+            return BadRequest(ModelState);
         }
     }
 
@@ -122,7 +116,25 @@ public class ContactController : Controller
             Message = "Contact deleted successfully!"
         });
     }
-
+    [HttpGet("details/{parameter}")]
+    [ProducesResponseType(typeof(Contact), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
+    public IActionResult Get(string parameter)
+    {
+        
+            var findContact = _service.Get(parameter);
+            if (findContact == null)
+            {
+                return NotFound(new
+                {
+                    Message = "Contact not found!"
+                });
+            }
+            return Ok(new
+            {
+                Message = "Contact found!"
+            });
+        
+    }
 
 }
-

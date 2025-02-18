@@ -1,20 +1,13 @@
-﻿using Exercice_Api.Data;
+﻿using System.Linq.Expressions;
+using Exercice_Api.Data;
 using Exercice_Api.Models;
 
-
+namespace Exercice_Api.Models;
 public class ContactRepository : BaseRepository, IRepository<Contact>
 {
     public ContactRepository(ApplicationDbContext context) : base(context)
     {
     }
-
-    public Contact Create(Contact entity)
-    {
-        _context.Contacts.Add(entity);
-        _context.SaveChanges();
-        return entity;
-    }
-
     public Contact Add(Contact entity)
     {
         _context.Contacts.Add(entity);
@@ -41,18 +34,19 @@ public class ContactRepository : BaseRepository, IRepository<Contact>
         return Contacts;
     }
 
+    public Contact? Get(Expression<Func<Contact, bool>> predicate) => _context.Contacts.FirstOrDefault(predicate);
     public Contact? GetById(int id)
     {
         var contactFound = _context.Contacts.FirstOrDefault(c => c.Id == id);
         var contactFoundSingle = _context.Contacts.SingleOrDefault(c => c.Id == id);
-        return contactFound;
+        return contactFound !=  null ? contactFound : contactFoundSingle;
     }
 
     public Contact? GetByName(string lastName)
     {
         var contactFound = _context.Contacts.FirstOrDefault(c => c.LastName == lastName);
         var contactFoundSingle = _context.Contacts.SingleOrDefault(c => c.LastName == lastName);
-        return contactFound;
+        return contactFound != null ? contactFound : contactFoundSingle;
     }
 
     public Contact? Update(Contact entity)
@@ -61,7 +55,8 @@ public class ContactRepository : BaseRepository, IRepository<Contact>
         _context.SaveChanges();
         return contactFound;
     }
-    public Contact? FilterBy(Contact entity){
+    public Contact? FilterBy(Contact entity)
+    {
         var contactFound = _context.Contacts.FirstOrDefault(c => c.Id == entity.Id);
         return contactFound;
 

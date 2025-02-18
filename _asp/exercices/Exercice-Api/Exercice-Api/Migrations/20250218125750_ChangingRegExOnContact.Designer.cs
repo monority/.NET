@@ -4,6 +4,7 @@ using Exercice_Api.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Exercice_Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250218125750_ChangingRegExOnContact")]
+    partial class ChangingRegExOnContact
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,7 +43,9 @@ namespace Exercice_Api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("FullName")
                         .HasColumnType("nvarchar(max)");
@@ -59,30 +64,6 @@ namespace Exercice_Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Contacts");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Age = 0,
-                            BirthDate = new DateOnly(1998, 12, 12),
-                            Email = "example@test.fr",
-                            FirstName = "Denis",
-                            Gender = "F",
-                            LastName = "Okijed",
-                            PhoneNumber = "+212315161"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Age = 0,
-                            BirthDate = new DateOnly(1994, 12, 12),
-                            Email = "example2@test.fr",
-                            FirstName = "Alicia",
-                            Gender = "M",
-                            LastName = "Dsze",
-                            PhoneNumber = "+21241515"
-                        });
                 });
 #pragma warning restore 612, 618
         }

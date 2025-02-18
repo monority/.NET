@@ -2,33 +2,28 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
-namespace Exercice_Api.Models
+namespace Exercice_Api.Models;
+
+public class Contact
 {
-    public class Contact
-    {
-        [Key]
-        public int Id { get; set; }
-        [Required(ErrorMessage = "First name is required")]
-        [StringLength(50)]
-        [RegularExpression("^[A-Z].*", ErrorMessage = "First name must start with capital letter.")]
+    [Key]
+    public int Id { get; set; }
+    [RegularExpression("^[A-Z][a-z]*$", ErrorMessage = "First name must start with a capital letter and contain only letters.")]
+    public required string? FirstName { get; set; }
+    [RegularExpression("^[A-Z]+$", ErrorMessage = "Last name must contain only capital letters.")]
 
-        public required string FirstName { get; set; } = string.Empty;
-        [RegularExpression("^[A-Z][a-z]+$", ErrorMessage = "Last name must contain only capital letters.")]
-        public required string LastName { get; set;  } = string.Empty;
-        public int Age { get; set; }
-        public string? FullName { get; set; }
-        [Required(ErrorMessage = "Gender is required")]
-        [StringLength(1)]
-        [RegularExpression("^[FMN]{0,1}$", ErrorMessage = "Must be F | M | N.")]
-
-        public required string Gender { get; set; } = string.Empty;
-        [ValidateEmail]
-        public string? Email { get; set; }
-        [ValidatePhone]
-        public string? PhoneNumber { get; set; }
-        [Required]
-        [BirthDateLimit]
-        public DateOnly BirthDate { get; set; }
-
-    }
+    public required string? LastName { get; set;  } 
+    public int Age { get; set; }
+    public string? FullName { get; set; }
+    [Required(ErrorMessage = "Gender is required")]
+    [StringLength(1)]
+    [RegularExpression("^[FMN]{0,1}$", ErrorMessage = "Must be F | M | N.")]
+    public required string? Gender { get; set; }
+    [EmailAddress(ErrorMessage = "Email format is invalid")]
+    public string? Email { get; set; }
+    [Phone(ErrorMessage = "Phone number is invalid")]
+    public string? PhoneNumber { get; set; }
+    [Required]
+    [Range(typeof(DateOnly), "1911-01-01", "9999-12-31", ErrorMessage ="Birthdate must be after 1910")]
+    public DateOnly BirthDate { get; set; }
 }
