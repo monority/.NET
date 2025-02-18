@@ -79,10 +79,11 @@ public class ContactController : Controller
         });
     }
 
-    //[HttpGet]
+    //[HttpGet("{parameter}")]
 
-    //public IActionResult FilterContacts(string paremeter)
+    //public IActionResult FilterContacts(string parameter)
     //{
+
 
     //}
 

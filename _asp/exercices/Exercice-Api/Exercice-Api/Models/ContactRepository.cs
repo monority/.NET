@@ -61,5 +61,9 @@ public class ContactRepository : BaseRepository, IRepository<Contact>
         _context.SaveChanges();
         return contactFound;
     }
+    public Contact? FilterBy(Contact entity){
+        var contactFound = _context.Contacts.FirstOrDefault(c => c.Id == entity.Id);
+        return contactFound;
 
+    }
 }

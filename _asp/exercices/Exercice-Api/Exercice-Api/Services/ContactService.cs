@@ -34,9 +34,10 @@ public class ContactService : IContactService
         return MapToViewModel(_repository.Add(contact));
     }
 
+
     public Contact? Update(Contact entity)
     {
-        var contact = MapToEntity(entity);
+        var contact = MapToEntity(entity);  
         var updatedContact = _repository.Update(contact);
         if (updatedContact == null) throw new InvalidOperationException("Contact not found.");
         return MapToViewModel(updatedContact);
