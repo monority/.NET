@@ -30,9 +30,6 @@ namespace Exercice_Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Age")
-                        .HasColumnType("int");
-
                     b.Property<DateOnly>("BirthDate")
                         .HasColumnType("date");
 
@@ -40,9 +37,6 @@ namespace Exercice_Api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FullName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Gender")
@@ -64,7 +58,6 @@ namespace Exercice_Api.Migrations
                         new
                         {
                             Id = 1,
-                            Age = 0,
                             BirthDate = new DateOnly(1998, 12, 12),
                             Email = "example@test.fr",
                             FirstName = "Denis",
@@ -75,7 +68,6 @@ namespace Exercice_Api.Migrations
                         new
                         {
                             Id = 2,
-                            Age = 0,
                             BirthDate = new DateOnly(1994, 12, 12),
                             Email = "example2@test.fr",
                             FirstName = "Alicia",

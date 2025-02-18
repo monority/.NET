@@ -12,9 +12,18 @@ public class Contact
     public required string? FirstName { get; set; }
     [RegularExpression("^[A-Z]+$", ErrorMessage = "Last name must contain only capital letters.")]
 
-    public required string? LastName { get; set;  } 
-    public int Age { get; set; }
-    public string? FullName { get; set; }
+    public required string? LastName { get; set;  }
+    public int Age
+    {
+        get
+        {
+            int age = DateTime.Now.Year - BirthDate.Year;
+            if (BirthDate > DateOnly.FromDateTime(DateTime.Now.AddYears(-age))) 
+                age--;
+            return age;
+        }
+    }
+    public string FullName => $"{FirstName} {LastName}";
     [Required(ErrorMessage = "Gender is required")]
     [StringLength(1)]
     [RegularExpression("^[FMN]{0,1}$", ErrorMessage = "Must be F | M | N.")]

@@ -19,8 +19,16 @@ public class ContactService : IContactService
 
     public Contact? Get(string parameter)
     {
-        return _repository.Get(c => c.FirstName == parameter || c.LastName == parameter || c.Email == parameter);
+        var contact = _repository.Get(c =>
+                                            (c.FirstName != null && c.FirstName.Contains(parameter)) ||
+                                           (c.LastName != null && c.LastName.Contains(parameter)) ||
+                                           (c.Email != null && c.Email.Contains(parameter)));
+        if (contact == null) return null;
+        var findContact = _repository.GetById(contact.Id);
+        return findContact;
     }
+
+
 
     public Contact? GetById(int id)
     {

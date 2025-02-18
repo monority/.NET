@@ -10,7 +10,7 @@ namespace Exercice_Api.Controllers;
 public class ContactController : ControllerBase
 {
     private readonly IContactService _service;
-    public ContactController(IContactService service)
+    public ContactController(IContactService service)   
     {
         _service = service;
     }
@@ -130,10 +130,11 @@ public class ContactController : ControllerBase
                     Message = "Contact not found!"
                 });
             }
-            return Ok(new
-            {
-                Message = "Contact found!"
-            });
+        return Ok(new
+        {
+            Message = "Contact found!",
+                  Contact = findContact
+        });
         
     }
 

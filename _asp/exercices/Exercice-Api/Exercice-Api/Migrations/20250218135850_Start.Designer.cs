@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Exercice_Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250218110342_ValidationAttributeUpdate")]
-    partial class ValidationAttributeUpdate
+    [Migration("20250218135850_Start")]
+    partial class Start
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,9 +33,6 @@ namespace Exercice_Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Age")
-                        .HasColumnType("int");
-
                     b.Property<DateOnly>("BirthDate")
                         .HasColumnType("date");
 
@@ -43,11 +40,6 @@ namespace Exercice_Api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("FullName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Gender")
@@ -56,9 +48,7 @@ namespace Exercice_Api.Migrations
                         .HasColumnType("nvarchar(1)");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
@@ -66,6 +56,28 @@ namespace Exercice_Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Contacts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BirthDate = new DateOnly(1998, 12, 12),
+                            Email = "example@test.fr",
+                            FirstName = "Denis",
+                            Gender = "F",
+                            LastName = "Okijed",
+                            PhoneNumber = "+212315161"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BirthDate = new DateOnly(1994, 12, 12),
+                            Email = "example2@test.fr",
+                            FirstName = "Alicia",
+                            Gender = "M",
+                            LastName = "Dsze",
+                            PhoneNumber = "+21241515"
+                        });
                 });
 #pragma warning restore 612, 618
         }
