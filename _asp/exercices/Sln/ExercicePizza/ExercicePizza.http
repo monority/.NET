@@ -1,0 +1,6 @@
+@ExercicePizza_HostAddress = http://localhost:5016
+
+GET {{ExercicePizza_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
