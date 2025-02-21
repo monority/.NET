@@ -6,6 +6,7 @@ using Swashbuckle.AspNetCore.Annotations;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Authorization;
 using ExercicePizza.Helpers;
+using ExercicePizza.Models;
 
 namespace ExercicePizza.Controllers
 {
@@ -26,16 +27,15 @@ namespace ExercicePizza.Controllers
         [SwaggerOperation(Summary = "Obtenir la liste des pizzas",
                   Description = "Récupère tous les pizzas avec des filtres optionnels sur le prénom, le nom, le numéro de téléphone et l'email.")]
         [ProducesResponseType(typeof(IEnumerable<PizzaDTO>), StatusCodes.Status200OK)]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
-        // [Authorize(Roles = Constants.RoleAdmin)] // => accessible aux admins
         [AllowAnonymous] // permet de donner l'accès à l'endpoint aux personnes sans JWT => remplace l'annotion [Authorize] du controller
         public async Task<IActionResult> Get(
             [FromQuery] string? name,
             [FromQuery] string? description,
             [FromQuery] decimal? price,
-            [FromQuery] string? email)
+            [FromQuery] Enum? status,
+            [FromQuery] List<Ingredients>? ingredients)
         {
-            var pizzas = await _pizzaService.GetAll(name, description, price, email);
+            var pizzas = await _pizzaService.GetAll(name, description, price, status, ingredients);
             return Ok(pizzas);
         }
 
@@ -51,19 +51,8 @@ namespace ExercicePizza.Controllers
             return pizza != null ? Ok(pizza) : NotFound($"Pizza avec l'id {id} non trouvé.");
         }
 
-        // GET /pizzas/lastname/{lastname}
-        [HttpGet("lastname/{lastName}")]
-        [SwaggerOperation(Summary = "Obtenir un pizza par nom",
-                  Description = "Récupère un pizza en fonction de son nom de famille.")]
-        [ProducesResponseType(typeof(PizzaDTO), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetByLastName(string lastName)
-        {
-            var pizza = await _pizzaService.GetByLastName(lastName);
-            return pizza != null ? Ok(pizza) : NotFound($"Pizza avec le nom \"{lastName}\" non trouvé.");
-        }
+        
 
-        // POST /pizzas
         [HttpPost]
         [SwaggerOperation(Summary = "Créer un nouveau pizza",
                   Description = "Ajoute un nouveau pizza dans le répertoire.")]
@@ -120,7 +109,6 @@ namespace ExercicePizza.Controllers
             try
             {
                 await _pizzaService.Delete(id);
-                //return Ok($"Pizza {id} supprimé.")
                 return NoContent();
             }
             catch (NotFoundException ex)

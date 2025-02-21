@@ -1,4 +1,6 @@
-﻿namespace ExercicePizza.Helpers;
+﻿using System.Security.Cryptography;
+
+namespace ExercicePizza.Helpers;
 
 public class Encryptor
 {
