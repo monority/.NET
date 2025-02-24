@@ -20,7 +20,7 @@ namespace PizzaWithDtos.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<PizzaDTO>> GetAll(string? name = null, string? description = null, decimal? price = null, Enum? status = null ,List<Ingredients>? ingredients = null)
+        public async Task<IEnumerable<PizzaDTO>> GetAll(string? name = null, string? description = null, decimal? price = null, Enum? status = null, List<Ingredients>? ingredients = null)
         {
             return _mapper.Map<IEnumerable<PizzaDTO>>(
                 await _PizzaRepository.GetAll(c =>
@@ -28,7 +28,7 @@ namespace PizzaWithDtos.Services
                     (string.IsNullOrEmpty(description) || c.Description != null && c.Description.Contains(description)) &&
                     (!price.HasValue || c.Price == price) &&
                     (status == null || c.Status.Equals(status) &&
-                    ingredients != null && ingredients.Any())
+                    ingredients != null && ingredients.Any(i => ingredients.Select(ing => ing.Id).Contains(i.Id)))
                 ));
         }
 

@@ -3,7 +3,6 @@ using ExercicePizza.Data;
 using ExercicePizza.Models;
 using ExercicePizza.Repositories;
 using ExercicePizza.Services;
-using ExercicePizza.Data;
 using ExercicePizza.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
