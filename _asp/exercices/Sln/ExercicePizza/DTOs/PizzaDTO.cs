@@ -15,14 +15,13 @@ public class PizzaDTO
     public string Name { get; set; } = string.Empty;
     [Precision(4,2)]
     [Required(ErrorMessage = "Price is required")]
-    public decimal Price { get; set; } 
+    public decimal Price { get; set; }
 
     [Required(ErrorMessage = "Description is required")]
     [StringLength(150, MinimumLength = 5, ErrorMessage = "Description must be less than {1} characters.")]
-    public string Description { get; set; }
+    public string Description { get; set; } = string.Empty;
 
 
      public Status Status { get; set; }
-    public List<Ingredients> Ingredients { get; set; }
-
+    public List<Ingredients>? Ingredients { get; set; }
 }

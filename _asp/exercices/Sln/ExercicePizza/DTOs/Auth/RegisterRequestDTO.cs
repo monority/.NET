@@ -13,5 +13,7 @@ public class RegisterRequestDTO
     [DataType(DataType.Password)]
     [PasswordValidator]
     public string? Password { get; set; }
+    [Required(ErrorMessage ="Name is required")]
+    public string? Name { get; set; }
     public bool IsAdmin { get; set; } = false;
 }

@@ -11,6 +11,9 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Swashbuckle.AspNetCore.Annotations;
+using ExercicePizza.DTOs;
+using ExercicePizza.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ExercicePizza.Data;
 
@@ -19,7 +22,7 @@ namespace ExercicePizza.Data;
 [ApiController]
 public class AuthenticationController : ControllerBase
 {
-    private readonly ApplicationDbContext _dbContext; // plutôt utiliser l'architecture CSR/N-Tier (Service + Repository)
+    private readonly ApplicationDbContext _dbContext;
     private readonly AppSettings _appSettings;
     private readonly Encryptor _encryptor;
 
@@ -32,7 +35,7 @@ public class AuthenticationController : ControllerBase
     }
 
     [HttpPost("register")]
-    [SwaggerOperation(Summary = "Enregistrer un nouvel Utilisateur.")]
+    [SwaggerOperation(Summary = "Add a new user.")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -44,9 +47,7 @@ public class AuthenticationController : ControllerBase
 
         if (await _dbContext.Users.AnyAsync(u => u.Email == registerDto.Email))
             return BadRequest(new RegisterResponseDTO
-            { IsSuccessful = false, ErrorMessage = "Email already exist !" }); 
-        Guid? createdBy = null;
-        string? userIdClaim = User.FindFirstValue(Helpers.Constants.ClaimUserId);
+            { IsSuccessful = false, ErrorMessage = "Email already exist !" });
 
         var user = new User
         {
@@ -55,7 +56,7 @@ public class AuthenticationController : ControllerBase
             IsAdmin = registerDto.IsAdmin,
         };
 
-        await _dbContext.AddAsync(user); 
+        await _dbContext.AddAsync(user);
 
         if (await _dbContext.SaveChangesAsync() == 0)
             return BadRequest(new RegisterResponseDTO { IsSuccessful = false, ErrorMessage = "Probleme creation User" });
@@ -63,8 +64,40 @@ public class AuthenticationController : ControllerBase
         return Ok(new RegisterResponseDTO { IsSuccessful = true, User = user });
     }
 
+    [HttpGet]
+
+    [ProducesResponseType(typeof(IEnumerable<UserDTO>), StatusCodes.Status200OK)]
+    [AllowAnonymous] // permet de donner l'accès à l'endpoint aux personnes sans JWT => remplace l'annotion [Authorize] du controller
+    public async Task<IActionResult> Get(
+            [FromQuery] string? name,
+            [FromQuery] string? email,
+            [FromQuery] Guid? id
+    )
+    {
+        var query = _dbContext.Users.AsQueryable();
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            query = query.Where(u => u.Name.Contains(name));
+        }
+
+        if (!string.IsNullOrEmpty(email))
+        {
+            query = query.Where(u => u.Email == email);
+        }
+
+        if (id.HasValue)
+        {
+            query = query.Where(u => u.Id == id.Value);
+        }
+
+        var users = await query.ToListAsync();
+        return Ok(users);
+    }
+
+
     [HttpPost("login")]
-    [SwaggerOperation(Summary = "Se connecter en tant qu'utilisateur et récupérer son JWT.")]
+    [SwaggerOperation(Summary = "Connect and get JWT.")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -90,12 +123,11 @@ public class AuthenticationController : ControllerBase
 
         string role = user.IsAdmin ? Helpers.Constants.RoleAdmin : Helpers.Constants.RoleUser;
 
-        var claims = new List<Claim> // detinée à aller dans la partie Payload du JWT
-            {
-                new (ClaimTypes.Role, role),
-                new (Helpers.Constants.ClaimUserId, user.Id!.ToString()!),
-                //new ("Profession", "Formateur d'exception"),
-            };
+        var claims = new List<Claim>
+    {
+        new (ClaimTypes.Role, role),
+        new (Helpers.Constants.ClaimUserId, user.Id!.ToString()!),
+    };
 
         var securityKey = _appSettings.SecretKey;
 
@@ -107,7 +139,7 @@ public class AuthenticationController : ControllerBase
             claims: claims,
             expires: DateTime.UtcNow.AddDays(_appSettings.TokenExpirationDays),
             signingCredentials: signingCredentials
-            );
+        );
 
         string token = new JwtSecurityTokenHandler().WriteToken(jwt);
 

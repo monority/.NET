@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ExercicePizza.Migrations
 {
     /// <inheritdoc />
-    public partial class INIT : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -33,6 +33,7 @@ namespace ExercicePizza.Migrations
                 {
                     id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     password = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     is_admin = table.Column<bool>(type: "bit", nullable: false)
                 },
@@ -60,6 +61,16 @@ namespace ExercicePizza.Migrations
                         principalTable: "Pizzas",
                         principalColumn: "id");
                 });
+
+            migrationBuilder.InsertData(
+                table: "Pizzas",
+                columns: new[] { "id", "description", "name", "price", "status" },
+                values: new object[] { 1, "Best one", "Hawaienne", 12.90m, 0 });
+
+            migrationBuilder.InsertData(
+                table: "Ingredients",
+                columns: new[] { "Id", "Description", "Name", "PizzaId" },
+                values: new object[] { 1, "good vegetable", "carot", 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Ingredients_PizzaId",

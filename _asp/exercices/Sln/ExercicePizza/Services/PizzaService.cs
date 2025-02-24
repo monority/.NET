@@ -60,7 +60,7 @@ namespace PizzaWithDtos.Services
             }
             catch (Exception e)
             {
-                // Ajout du Logging de l'erreur rencontrée
+                    // Ajout du Logging de l'erreur rencontrée
                 Console.WriteLine($"Erreur de modification pour le Pizza avec l'id {id}: {e.Message}");
                 Console.WriteLine(e.StackTrace);
                 throw;

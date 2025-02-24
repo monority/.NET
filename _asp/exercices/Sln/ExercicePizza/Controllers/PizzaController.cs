@@ -24,8 +24,8 @@ namespace ExercicePizza.Controllers
 
         // GET /pizzas
         [HttpGet]
-        [SwaggerOperation(Summary = "Obtenir la liste des pizzas",
-                  Description = "Récupère tous les pizzas avec des filtres optionnels sur le prénom, le nom, le numéro de téléphone et l'email.")]
+        [SwaggerOperation(Summary = "Get list of pizzas",
+                  Description = "Get list of pizzas with their specifications.")]
         [ProducesResponseType(typeof(IEnumerable<PizzaDTO>), StatusCodes.Status200OK)]
         [AllowAnonymous] // permet de donner l'accès à l'endpoint aux personnes sans JWT => remplace l'annotion [Authorize] du controller
         public async Task<IActionResult> Get(
@@ -41,21 +41,21 @@ namespace ExercicePizza.Controllers
 
         // GET /pizzas/{id}
         [HttpGet("{id}")]
-        [SwaggerOperation(Summary = "Obtenir un pizza par ID",
-                  Description = "Récupère un pizza en fonction de son identifiant unique.")]
+        [SwaggerOperation(Summary = "Get pizza by id",
+                  Description = "Get a pizza by his unique identifier.")]
         [ProducesResponseType(typeof(PizzaDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetById(int id)
         {
             var pizza = await _pizzaService.GetById(id);
-            return pizza != null ? Ok(pizza) : NotFound($"Pizza avec l'id {id} non trouvé.");
+            return pizza != null ? Ok(pizza) : NotFound($"Pizza : {id} was not found.");
         }
 
         
 
         [HttpPost]
-        [SwaggerOperation(Summary = "Créer un nouveau pizza",
-                  Description = "Ajoute un nouveau pizza dans le répertoire.")]
+        [SwaggerOperation(Summary = "Create a pizza",
+                  Description = "Add a pizza to the list.")]
         [ProducesResponseType(typeof(PizzaDTO), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Create([FromBody] PizzaDTO pizza)
@@ -69,14 +69,14 @@ namespace ExercicePizza.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest($"Erreur lors de la création du pizza : {ex.Message}");
+                return BadRequest($"Error while creating the pizza : {ex.Message}");
             }
         }
 
         // PUT /pizzas/{id}
         [HttpPut("{id}")]
-        [SwaggerOperation(Summary = "Mettre à jour un pizza",
-                  Description = "Met à jour les informations d'un pizza existant.")]
+        [SwaggerOperation(Summary = "Change pizza recipe.",
+                  Description = "Update pizza informations.")]
         [ProducesResponseType(typeof(PizzaDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
@@ -93,14 +93,14 @@ namespace ExercicePizza.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest($"Erreur lors de la mise à jour du pizza : {ex.Message}");
+                return BadRequest($"Error while trying to update the pizza : {ex.Message}");
             }
         }
 
         // DELETE /pizzas/{id}
         [HttpDelete("{id}")]
-        [SwaggerOperation(Summary = "Supprimer un pizza",
-                  Description = "Supprime un pizza à partir de son identifiant.")]
+        [SwaggerOperation(Summary = "Delete a pizza",
+                  Description = "Delete a pizza by his id")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
@@ -117,7 +117,7 @@ namespace ExercicePizza.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest($"Erreur lors de la suppression du pizza : {ex.Message}");
+                return BadRequest($"Error while deleting a pizza : {ex.Message}");
             }
         }
     }

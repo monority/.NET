@@ -29,7 +29,7 @@ namespace PizzaWithDtos.Repositories
 
         public async Task<IEnumerable<Pizza>> GetAll() => _db.Pizzas;
 
-        public async Task<IEnumerable<Pizza>> GetAll(Expression<Func<Pizza, bool>> predicate) => _db.Pizzas.Where(predicate);
+        public async Task<IEnumerable<Pizza>> GetAll(Expression<Func<Pizza, bool>> predicate) => await _db.Pizzas.Where(predicate).ToListAsync();
 
         public async Task<Pizza?> Update(Pizza Pizza)
         {

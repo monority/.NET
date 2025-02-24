@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ExercicePizza.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250221124809_INIT")]
-    partial class INIT
+    [Migration("20250224124232_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,6 +39,10 @@ namespace ExercicePizza.Migrations
                     b.Property<bool>("IsAdmin")
                         .HasColumnType("bit")
                         .HasColumnName("is_admin");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("name");
 
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)")
@@ -71,6 +75,15 @@ namespace ExercicePizza.Migrations
                     b.HasIndex("PizzaId");
 
                     b.ToTable("Ingredients");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "good vegetable",
+                            Name = "carot",
+                            PizzaId = 1
+                        });
                 });
 
             modelBuilder.Entity("ExercicePizza.Models.Pizza", b =>
@@ -101,13 +114,25 @@ namespace ExercicePizza.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Pizzas");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Best one",
+                            Name = "Hawaienne",
+                            Price = 12.90m,
+                            Status = 0
+                        });
                 });
 
             modelBuilder.Entity("ExercicePizza.Models.Ingredients", b =>
                 {
-                    b.HasOne("ExercicePizza.Models.Pizza", null)
+                    b.HasOne("ExercicePizza.Models.Pizza", "Pizza")
                         .WithMany("Ingredients")
                         .HasForeignKey("PizzaId");
+
+                    b.Navigation("Pizza");
                 });
 
             modelBuilder.Entity("ExercicePizza.Models.Pizza", b =>
