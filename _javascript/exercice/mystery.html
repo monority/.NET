@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="mysterynumber.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	<main>
+		<div class="container">
+			<div class="element">
+				<h1>Mystery number</h1>
+			</div>
+			<div class="element">
+				<p>Find the mystery number between 1 and 100</p>
+			</div>
+			<div class="element">
+				<p>Tries left : <span class="triesleft">10</span></p>
+			</div>
+			<div class="element">
+				<label for="mystery">Mystery number</label>
+				<input type="text" name="mystery" id="mystery" class="mystery">
+
+			</div>
+			<div class="element">
+				<button onclick="validate()" class="btn">Validate</button>
+			</div>
+
+		</div>
+		<div class="container_result">
+			<div class="element">
+				<h1 class="result">Try game</h1>
+			</div>
+		</div>
+	</main>
+</body>
+<script src="mysterynumber.js"></script>
+
+</html>
