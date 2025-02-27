@@ -10,13 +10,18 @@ document.addEventListener("keydown", (e) => {
 	}
 })
 const validate = () => {
+	let value = input.value;
+	if (value > 100 || value < 0) {
+		alert("Enter a valid value");
+		return;
+	}
 	triesleft.innerHTML = parseInt(triesleft.innerHTML) - 1;
 	if (parseInt(triesleft.innerHTML) == 0) {
 		result.innerHTML = "<p>Game over</p>"
 		alert("You lost");
 		location.reload();
 	}
-	let value = input.value;
+
 	if (value == mysteryNumber) {
 		result.innerHTML = `<p class="success">Good job, you won</p>`
 		setTimeout(() => {
