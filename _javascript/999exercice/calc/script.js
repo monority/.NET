@@ -24,15 +24,17 @@ document.addEventListener("keydown", (e) => {
 		"0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
 		"+", "-", "*", "/", ".", "Enter", "Backspace"
 	];
-
+	if (e.key == "C" || e.key == "c") {
+		result.value = "";
+		return;
+	}
 	if (!numpadKeys.includes(e.key)) {
 		alert("Please use the numpad keys.");
 		return;
 	}
-
 	if (e.key === "Enter") {
 		try {
-			result.value = eval(result.value);
+			result.value += `\n = ${eval(result.value)}`
 		} catch (error) {
 			result.value = error.message;
 		}
