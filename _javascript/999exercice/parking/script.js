@@ -1,4 +1,4 @@
-import { Vehicule } from "./classes/Vehicule.js";
+import { Vehicule } from "./modules/classes/Vehicule.js";
 let car01 = new Vehicule("123", "2018-09-22T15:00:00", new Date());
 let car02 = new Vehicule("456", "2025-02-28T15:00:00", new Date());
 let car03 = new Vehicule("789", "2025-02-28T15:00:00", new Date());
@@ -22,7 +22,7 @@ const calculPrice = (outDate, enterDate) => {
 	}
 	return price;
 }
-
+ 
 document.querySelector(".btn_pay").addEventListener("click", () => {
 
 	let findCar = cars.find(car => car.imm === input.value);
