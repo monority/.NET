@@ -1,0 +1,116 @@
+* {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-color: #eceaff;
+	color: #272727;
+	margin: 0;
+	padding: 0;
+	font-family: "Geist", sans-serif;
+	font-optical-sizing: auto;
+	font-size: 1.6rem;
+	font-style: normal;
+	font-optical-sizing: auto;
+	line-height: 1.6;
+	letter-spacing: -0.1rem;
+	font-weight: 400;
+	word-spacing: 0.35rem;
+	tab-size: 4;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+a {
+	text-decoration: none;
+	color: #272727;
+}
+
+li {
+	list-style-type: none;
+}
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+	padding: 0;
+
+}
+.container, header, ul {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+}
+nav, li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.container {
+	justify-content: space-between;
+}
+.app_container {
+	display: flex;
+	max-width: 60rem;
+	margin: 0 auto;
+	gap: 8rem;
+	flex-direction: column;
+}
+.wrapper_content, .container_content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#productcard {
+	display: flex;
+	border-radius: 0.5rem;
+	flex-direction: column;
+	gap: 2rem;
+	min-width: 20rem;
+	padding: 1rem;
+	box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+}
+
+button {
+	background-color: #414141;
+	color: #ebebeb;
+	border: none;
+	padding: 1rem 2rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+.wrapper_content {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+.bg_color01 {
+	background-color: #e47070;
+}
+.bg_color02 {
+	background-color: #f7b933;
+}
+.bg_color03 {
+	background-color: #62e068;
+}
+.bg_color04 {
+	background-color: #7a7bec;
+}
+.list_item{
+	box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+padding: 1rem;
+}
