@@ -93,7 +93,7 @@ button {
 	border-radius: 0.5rem;
 	cursor: pointer;
 }
-.wrapper_content {
+.wrapper_content,.list{
 	display: flex;
 	flex-wrap: wrap;
 	gap: 2rem;
@@ -111,6 +111,12 @@ button {
 	background-color: #7a7bec;
 }
 .list_item{
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 	box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 padding: 1rem;
+border-radius: 0.5rem;
+min-width: 15rem;
+height: auto;
 }

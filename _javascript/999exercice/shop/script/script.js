@@ -13,9 +13,12 @@ buttons.forEach((button) => {
 			findType.count++;
 			localStorage.setItem('session', JSON.stringify(arraySkill));
 			console.log(arraySkill)
+			displayCount();
 			return;
 		}
 		arraySkill.push(object);
+		displayCount();
+
 		localStorage.setItem('session', JSON.stringify(arraySkill));
 		console.log(arraySkill);
 	});
