@@ -37,4 +37,19 @@ const displayCount = () => {
 		count_cart.innerHTML = `<p>${totalCount}</p>`;
 	}
 }
-window.onload = displayCount;
+const init = () => {
+	const bodyElement = document.body;
+	const theme = localStorage.getItem('theme') || 'light';
+	bodyElement.setAttribute('data-theme', theme);
+}
+const thememode = () => {
+	const bodyElement = document.body;
+	const oldtheme = localStorage.getItem('theme') || 'light';
+	const newTheme = oldtheme === 'light' ? 'dark' : 'light';
+	bodyElement.setAttribute('data-theme', newTheme);
+	localStorage.setItem('theme', newTheme);
+}
+window.onload = () => {
+	init();
+	displayCount();
+};

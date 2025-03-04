@@ -9,8 +9,8 @@ html {
 }
 
 body {
-	background-color: #eceaff;
-	color: #272727;
+	background-color:var(--background_color);
+	color: var(--color);
 	margin: 0;
 	padding: 0;
 	font-family: "Geist", sans-serif;
@@ -58,6 +58,7 @@ nav, li {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	color : var(--color);	
 }
 .container {
 	justify-content: space-between;
@@ -86,8 +87,8 @@ nav, li {
 }
 
 button {
-	background-color: #414141;
-	color: #ebebeb;
+	background-color: var(--color);
+	color: var(--background_color);
 	border: none;
 	padding: 1rem 2rem;
 	border-radius: 0.5rem;
@@ -119,4 +120,13 @@ padding: 1rem;
 border-radius: 0.5rem;
 min-width: 15rem;
 height: auto;
+}
+
+[data-theme="dark"] {
+	--background_color: #272727;
+	--color: #ebebeb;
+}
+[data-theme="light"] {
+	--color: #272727;
+	--background_color: #ffffff;
 }
