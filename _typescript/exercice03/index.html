@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	<main>
+		<div class="container">
+			<div class="wrapper">
+				<div class="element">
+					<h1>Contacts</h1>
+				</div>
+			</div>
+			<div class="wrapper">
+
+			</div>
+			<form action="" class="form_group">
+				<div class="form_element">
+					<button onclick="addUser()">Add</button>
+				</div>
+			</form>
+		</div>
+		<div class="container">
+			<form action="" class="form_details flex column gap2" id="form_submit">
+				<div class="form_group">
+					<div class="form_element">
+						<label for="firstName">Firstname</label>
+						<input type="text" name="firstName" id="firstName" class="firstName">
+					</div>
+					<div class="form_element">
+						<label for="LastName">LastName</label>
+						<input type="text" name="LastName" id="LastName">
+					</div>
+					<div class="form_element">
+						<label for="date">Date Of Birth</label>
+						<input type="datetime" name="date" id="date">
+					</div>
+					<div class="form_element">
+						<label for="email">Email</label>
+						<input type="text" name="email" id="email">
+					</div>
+					<div class="form_element">
+						<label for="phone">Phone number</label>
+						<input type="tel" name="phone" id="phone">
+					</div>
+				</div>
+				<div class="flex gap1">
+					<div class="form_element">
+						<button class="btn">Edit</button>
+					</div>
+					<div class="form_element">
+						<button  class="btn">Delete</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</main>
+</body>
+<script type="module" src="./js/script.js"></script>
+
+</html>

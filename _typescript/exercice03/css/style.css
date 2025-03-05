@@ -1,0 +1,55 @@
+
+* {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+
+}
+
+html {
+	font-size: 62.5%;
+}
+
+
+body {
+	background: #f0f0f0;
+	color: #2c2c2c;
+	width: 100%;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.6rem;
+	font-family: "Poppins", serif;
+	--color_primary : #313131;
+	--border_primary : 1px solid rgb(139, 139, 139);
+}
+
+main{
+	display: flex;
+	gap: 4rem;
+}
+.form_element{
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.btn{
+	border-radius: 0.5rem;
+	border: 0.1px solid rgba(0, 0, 0, 0.178);
+	flex : 1 0 100%;
+}
+.flex{
+	display: flex;
+}
+.gap1{
+	gap:1rem;
+}
+.gap2{
+	gap:2rem;
+}
+.column{
+	flex-direction: column;
+}
