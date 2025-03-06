@@ -2,13 +2,12 @@ import React, { useState } from 'react'
 import Task from './display/components/Task';
 
 const App = () => {
-	const [list, setList] = useState([{
-		id: 1,
-		name: 'Task 1'
-	},
-	]);
+	const [list, setList] = useState(JSON.parse(localStorage.getItem('list')) || []);
+
+	
 	const taskMap = list.map((item, index) => {
 		return (
+
 			<Task key={item.id} id={item.id} name={item.name} action={(e) => removeTask(e, item.id)} />
 		)
 	})
@@ -18,12 +17,15 @@ const App = () => {
 		const task = e.target.task.value;
 		const id = list.length + 1;
 		const newList = [...list, { id, name: task }];
+		localStorage.setItem('list', JSON.stringify(newList));
 		setList(newList);
 	}
 
 	const removeTask = (e, id) => {
+
 		e.preventDefault();
 		const newList = list.filter((item) => item.id !== id);
+		localStorage.setItem('list', JSON.stringify(newList));
 		setList(newList);
 	}
 	return (
