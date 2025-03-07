@@ -2,7 +2,7 @@ import React from 'react'
 
 const ContactCard = ({ name, nickname, lift }) => {
 	return (
-		<table id="contactcard" className='w_100'>
+	
 			<tbody className='flex gap1 between w_100'>
 				<tr>
 
@@ -17,7 +17,6 @@ const ContactCard = ({ name, nickname, lift }) => {
 					<td>{lift}</td>
 				</tr>
 			</tbody>
-		</table>
 	)
 }
 

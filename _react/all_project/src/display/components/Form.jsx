@@ -4,10 +4,11 @@ const Form = ({ contacts, setContacts }) => {
 	const [name, setName] = useState('')
 	const [nickname, setNickname] = useState('')
 	const [lift, setLift] = useState('')
+	const [id, setId] = useState('')
 
 	const addContact = (e) => {
 		e.preventDefault();
-		setContacts([...contacts, { name, nickname, lift }])
+		setContacts([...contacts, { id, name, nickname, lift }])
 		setName('')
 		setNickname('')
 		setLift('')
@@ -18,6 +19,7 @@ const Form = ({ contacts, setContacts }) => {
 		if (name === 'name') setName(value)
 		if (name === 'nickname') setNickname(value)
 		if (name === 'lift') setLift(value)
+		setId(contacts.length + 1)
 	}
 
 	return (
@@ -26,15 +28,15 @@ const Form = ({ contacts, setContacts }) => {
 				<div className="flex column gap2 form_group">
 					<div className="flex gap1 form_element">
 						<label htmlFor="name">Name</label>
-						<input type="text" name="name" id="name" value={name} onChange={handleChange} required maxLength={12} />
+						<input type="text" name="name" id="name" value={name} onChange={(e) => handleChange(e)} required maxLength={12} />
 					</div>
 					<div className="flex gap1 form_element">
 						<label htmlFor="nickname">Nickname</label>
-						<input type="text" name="nickname" id="nickname" value={nickname} onChange={handleChange} required maxLength={12} />
+						<input type="text" name="nickname" id="nickname" value={nickname} onChange={(e) => handleChange(e)} required maxLength={12} />
 					</div>
 					<div className="flex gap1 form_element">
 						<label htmlFor="lift">How much you lift</label>
-						<input type="text" name="lift" id="lift" value={lift} onChange={handleChange} required maxLength={3} />
+						<input type="text" name="lift" id="lift" value={lift} onChange={(e) => handleChange(e)} required maxLength={3} />
 					</div>
 
 				</div>

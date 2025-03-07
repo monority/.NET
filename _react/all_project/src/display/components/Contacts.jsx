@@ -6,11 +6,8 @@ const Contacts = ({ contacts }) => {
 	const displayContact = () => {
 		return (
 			<>
-				{contacts && contacts.map((contact, index) => (
-					<>
-
-						<ContactCard key={index} name={contact.name} nickname={contact.nickname} lift={contact.lift} />
-					</>
+				{contacts && contacts.map((contact) => (
+					<ContactCard key={contact.id} name={contact.name} nickname={contact.nickname} lift={contact.lift} />
 				))}
 			</>
 		)
@@ -18,7 +15,8 @@ const Contacts = ({ contacts }) => {
 	return (
 		<>
 			<div className="container">
-				<div className="wrapper">
+				<table id="contactcard" className='w_100'>
+
 					<thead className='w_100 flex'>
 						<tr className='flex gap1 between w_100'>
 							<th>Name</th>
@@ -27,7 +25,7 @@ const Contacts = ({ contacts }) => {
 						</tr>
 					</thead>
 					{displayContact()}
-				</div>
+				</table>
 			</div>
 		</>
 	)
