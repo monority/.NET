@@ -23,7 +23,7 @@ const Contacts = ({ contacts }) => {
 						<tr className='flex gap1 between w_100'>
 							<th>Name</th>
 							<th>Nickname</th>
-							<th>How much you lift</th>
+							<th>Lift</th>
 						</tr>
 					</thead>
 					{displayContact()}

@@ -84,13 +84,25 @@
 	@include mixins.flex(flex-start, flex-start, column);
 
 }
+form{
+	width: 50rem;
+}
 table{
 	min-width: 55rem;
-	tr{
-		width: 100%;
-	}
+
 }
 .form_element{
 	display: flex;
 	justify-content: space-between;
+}
+
+input{
+	border: var(--border_color01);
+	background-color: var(--bg_color02);
+	color: white;
+	border-radius: 0.5rem;
+	height: 3.5rem;
+	font-size: 2rem;
+	outline: none;
+	padding: 1rem;
 }
