@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom"
-import Home from "./Home"
-import Error from "./Error"
-import Form from "./Form";
-import Header from './Header';
-import Profil from './Profil';
+import Home from "./pages/Home"
+import Error from "./pages/Error"
+import Form from "./pages/Form";
+import Header from './pages/Header';
+
 const router = createBrowserRouter([
 	// {path: "/", element: <HomePage />, errorElement: <ErrorPage />},
 	// {path: "/form", element: <FormPage />, errorElement : <ErrorPage />}
