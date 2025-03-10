@@ -11,6 +11,7 @@ const App = () => {
 				<Form contacts={contacts} setContacts={setContacts} />
 				<Contacts contacts={contacts} />
 			</div >
+		
 		</>
 	)
 }
