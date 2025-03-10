@@ -2,14 +2,14 @@ import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import AppContainer from './display/AppContainer'
 import App from './App';
-import Login from './Login';
+import LoginForm from './display/LoginEx/components/LoginForm';
 const Root = () => {
 	return (
 		<BrowserRouter>
 			<AppContainer>
 				<Routes>
 					<Route exact path="/" element={<App />} />
-					<Route exact path="/login" element={<Login />} />
+					<Route exact path="/login" element={<LoginForm />} />
 				</Routes>
 			</AppContainer>
 		</BrowserRouter>
