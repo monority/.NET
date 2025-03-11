@@ -1,0 +1,6 @@
+@use "../utils/variables" as v;
+#header {
+	height: 10rem;
+	background-color: var(--text_color01);
+	color : var(--bg_color01);
+}

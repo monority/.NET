@@ -1,0 +1,30 @@
+#modal {
+	position: fixed;
+	z-index: 1;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal_content {
+	width: min(100rem, 100%);
+	padding: 2rem;
+	gap: 2rem;
+	border-radius: 0.5rem;
+	background-color: rgba(255, 255, 255, 0.904);
+	.container{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+		.cart_item{
+			display: flex;
+			flex-direction: column;
+			flex-basis: calc(33% - 4rem)
+		}
+	}
+}
