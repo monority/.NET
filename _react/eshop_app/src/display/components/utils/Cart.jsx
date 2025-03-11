@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import Icon from './Icon'
 
 const Cart = ({ newList, setNewList }) => {
 	const deleteProduct = (id) => {
@@ -15,13 +16,20 @@ const Cart = ({ newList, setNewList }) => {
 		return (
 			<div className="cart_item" key={product.id}>
 				<div className="flex column gap1">
-					<h3>{product.title}</h3>
-					<p>${product.price}</p>
-					<p>Quantity : {product.quantity}</p>
-					<button className='btn btn_delete' onClick={() => deleteProduct(product.id)}>-</button>
+					<div className="element">
+						<h3>{product.title}</h3>
+					</div>
+					<div className="element">
+						<p>${product.price}</p>
+					</div>
+					<div className="element">
+						<p>Quantity : {product.quantity}</p>
+					</div>
+					<div className="element_bin">
+						<Icon type="bin" width="2rem" height="2rem" action={() => deleteProduct(product.id)} />
+					</div>
 				</div>
 
-				<hr />
 			</div>
 		)
 	})
@@ -32,12 +40,15 @@ const Cart = ({ newList, setNewList }) => {
 	return (
 		<>
 			<div id="cart">
-				
+
 				<div className="container">
 					{cartMap}
 				</div>
 				<div className="element">
-					{totalPrice > 0 && <p>Total: ${totalPrice}</p>}
+					{totalPrice > 0 && <p>Total: <strong className='text_color02'>{totalPrice}</strong> $</p>}
+				</div>
+				<div className="element">
+					<button className='btn btn_remove' onClick={() => setNewList([])}>Remove All</button>
 				</div>
 			</div>
 
