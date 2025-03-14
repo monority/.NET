@@ -7,11 +7,10 @@
     <VerticalStackLayout Padding="10" HorizontalOptions="Center" BackgroundColor="#323232"  Spacing="30">
         <VerticalStackLayout BackgroundColor="#444444">
             <Label Text="Total P/Person" TextColor="#73f0db" TextTransform="Uppercase" HorizontalTextAlignment="Center"/>
-            <HorizontalStackLayout Spacing="30" HorizontalOptions="Center" VerticalOptions="Center" Padding="40">
+            <HorizontalStackLayout Spacing="30" HorizontalOptions="Center" VerticalOptions="Center" Padding="20">
                 <Label Text="0"  TextColor="White" FontSize="30" x:Name="splitNumber" VerticalTextAlignment="Center"/>
                 <Border 
-      BackgroundColor="white" HeightRequest="150"
-      />
+      BackgroundColor="white" HeightRequest="150"  />
                 <VerticalStackLayout VerticalOptions="Center">
                     <VerticalStackLayout VerticalOptions="Center">
                         <Label Text="SubTotal" TextColor="White" FontSize="15" VerticalTextAlignment="Center"/>
