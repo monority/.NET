@@ -24,20 +24,18 @@ public partial class Sales : ContentPage
 
     private int CalculateSplitAmount()
     {
-        return _totalPrice / _personCount;
+        return (_totalPrice + _tip) / _personCount;
     }
 
-    private void UpdateTipAndTotal()
+    private void UpdateTip()
     {
         _tip = _totalPrice * _sliderValue / 100;
-        _totalPrice += _tip;
     }
 
     private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
     {
         _sliderValue = (int)e.NewValue;
-        UpdateTipAndTotal();
-        _tip = 0;
+        UpdateTip();
         UpdateUI();
     }
 
@@ -46,6 +44,7 @@ public partial class Sales : ContentPage
         if (int.TryParse(EntryBill.Text, out int result))
         {
             _totalPrice = result;
+            UpdateTip();
             UpdateUI();
         }
         else
@@ -83,8 +82,8 @@ public partial class Sales : ContentPage
                 _ => 0
             };
 
-            _tip = _totalPrice * tipPercentage / 100;
-            _totalPrice += _tip;
+            _sliderValue = tipPercentage;
+            UpdateTip();
             UpdateUI();
         }
     }
