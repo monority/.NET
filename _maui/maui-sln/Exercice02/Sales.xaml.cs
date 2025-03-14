@@ -1,30 +1,34 @@
+using System.Globalization;
+
 namespace Exercice02;
 
 public partial class Sales : ContentPage
 {
-    private int _sliderValue;
-    private int _totalPrice;
-    private int _tip;
+    private double _sliderValue;
+    private double _totalPrice;
+    private double _tip;
     private int _personCount = 1;
+    CultureInfo culture = new CultureInfo("fr-Fr");
 
     public Sales()
     {
         InitializeComponent();
         UpdateUI();
+
     }
 
     private void UpdateUI()
     {
-        totalPrice.Text = _totalPrice.ToString();
-        TipEntry.Text = _tip.ToString();
-        splitNumber.Text = CalculateSplitAmount().ToString();
+        totalPrice.Text = _totalPrice.ToString("C", culture); ;
+        TipEntry.Text = _tip.ToString("C", culture);
+        splitNumber.Text = CalculateSplitAmount().ToString("C" , culture);
         personNumber.Text = _personCount.ToString();
         PercentageTip.Text = _sliderValue.ToString();
     }
 
     private int CalculateSplitAmount()
     {
-        return (_totalPrice + _tip) / _personCount;
+        return (int)((_totalPrice + _tip) / _personCount);
     }
 
     private void UpdateTip()
@@ -41,7 +45,7 @@ public partial class Sales : ContentPage
 
     private void EntryBill_Completed(object sender, EventArgs e)
     {
-        if (int.TryParse(EntryBill.Text, out int result))
+        if (double.TryParse(EntryBill.Text, out double result))
         {
             _totalPrice = result;
             UpdateTip();
