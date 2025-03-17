@@ -11,7 +11,7 @@
 				x:Name="quote"
 				FontFamily="BisonBold"
 				VerticalOptions="CenterAndExpand"
-				FontSize="25"
+				FontSize="40"
 				TextTransform="Uppercase"/>
 		<Button Text="Get another quote ?"
 				Clicked="Button_Clicked"
