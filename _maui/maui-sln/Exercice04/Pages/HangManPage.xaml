@@ -14,5 +14,8 @@
         <Image Source="hangman_01.png" x:Name="hangmanImage" WidthRequest="200" HeightRequest="200" BackgroundColor="White" />
         <Entry Text="Word" x:Name="WordToFind" HorizontalTextAlignment="Center" FontSize="30"/>
     </VerticalStackLayout>
-    <Grid RowDefinitions="3, *,*" ColumnDefinitions="7,*,*"
+    <Grid RowDefinitions="3, *,*" ColumnDefinitions="7,*,*">
+        
+        
+    </Grid>
 </ContentPage>
