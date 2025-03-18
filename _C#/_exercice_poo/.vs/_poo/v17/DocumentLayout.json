@@ -1,7 +1,28 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Administrateur\\Desktop\\.NET\\_.NET\\_exercice_poo\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_C#\\_exercice_poo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{730C99DC-92FE-4295-8CDF-186E40C30C1C}|_exercice03\\_exercice03.csproj|c:\\users\\administrateur\\desktop\\_dev\\.net\\_c#\\_exercice_poo\\_exercice03\\classes\\pendu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{730C99DC-92FE-4295-8CDF-186E40C30C1C}|_exercice03\\_exercice03.csproj|solutionrelative:_exercice03\\classes\\pendu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{730C99DC-92FE-4295-8CDF-186E40C30C1C}|_exercice03\\_exercice03.csproj|c:\\users\\administrateur\\desktop\\_dev\\.net\\_c#\\_exercice_poo\\_exercice03\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{730C99DC-92FE-4295-8CDF-186E40C30C1C}|_exercice03\\_exercice03.csproj|solutionrelative:_exercice03\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE89EB9C-5F63-4346-A072-F495E544232E}|_ExerciceAccount\\_ExerciceAccount.csproj|c:\\users\\administrateur\\desktop\\_dev\\.net\\_c#\\_exercice_poo\\_exerciceaccount\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE89EB9C-5F63-4346-A072-F495E544232E}|_ExerciceAccount\\_ExerciceAccount.csproj|solutionrelative:_exerciceaccount\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C154FE55-5C66-45E5-A4B6-1C1F0A189CD7}|_exerciceFigCorrect\\_exerciceFigCorrect.csproj|c:\\users\\administrateur\\desktop\\_dev\\.net\\_c#\\_exercice_poo\\_exercicefigcorrect\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C154FE55-5C66-45E5-A4B6-1C1F0A189CD7}|_exerciceFigCorrect\\_exerciceFigCorrect.csproj|solutionrelative:_exercicefigcorrect\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A9A51A8-86CF-4B92-9B82-84D7602535F4}|_WaterTank\\_WaterTank.csproj|c:\\users\\administrateur\\desktop\\_dev\\.net\\_c#\\_exercice_poo\\_watertank\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A9A51A8-86CF-4B92-9B82-84D7602535F4}|_WaterTank\\_WaterTank.csproj|solutionrelative:_watertank\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +30,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Pendu.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_C#\\_exercice_poo\\_exercice03\\Classes\\Pendu.cs",
+              "RelativeDocumentMoniker": "_exercice03\\Classes\\Pendu.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_C#\\_exercice_poo\\_exercice03\\Classes\\Pendu.cs",
+              "RelativeToolTip": "_exercice03\\Classes\\Pendu.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAA8wBwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T09:50:30.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_C#\\_exercice_poo\\_exercice03\\Program.cs",
+              "RelativeDocumentMoniker": "_exercice03\\Program.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_C#\\_exercice_poo\\_exercice03\\Program.cs",
+              "RelativeToolTip": "_exercice03\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T09:50:27.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_C#\\_exercice_poo\\_ExerciceAccount\\Program.cs",
+              "RelativeDocumentMoniker": "_ExerciceAccount\\Program.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_C#\\_exercice_poo\\_ExerciceAccount\\Program.cs",
+              "RelativeToolTip": "_ExerciceAccount\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T09:50:25.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_C#\\_exercice_poo\\_exerciceFigCorrect\\Program.cs",
+              "RelativeDocumentMoniker": "_exerciceFigCorrect\\Program.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_C#\\_exercice_poo\\_exerciceFigCorrect\\Program.cs",
+              "RelativeToolTip": "_exerciceFigCorrect\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T09:50:24.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_C#\\_exercice_poo\\_WaterTank\\Program.cs",
+              "RelativeDocumentMoniker": "_WaterTank\\Program.cs",
+              "ToolTip": "C:\\Users\\Administrateur\\Desktop\\_dev\\.NET\\_C#\\_exercice_poo\\_WaterTank\\Program.cs",
+              "RelativeToolTip": "_WaterTank\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T09:50:21.067Z",
+              "EditorCaption": ""
             }
           ]
         }
