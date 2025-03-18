@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Exercice02.Sales"
+             Title="Sales" BackgroundColor="#323232">
+
+    <VerticalStackLayout Padding="10" HorizontalOptions="Center" BackgroundColor="#323232"  Spacing="30">
+        <VerticalStackLayout BackgroundColor="#444444">
+            <Label Text="Total P/Person" TextColor="#73f0db" TextTransform="Uppercase" HorizontalTextAlignment="Center"/>
+            <HorizontalStackLayout Spacing="30" HorizontalOptions="Center" VerticalOptions="Center" Padding="20">
+                <Label Text="0"  TextColor="White" FontSize="30" x:Name="splitNumber" VerticalTextAlignment="Center"/>
+                <Border 
+      BackgroundColor="white" HeightRequest="150"  />
+                <VerticalStackLayout VerticalOptions="Center">
+                    <VerticalStackLayout VerticalOptions="Center">
+                        <Label Text="SubTotal" TextColor="White" FontSize="15" VerticalTextAlignment="Center"/>
+                        <Label Text="0" TextColor="White" FontSize="15" x:Name="totalPrice" VerticalTextAlignment="Start"/>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout VerticalOptions="Center">
+                        <Label Text="Tip" TextColor="White" FontSize="15"/>
+                        <Label Text="0" TextColor="White" FontSize="15" x:Name="TipEntry"/>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+       
+        </VerticalStackLayout>
+        <VerticalStackLayout Spacing="70">
+            <FlexLayout Direction="Row" AlignItems="Center"  JustifyContent="SpaceBetween">
+                <Label Text="Enter your bill" TextColor="White" FontSize="12"  />
+                <Entry Placeholder="120"  BackgroundColor="#444444" WidthRequest="220" Keyboard="Numeric"  x:Name="EntryBill"   Completed="EntryBill_Completed"/>
+            </FlexLayout>
+            <FlexLayout Direction="Row" AlignItems="Center"  JustifyContent="SpaceBetween">
+                <Label Text="Choose Your Tip" TextColor="White" FontSize="12"  />
+                <HorizontalStackLayout Spacing="10">
+                    <Button Text="10%" BackgroundColor="#502bd4" CornerRadius="10" x:Name="BtnTen" Clicked="Btn_Clicked"/>
+                    <Button Text="15%" BackgroundColor="#502bd4" CornerRadius="10" x:Name="BtnFifteen" Clicked="Btn_Clicked"/>
+                    <Button Text="20%" BackgroundColor="#502bd4" CornerRadius="10" x:Name="BtnTwenty" Clicked="Btn_Clicked"/>
+                </HorizontalStackLayout>
+            </FlexLayout>
+            <FlexLayout Direction="Row" AlignItems="Center"  JustifyContent="SpaceBetween">
+                <HorizontalStackLayout>
+                    <Label Text="Tip" TextColor="White" FontSize="12"  />
+                    <Label Text="(0%)" TextColor="White" FontSize="12" x:Name="PercentageTip"  />
+                </HorizontalStackLayout>
+
+                <Slider WidthRequest="220" x:Name="slider"  Maximum="100" ValueChanged="Slider_ValueChanged"/>
+            </FlexLayout>
+            <FlexLayout Direction="Row" AlignItems="Center"  JustifyContent="SpaceBetween">
+         
+                    <Label Text="Split the total" TextColor="White" FontSize="12"  />
+                <HorizontalStackLayout Spacing="12">
+                    <Button Text="-" BackgroundColor="#502bd4" CornerRadius="10" x:Name="BtnMinus" Clicked="Btn_Person_Management"/>
+
+                    <Frame BackgroundColor="#444444" BorderColor="#444444">
+                        <Label Text="1"  TextColor="White" x:Name="personNumber"/>
+                    </Frame>
+                    <Button Text="+" BackgroundColor="#502bd4" CornerRadius="10" x:Name="BtnPlus" Clicked="Btn_Person_Management"/>
+
+
+                </HorizontalStackLayout>
+            </FlexLayout>
+
+        </VerticalStackLayout>
+
+        
+    </VerticalStackLayout>
+</ContentPage>
