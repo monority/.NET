@@ -7,8 +7,20 @@ namespace Exercice04.Models
 {
     public class HangManViewModel : INotifyPropertyChanged
     {
-
         private string? _wordToFind;
+        public string Letters { get; set; } = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        private Image _image;
+        private readonly List<Image> _images = new();
+
+        public Image Image
+        {
+            get => _image;
+            set
+            {
+                _image = value;
+                OnPropertyChanged();
+            }
+        }
         public string? WordToFind
         {
             get => _wordToFind;
@@ -20,9 +32,11 @@ namespace Exercice04.Models
         }
         private int? _errors = 0;
 
-        public int? Errors {
+        public int? Errors
+        {
             get => _errors;
-            set {
+            set
+            {
                 _errors = value;
                 OnPropertyChanged();
             }

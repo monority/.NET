@@ -8,11 +8,13 @@ namespace Exercice04.Pages
     public partial class HangManPage : ContentPage
     {
         public HangManViewModel ViewModel { get; set; }
-        public List<string> QuotesList = new([
-        "apple",
+        public List<string> QuotesList { get; } = new()
+        {
+            "apple",
             "banana",
             "kiwi"
-        ]);
+        };
+
 
         public HangManPage()
         {
@@ -21,15 +23,12 @@ namespace Exercice04.Pages
             BindingContext = ViewModel;
             GenerateWords();
         }
-
         private void Btn_Clicked(object? sender, EventArgs e)
         {
             if (sender is not Button button || ViewModel.WordToFind == null || ViewModel.Mask == null)
                 return;
 
-            button.BackgroundColor = Color.FromArgb("#c8c8c8");
-            button.TextColor = Color.FromArgb("#000000");
-            button.IsEnabled = false;
+            DisableButton(button);
 
             char pressedChar = button.Text.ToLower()[0];
             bool letterFound = false;
@@ -48,22 +47,73 @@ namespace Exercice04.Pages
             if (!letterFound)
             {
                 ViewModel.Errors += 1;
+
             }
+
+            CheckGameStatus();
+        }
+
+        private void DisableButton(Button button)
+        {
+            button.BackgroundColor = Color.FromArgb("#c8c8c8");
+            button.TextColor = Color.FromArgb("#000000");
+            button.IsEnabled = false;
+        }
+
+        private void CheckGameStatus()
+        {
+            if (ViewModel.Mask == ViewModel.WordToFind)
+            {
+                ViewModel.Mask = "You won";
+                ShowRetryButton();
+                DisableAllButtons();
+                return;
+            }
+
             if (ViewModel.Errors == 7)
             {
-                BtnRetry.IsEnabled = true;
-                BtnRetry.IsVisible = true;
+                ShowRetryButton();
                 Mask.IsVisible = false;
+                DisableAllButtons();
             }
         }
 
+        private void ShowRetryButton()
+        {
+            BtnRetry.IsEnabled = true;
+            BtnRetry.IsVisible = true;
+        }
+
+        private void DisableAllButtons()
+        {
+            foreach (var view in this.Content.FindByName<FlexLayout>("ButtonContainer").Children)
+            {
+                if (view is Button btn)
+                {
+                    btn.IsEnabled = false;
+                }
+            }
+        }
 
         public void GenerateWords()
         {
-            Random rnd = new Random();
+            Random rnd = new();
             var randomQuote = rnd.Next(0, QuotesList.Count);
             string newWord = QuotesList[randomQuote];
             ViewModel.GenerateMask(newWord);
+        }
+
+        private void ResetButtons()
+        {
+            foreach (var view in this.Content.FindByName<FlexLayout>("ButtonContainer").Children)
+            {
+                if (view is Button button)
+                {
+                    button.BackgroundColor = Color.FromArgb("#9e4222");
+                    button.TextColor = Color.FromArgb("#ffffff");
+                    button.IsEnabled = true;
+                }
+            }
         }
 
         private void BtnRetry_Clicked(object sender, EventArgs e)
@@ -72,6 +122,7 @@ namespace Exercice04.Pages
             BtnRetry.IsEnabled = false;
             BtnRetry.IsVisible = false;
             Mask.IsVisible = true;
+            ResetButtons();
             ViewModel.Errors = 0;
         }
     }

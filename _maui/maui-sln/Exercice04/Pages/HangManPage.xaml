@@ -10,11 +10,11 @@
             <Label Text="{Binding Errors}" x:Name="displayErrorNbr"/>
             <Label Text=" /7"/>
         </HorizontalStackLayout>
-        <Image Source="hangman_01.png" x:Name="hangmanImage" WidthRequest="200" HeightRequest="200" BackgroundColor="White" />
+        <Image Source="{Binding Image}" x:Name="hangmanImage" WidthRequest="200" HeightRequest="200" BackgroundColor="White" />
         <Label Text="{Binding Mask}" HorizontalTextAlignment="Center" FontSize="30" x:Name="Mask"/>
         <Button IsVisible="False" Text="Retry ?" IsEnabled="False" x:Name="BtnRetry" Clicked="BtnRetry_Clicked"/>
 
-        <HorizontalStackLayout Spacing="3">
+        <FlexLayout Margin="2" x:Name="ButtonContainer"  Wrap="Wrap" JustifyContent="SpaceEvenly" Grid.Row="3">
             <Button Text="a" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyA" Clicked="Btn_Clicked"/>
             <Button Text="b" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyB"  Clicked="Btn_Clicked" />
             <Button Text="c" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyC"  Clicked="Btn_Clicked"/>
@@ -22,8 +22,6 @@
             <Button Text="e" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyE"  Clicked="Btn_Clicked"/>
             <Button Text="f" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyF"  Clicked="Btn_Clicked"/>
             <Button Text="g" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyG"  Clicked="Btn_Clicked"/>
-        </HorizontalStackLayout>
-        <HorizontalStackLayout Spacing="3">
             <Button Text="h" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyH"  Clicked="Btn_Clicked"/>
             <Button Text="i" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyI"  Clicked="Btn_Clicked"/>
             <Button Text="j" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyJ"  Clicked="Btn_Clicked"/>
@@ -31,8 +29,6 @@
             <Button Text="l" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyL" Clicked="Btn_Clicked"/>
             <Button Text="m" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyM" Clicked="Btn_Clicked"/>
             <Button Text="n" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyN" Clicked="Btn_Clicked"/>
-        </HorizontalStackLayout>
-        <HorizontalStackLayout Spacing="3">
             <Button Text="o" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyO" Clicked="Btn_Clicked"/>
             <Button Text="p" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyP" Clicked="Btn_Clicked"/>
             <Button Text="q" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyQ" Clicked="Btn_Clicked"/>
@@ -40,14 +36,12 @@
             <Button Text="s" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyS" Clicked="Btn_Clicked"/>
             <Button Text="t" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyT" Clicked="Btn_Clicked"/>
             <Button Text="u" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyU" Clicked="Btn_Clicked"/>
-        </HorizontalStackLayout>
-        <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
             <Button Text="v" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyV" Clicked="Btn_Clicked"/>
             <Button Text="w" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyW" Clicked="Btn_Clicked"/>
             <Button Text="x" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyX" Clicked="Btn_Clicked"/>
             <Button Text="y" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyY" Clicked="Btn_Clicked"/>
             <Button Text="z" FontSize="17" BackgroundColor="#9e4222" Padding="5" TextColor="White" x:Name="keyZ" Clicked="Btn_Clicked"/>
-        </HorizontalStackLayout>
+        </FlexLayout>
     </VerticalStackLayout>
         
 </ContentPage>
