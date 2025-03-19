@@ -12,7 +12,7 @@ public partial class WeatherPage : ContentPage
 
     public WeatherPage()
     {
-        InitializeComponent();
+         InitializeComponent();
         ViewModel = new WeatherViewModel();
         BindingContext = ViewModel;
         _http = new HttpClient();

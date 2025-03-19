@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exercice05.Models
 {
+
     public class Weather
     {
 

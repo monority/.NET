@@ -2,30 +2,38 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Exercice05.Pages.WeatherPage"
-             Title="WeatherPage"  BackgroundColor="#141132">
+             Title="WeatherPage"  BackgroundColor="#141132"
+                xmlns:converters="clr-namespace:Exercice05.Converters"
+                          xmlns:extended="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:WeatherCodeConverter x:Key="WeatherCodeConverter" />
+            <converters:WeatherImageConverter x:Key="WeatherImageConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <VerticalStackLayout Spacing="10" Margin="20">
         <Frame BackgroundColor="White">
             <Entry Placeholder="Enter Location" Completed="LocationEntry_Completed" HeightRequest="40" x:Name="LocationEntry"/>
         </Frame>
+
+
         <Label x:Name="LabelCityName" Text="{Binding CityName}"  FontSize="20" TextColor="White" HorizontalTextAlignment="Center"/>
         <Label x:Name="LabelDate" Text="{Binding Date}" FontSize="12" TextColor="White" HorizontalTextAlignment="Center"/>
+        <extended:SKLottieView Source="{Binding WeatherCode, Converter={StaticResource WeatherImageConverter}}" HeightRequest="100"  WidthRequest="100" HorizontalOptions="Center" VerticalOptions="Center"/>
+
         <FlexLayout JustifyContent="SpaceBetween">
-            <VerticalStackLayout>
+            <VerticalStackLayout  Spacing="5">
                 <Label Text="Temp" TextColor="#c5c4ca" HorizontalTextAlignment="Center"/>
                 <Label x:Name="LabelTemperature" Text="{Binding TemperatureFormatted}" FontSize="20" TextColor="White" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
-
             </VerticalStackLayout>
-            <VerticalStackLayout>
+            <VerticalStackLayout Spacing="5">
                 <Label Text="Wind" TextColor="#c5c4ca" HorizontalTextAlignment="Center"/>
-
                 <Label x:Name="LabelWind" Text="{Binding WindFormatted}" FontSize="20" TextColor="White" HorizontalTextAlignment="Center"/>
-
             </VerticalStackLayout>
-            <VerticalStackLayout>
+            <VerticalStackLayout Spacing="5">
                 <Label Text="Weather" TextColor="#c5c4ca" HorizontalTextAlignment="Center"/>
-
-                <Label x:Name="LabelWeatherCondition" Text="{Binding WeatherCode}" FontSize="20" TextColor="White" HorizontalTextAlignment="Center"/>
-
+                <Label Text="{Binding WeatherCode, Converter={StaticResource WeatherCodeConverter}}"  FontSize="20"  TextColor="White"/>
             </VerticalStackLayout>
         </FlexLayout>
     </VerticalStackLayout>
