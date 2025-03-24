@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  site-a:
+    build: ./site01
+    container_name: site01
+    networks:
+      - mynetwork
+
+  site-b:
+    build: ./site02
+    container_name: site02
+    networks:
+      - mynetwork
+
+  reverse-proxy:
+    build: ./reverse-proxy
+    container_name: reverse-proxy
+    ports:
+      - "8080:80"
+    depends_on:
+      - site01
+      - site02
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
