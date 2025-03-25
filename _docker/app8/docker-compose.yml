@@ -1,17 +1,31 @@
 version: '3.8'
 
 services:
-  app1:
-    build: ./app1
-    container_name: container1
+  db_server:
+    image: mysql:latest
+    container_name: db_container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpassword
+    volumes:
+      - db-data:/var/lib/mysql
     networks:
       - my_network
 
-  app2:
-    build: ./app2
-    container_name: container2
+  db_client:
+    image: mysql:latest
+    container_name: db_client
+    depends_on:
+      - db_server
+    entrypoint: ["tail", "-f", "/dev/null"]
     networks:
       - my_network
+
+volumes:
+  db-data:
 
 networks:
   my_network:
