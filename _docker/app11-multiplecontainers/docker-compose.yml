@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  app1:
+    build: ./app1
+    container_name: app1
+    networks:
+      - mynetwork
+
+  app2:
+    build: ./app2
+    container_name: app2
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
