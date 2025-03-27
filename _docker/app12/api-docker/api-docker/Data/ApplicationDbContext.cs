@@ -1,13 +1,13 @@
-﻿using Exercice_Api.Models;
+﻿using api_docker.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Exercice_Api.Data;
+namespace api_docker.Data;
 
 public class ApplicationDbContext : DbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-    public DbSet<Contact> Contacts { get; set; }
+    public DbSet<Person> Contacts { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -18,34 +18,22 @@ public class ApplicationDbContext : DbContext
 
         var connectionString = $"Server={serverAddress};Database={databaseName};Uid={username};Pwd={password};";
 
-        optionsBuilder.UseMySql(connectionString, new MySqlServerVersion(new Version(9, 0)));
+        optionsBuilder.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0)));
     }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-
-        modelBuilder.Entity<Contact>().HasData(new Contact()
+        modelBuilder.Entity<Person>().HasData(new Person()
         {
             Id = 1,
-            FirstName = "Denis",
-            LastName = "Okijed",
-            BirthDate = new DateOnly(1998, 12, 12),
-            PhoneNumber = "+212315161",
+            Name = "Denis",
             Email = "example@test.fr",
-            Gender = "F",
         },
-        new Contact()
+        new Person()
         {
             Id = 2,
-            FirstName = "Alicia",
-            LastName = "Dsze",
-            BirthDate = new DateOnly(1994, 12, 12),
-            PhoneNumber = "+21241515",
-            Email = "example2@test.fr",
-            Gender = "M",
-        }
-
-        );
-
+            Name = "Alicia",
+            Email = "example@test.fr",
+        });
     }
-
 }
